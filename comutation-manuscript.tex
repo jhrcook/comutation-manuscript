@@ -27,7 +27,10 @@
         \setcounter{figure}{0}
         \renewcommand{\thefigure}{\arabic{figure}}%
      }
-     
+
+% Single spaces after periods.
+\frenchspacing
+
 % Page numbering.
 \pagenumbering{arabic}
 \rfoot{\thepage}
@@ -134,6 +137,32 @@ This suggested that the particular properties of the alleles drive their selecti
 
 \subsection*{The \KRAS{} alleles have distinct comutation networks.}
 
+The \KRAS{} alleles can be further characterized by the genes they tend to comutate with.
+An increased frequency of comutation suggests a synergistic effect whereas a reduced frequency of comutation suggests an inhibitory effect on growth, likely through a mechanism of collateral lethality.
+The extreme of the latter effect is commonly known as "mutual exclusivity."
+For instance, in COAD, \emph{APC} comutation enhances the effects of oncogenic \KRAS{}-induced hyperactivation of the Wnt signaling pathway, essential for the growth of cancer stem cells in the intestinal crypts \cite{Janssen2006, Fearon2014, Sakai2018, Jauhri2017}.
+Alternatively, the activation of \emph{BRAF} via a V600E mutation was demonstrated to induce senescence in the presence of a \KRAS{} mutant, and, thus, the two are rarely found in the same tumor \cite{Seth2009ConcomitantCancer., Cisowski2016, Jauhri2017}.
+The comutation network of each \KRAS{} allele for each cancer was constructed using a one-sided Fisher's exact test to detect genes with increased comutation and the Row Column test for Exclusivity to detect genes with reduced comutation \cite{Leiserson2016}.
+The result of the analysis on COAD tumors was a weakly connected network of the \KRAS{} alleles with only a few genes linking the alleles together (Fig. \ref{fig:coad-comutation-main}a).
+These linking genes tended to be well-known oncogenes such as \emph{BRAF}, \emph{APC}, and \emph{TP53}.
+Contrary to common assumption, while \KRAS{} and \emph{TP53} are frequently found mutated in the same tumor, there is a detectable reduction in comutation of \emph{TP53} with \KRAS{} G12D and G13D (Fig. \ref{fig:coad-comutation-main}a, b).
+
+Surprisingly, there were a substantial number of genes detected to comutate with just one \KRAS{} allele.
+To gain functional insight into the network, genes known to physically interact with \KRAS{} \cite{Kovalski2019}, signal up- or downstream of \KRAS{} \cite{Kanehisa2017, Kanehisa2016KEGGAnnotation.}, or are known oncogenes \cite{Bamford2004TheWebsite., Sondka2018} were extracted (Fig. \ref{fig:coad-comutation-main}b).
+As expected, several alleles had reduced comutation with \emph{NRAS} and \emph{BRAF} and increased comutation with \emph{APC} and \emph{PIK3CA}. Some novel interactions included increased comutation of \emph{PORCN} with \KRAS{} A146T, \emph{MTOR} with G12C, and \emph{SMAD4} with G12V.
+Further, several of the alleles showed enrichment for cellular functions in their comutation networks (Fig. \ref{fig:coad-comutation-main}c).
+One of the strongest effects was an enrichment in the G12D comutation network of interactors with \emph{YWHAZ}, a 14-3-3 scaffolding protein implicated in modulating many interactions including Arhgef7 activity on Rac1 \cite{Angrand2006TransgenicSignaling.}.
+Also, genes involved in the Hippo and Wnt signaling, key pathways in COAD, were enriched in the comutation networks of \KRAS{} G12V and G13D.
+
+% I didn't reference Fig. 2 e-g because there wasn't anything specific to say about them, and there is not enough space to expand upon them for each cancer. They are explained in the legend and are just an interesting visualization of comutation interactions.
+
+
+
+
+
+
+
+
 
 
 
@@ -220,7 +249,7 @@ p_{k,s} = \frac{c_{s,a} w_{k,s}}{\sum_{s}^{S} c_{s,a} w_{k,s}}
 
 \subsection*{Comutation with \KRAS{} alleles}
 
-A one-tailed Fisher’s exact test was used to identify increased frequency of comutation between \KRAS{} alleles and other mutated genes. Only comutation partners with at least three comutation events were considered. Further, only genes with a mutation frequency of at least 1 \% or a comutation frequency of at least 10 \% were considered. 
+A one-tailed Fisher’s exact test of independence was used to identify increased frequency of comutation between \KRAS{} alleles and other mutated genes. Only comutation partners with at least three comutation events were considered. Further, only genes with a mutation frequency of at least 1 \% or a comutation frequency of at least 10 \% were considered. 
 
 The Row-Column Test for Exclusivity (RC-test) was used to identify reduced frequency of comutation between \KRAS{} alleles and other mutated genes \cite{Leiserson2016}. 
 This is a permutation-based test that finds the probability of observing the actual number of mutually exclusive events given than the number of time the genes is mutated in all samples is fixed and the number of mutations in each sample is fixed.
@@ -261,9 +290,7 @@ Each author’s contribution to the work should be described briefly, on a separ
 A competing interests statement is required for all papers accepted by and published in \emph{Scientific Data}. If there is no conflict of interest, a statement declaring this must still be included in the manuscript.
 
 
-\bibliography{references, R_citations, additional_citations}{
-
-}
+\bibliography{reference_files/references, reference_files/R_citations, reference_files/additional_citations}{}
 \bibliographystyle{plain}
 
 
