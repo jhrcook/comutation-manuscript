@@ -46,6 +46,7 @@
 
 \begin{document}
 
+
 \maketitle
 
 \thispagestyle{fancy}
@@ -173,9 +174,17 @@ There were several intriguing cellular processes enriched in the networks of eac
 Interestingly, some of the enrichments were driven by both increased and reduced comutation interactions while others were driven by increased or reduced comutation interactions (Fig. \ref{fig:luad-comutation-main}c).
 For example, \KRAS{} G12C had increased and reduced comutation interactions with many genes that interact with Myc ("PPI of MYC (TF)"), compared to how reduced comutation interactions drove the enrichment of focal adhesion genes with \KRAS{} G12D (Fig. \ref{fig:luad-comutation-main}c, Supplemental Fig. \ref{sfig:luad-enriched-comutation-ppi-examples}).
 
-In MM, the \KRAS{} comutation network was sparse and highly disconnected.
-In fact, the only three alleles that shared a detectable interaction were \KRAS{} G12D, Q61L, and Q61R, which all demonstrated strongly reduced comutation with \emph{BRAF}, a gene known to be mutually exclusive with \KRAS{} in this cancer.
-% Literature to read in "multiple myeloma" folder.
+In MM, the \KRAS{} comutation network was sparse and highly disconnected (Supplemental Fig. \ref{sfig:mm_labeled-comutation}a).
+In fact, the only three alleles that shared a detectable interaction were \KRAS{} G12D, Q61L, and Q61R, which all demonstrated strongly reduced comutation with \emph{NRAS}, a gene previously reported to be mutually exclusive with \KRAS{} in this and other cancers \cite{Lohr2014WidespreadTherapy.}.
+A major limitation of this study was that MM is known to be highly heterogeneous, often with multiple subclonal populations experiencing parallel evolution \cite{Melchor2014Single-cellMyeloma., Lionetti2015MolecularActivation., Keats2012ClonalMyeloma., Corre2015GeneticsLevel, Lohr2016GeneticResolution., Lohr2014WidespreadTherapy., Xu2017MolecularActivation.}.
+Thus, some comutation events were in fact mutations acquired by distinct populations in a single patient, potentially interfering with the ability to detect comutation interactions.
+Due to this caveat, focusing on genes known to drive MM reduces the chances of highlighting a false positive. Previous studies have indicated that mutations in \emph{ACTG1}, \emph{ATR}, \emph{BRAF}, \emph{CYLD}, \emph{DIS3}, \emph{FAM46C}, \emph{NBEA}, \emph{NRAS}, \emph{PRDM1}, \emph{RB1}, \emph{SOX21}, \emph{TP53} and \emph{TRAF3} tend to drive cancer progression \cite{Lohr2014WidespreadTherapy., Sondka2018} and several showed patterns of comutation with the \KRAS{} alleles.
+\emph{NRAS} had reduced comutation with \KRAS{} G12D and \KRAS{} Q61L, but one of the highest rates of comutation (42.9 \%) with \KRAS{} Q61H, the most common \KRAS{} allele in MM (Supplemental Fig. \ref{sfig:mm_labeled-comutation}b).
+Interestingly, this was about equal to the rate of \NRAS{} mutation in \KRAS{} WT tumors (42.3 \%), suggesting that the signaling of the Q61H allele is fundamentally different from the other \KRAS{} mutations in MM, especially G12D.
+Instead, the Q61H allele shows a reduced frequency of comutation with \emph{BRAF} and \emph{TRAF3}.
+The G12D allele had a comutation frequency of 25 \% with both of those genes, again suggesting varying signaling properties of these two common \KRAS{} alleles.
+
+% next: PAAD
 
 
 
@@ -301,8 +310,9 @@ Each author’s contribution to the work should be described briefly, on a separ
 A competing interests statement is required for all papers accepted by and published in \emph{Scientific Data}. If there is no conflict of interest, a statement declaring this must still be included in the manuscript.
 
 
+\bibliographystyle{unsrt}
 \bibliography{reference_files/references, reference_files/R_citations, reference_files/additional_citations}{}
-\bibliographystyle{plain}
+
 
 
 \begin{figure}[p]
@@ -452,7 +462,9 @@ A competing interests statement is required for all papers accepted by and publi
 \centering
 \includegraphics[height=150mm]{figures/SuppFigure_09.jpeg}
 \caption{
-    \textbf{The comutation network of the \KRAS{} alleles in MM.} Each edge represented a comutation interaction between an allele and the indicated gene. The color of the edge indicates that the interaction was an increase (blue) or decrease (green) in the frequency of comutation.
+    \textbf{The comutation network of the \KRAS{} alleles in MM.} 
+    \textbf{a.} Each edge represented a comutation interaction between an allele and the indicated gene. The color of the edge indicates that the interaction was an increase (blue) or decrease (green) in the frequency of comutation.
+    \textbf{b.} A heat map of the comutation frequencies between known MM driving genes and \KRAS{} alleles. The color is correlated with the comutation frequency, indicated in each cell. Bold percent values indicate statistical significance of a comutation interaction (see Methods). The bar plot along the top indicates the number of samples with the \KRAS allele, and the bar plot on the right indicates the number of samples with a mutation in the gene.
 }
 \label{sfig:mm_labeled-comutation}
 \end{figure}
