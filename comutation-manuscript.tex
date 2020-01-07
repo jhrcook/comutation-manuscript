@@ -97,7 +97,7 @@ This reaction is catalyzed by a GTPase-activating protein (GAP), and the exchang
 Mutations to any of the four hotspot codons causes an increase in downstream activation by increasing the amount of GTP-bound \kras{}.
 More specifically, mutations to codons 12, 13, and 61 reduce the rate of intrinsic and GAP-mediated hydrolysis, and mutants at 13 and 61, but not 12, increase the rate of GDP exchange \cite{Hunter2015a, Smith2013}.
 Further, the A146T mutation does not alter the rate of GTP hydrolysis, but causes hyperactivation though an increased rate of GDP exchange \cite{Edkins2006, Janakiraman2010, Poulin2019}.
-Additional biochemical, structural, and signaling distinctions have been identified between different mutant alleles at the same amino acid position \cite{Poulin2019, Hobbs2019, Hunter2015a, Li2018, Yu2018, Kovalski2019, Ihle2012, Spoerner2004, Smith2014a, Pantsar2018}.
+Additional biochemical, structural, and signaling distinctions have been identified between different mutant alleles at the same amino acid position \cite{Poulin2019, Hobbs2019AtypicalCancer., Hunter2015a, Li2018, Yu2018, Kovalski2019, Ihle2012, Spoerner2004, Smith2014a, Pantsar2018}.
 
 Likely as a consequence of their distinct properties, associations have been uncovered between drug-response or clinical outcome and the specific \KRAS{} mutation status of the patient's tumor \cite{Haigis2017, Li2018}.
 For instance, a retrospective study indicated that COAD tumors with a \KRAS{} G13D allele may be susceptible to anti-EGFR therapies, a treatment generally discouraged for \KRAS{}-mutant tumors \cite{DeRoock2010}. 
@@ -107,7 +107,7 @@ Another example is that the \KRAS{} G12D allele is associated with reduced overa
 
 Unfortunately, the \kras{} protein is still considered "undruggable" in most circumstances because of its relatively smooth surface and picomolar affinity for its nucleotide substrate, GTP \cite{Spencer-Smith2019}.
 Promising results of a \KRAS{} G12C inhibitor have been recently demonstrated in combating LUAD, however, because the drug is exploiting a covalent bond with the cysteine residue, these results are unlikely to extend to other \KRAS{} alleles, leaving most patients still without a \kras{} inhibitor \cite{Lim2014, Ostrem2013K-RasG12CInteractions., Patricelli2016SelectiveState., Lito2016Allele-specificMechanism., Canon2019}.
-Others have explored disrupting the processing of the \kras{} protein, signaling partners, and downstream pathways with mixed results \cite{Spencer-Smith2019}.
+Others have explored disrupting the processing of the \kras{} protein, signaling partners, and downstream pathways with mixed results \cite{Spencer-Smith2019, Zeitouni2016}.
 
 For the reasons noted above, understanding the heterogeneous properties of the \KRAS{} alleles is likely essential to effectively treating \KRAS{}-driven cancers.
 The prominent reductionist strategy of treating all \KRAS{} mutants the same has so far proven insufficient.
@@ -147,7 +147,7 @@ For each tumor with a \KRAS{} mutation, the probability that the allele was caus
 The average of these probabilities for each allele were shown in Fig. \ref{fig:mutational-signatures-main}c. 
 Most of the common \KRAS{} mutations in COAD, MM, and PAAD, were likely caused by mutations in “clock-like” signatures 1 and 5, mutations believed to accumulate with age \cite{Alexandrov2015} (Supplementary Fig. \ref{sfig:mutational-signatures-summary}b). 
 LUAD was the only cancer with \KRAS{}-mutant samples enriched for a mutational signature of exogenous cause. 
-Samples with \KRAS{} G12A/C/V and G13C mutations were primarily burdened with mutations attributable to tobacco smoke (signature 4 \cite{Alexandrov2016}) while \KRAS{} G12D samples were split into about 25 \% signature 4 and about 75 \% signature 1 and 5 (Fig. \ref{fig:mutational-signatures-main}c, d).
+The \KRAS{} G12A/C/V and G13C mutations were primarily attributable to mutations caused by tobacco smoke (signature 4 \cite{Alexandrov2016}) while mutation \KRAS{} G12D samples were most likely attributable to clock mutations (Fig. \ref{fig:mutational-signatures-main}c, d).
 Signature 8, of unknown etiology, had a substantial probability of causing some of the \KRAS{} alleles across all four cancers.
 
 There were some interesting links between specific alleles and mutational signatures.
@@ -230,8 +230,8 @@ The G12D allele had a comutation frequency of 25 \% with both of those genes, ag
 Whole genome sequencing (WGS), whole exome sequencing (WXS), and targeted gene panel sequencing data were collected of colorectal adenocarcinoma (COAD), lung adenocarcinoma (LUAD), multiple myeloma (MM), and pancreatic adenocarcinoma (PAAD).
 WXS and WGS data were downloaded from cBioportal \cite{Gao2013, Cerami2012}, which included relevant project from The Cancer Genome Atlas (TCGA) \cite{CancerGenomeAtlasNetwork2012, CancerGenomeAtlasResearchNetwork2014, CancerGenomeAtlasResearchNetwork.Electronicaddress:andrew_aguirredfci.harvard.edu2017} and other smaller studies. 
 Additional data were acquired from the International Cancer Genome Consortium (ICGC) for pancreatic cancer \cite{Scarlett2011} and colorectal cancer. 
-Panel data for multiple cancers were retrieved from the Genomics Evidence Neoplasia Information Exchange (GENIE) consortium \cite{AACRProjectGENIEConsortium2017AACRConsortium.}.
-GENIE data are an aggregation of several different panels ranging from ~30 genes to ~600.
+Panel data for multiple cancers were retrieved from AACR Project Genomics Evidence Neoplasia Information Exchange (GENIE) \cite{AACRProjectGENIEConsortium2017AACRConsortium.}.
+GENIE data are an aggregation of several different panels ranging from 30 genes to 600.
 \KRAS{} was included in all of the libraries. 
 A detailed list of all cancer studies can be found in Supplementary Table 1.
 
@@ -239,7 +239,7 @@ A detailed list of all cancer studies can be found in Supplementary Table 1.
 \subsection*{Hypermutated sample cutoff}
 
 Some of the COAD samples had 5 to 10-times more mutations than average, often due to microsatellite instability (MSI). 
-A Gaussian mixed model was used to find the optimal cutoff based on available WGS and WXS data (Supplementary Fig. X). 
+A Gaussian mixed model was used to find the optimal cutoff based on available WGS and WXS data. 
 The top 17 \% and 21 \% of samples were considered hypermutants in WGS and WXS, respectively.
 The same 17 \% cutoff was applied to the gene panel data. 
 Hypermutants were not excluded from the identification of mutational signatures as they signature 6 is caused by MSI.
@@ -275,7 +275,6 @@ This signature was not adjusted to resemble those previously reported because th
 This signature referred to as N did not contribute to \KRAS{} mutations.
 Three of the signatures discovered via NMF were likely to be artifacts \cite{Costello2013DiscoveryPreparation.} and were removed from downstream analysis. 
 Signatures present at very low levels were removed and the levels of each signature were recalculated using Non-Negative Least Squares (NNLS) \cite{Gulhan2019DetectingSamples.}.
-The results of this calculation were shown in Supplementary Fig X. 
 
 
 \subsection*{Probability of \KRAS{} mutations from mutational signatures}
