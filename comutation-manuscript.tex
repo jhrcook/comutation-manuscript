@@ -364,7 +364,7 @@ A competing interests statement is required for all papers accepted by and publi
     \textbf{The comutation networks of common \KRAS{} alleles in COAD are distinct.}
     \textbf{a.} The comutation network of the \KRAS{} alleles in COAD with each edge representing a comutation interaction between an allele and another gene. The color of the edge indicates that the interaction was an increase (blue) or decrease (green) in the frequency of comutation.
     \textbf{b.} A subset of the network shown in \textbf{a} of genes known to physically interact with \KRAS{} or one of its canonical up- or downstream pathways. The width of the edge indicates the strength of the association.
-    \textbf{c.} Cellular functions enriched in the comutation networks of the \KRAS{} alleles. The size of the dot indicates the strength of the association and the transparency indicates the number of genes in both the function and the comutation network.
+    \textbf{c.} Cellular functions enriched in the comutation networks of the \KRAS{} alleles. The size of the dot indicates the number of genes in both the function and the comutation network and the transparency indicates the strength of the association.
     \textbf{d, e, f, g.} A visualization of the increased (\textbf{d}) or (\textbf{e}) decreased comutation of select genes with \KRAS{} G12D (\textbf{d, e}) and G12V (\textbf{f, g}). Rows of the central plot represent genes. Each column of the central plot is a different tumor sample. A filled space denotes a mutation of the gene in the sample, the color describing the type of variant. The bar plots above and to the right indicate the marginal values of the central plot. The row below the central plot indicates the \KRAS{} alleles of the tumor samples in the central plot.
 }
 \label{fig:coad-comutation-main}
@@ -376,7 +376,7 @@ A competing interests statement is required for all papers accepted by and publi
 \caption{
     \textbf{The comutation networks of \KRAS{} alleles in LUAD.}
     \textbf{a.} The comutation network of the \KRAS{} alleles in LUAD with each edge representing a comutation interaction between an allele and another gene. The color of the edge indicates that the interaction was an increase (blue) or decrease (green) in the frequency of comutation.
-    \textbf{b.} Cellular functions enriched in the comutation networks of the \KRAS{} alleles. The size of the dot indicates the strength of the association and the transparency indicates the number of genes in both the function and the comutation network.
+    \textbf{b.} Cellular functions enriched in the comutation networks of the \KRAS{} alleles. The size of the dot indicates the number of genes in both the function and the comutation network and the transparency indicates the strength of the association.
     \textbf{c.} The combined rate of comutation of the genes underlying the enriched functions shown in \textbf{b}. The x-axis indicates the rate at which one of the genes in the enriched function is mutated in the samples with the indicated \KRAS{} allele (dark) or the other samples (light). The genes were separated into those with an increase (blue, going right) or a reduced (green, going left) rate of comutation with the \KRAS{} allele.
 }
 \label{fig:luad-comutation-main}
@@ -495,6 +495,22 @@ A competing interests statement is required for all papers accepted by and publi
     \textbf{b.} A heat map of the comutation frequencies between known MM driving genes and \KRAS{} alleles. The color is correlated with the comutation frequency, indicated in each cell. Bold percent values indicate statistical significance of a comutation interaction (see Methods). The bar plot along the top indicates the number of samples with the \KRAS allele, and the bar plot on the right indicates the number of samples with a mutation in the gene.
 }
 \label{sfig:mm_labeled-comutation}
+\end{figure}
+
+
+\begin{figure}[p]
+\centering
+\includegraphics[height=120mm]{figures/SuppFigure_12.jpeg}
+\caption{
+    \textbf{Opposing comutation interactions were detected between the \KRAS{} alleles in PAAD.}
+    \textbf{a.} The comutation network of the \KRAS{} alleles in PAAD with each edge representing a comutation interaction between an allele and another gene. The color of the edge indicates that the interaction was an increase (blue) or decrease (green) in the frequency of comutation.
+    \textbf{b.} A subset of the network shown in \textbf{a} of genes known to physically interact with \KRAS{} or one of its canonical up- or downstream pathways. The width of the edge indicates the strength of the association.
+    \textbf{c.} The log-odds of comutation between \KRAS{} alleles and other genes that had detectable opposing comutation interactions with multiple alleles.
+    \textbf{d.} Cellular functions enriched in the comutation networks of the \KRAS{} alleles. The size of the dot indicates the number of genes in both the function and the comutation network and the transparency indicates the strength of the association.
+    \textbf{e.} The PPI network of proteins encoded by the genes constituting the "calcium ion transport" enriched in the comutation network of \KRAS{} G12V. The colored nodes indicate the genes in the comutation network, the color indicating the type of comutation interaction between the gene and G12V. The grey nodes were selected as they are most central to connecting the highlighted genes.
+    \textbf{f.} A comparison of the comutation rates of the genes producing proteins in the PPI of SMAD1-3. Each column is a gene with a comutation interaction with a \KRAS{} allele and in at least one of the gene sets. The black tiles on top indicate that the gene was in the PPI of the SMAD protein. The bar plot shows the distribution of the comutation events of each gene across tumor samples with the various \KRAS{} mutations.
+}
+\label{sfig:paad-comutation}
 \end{figure}
 
 
