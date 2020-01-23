@@ -106,7 +106,7 @@ An almost simultaneous publication by Rabara \emph{et al.} \cite{Rabara2019} pro
 Another example is that the \KRAS{} G12D allele is associated with reduced overall survival in advanced PAAD when separately compared to patients with WT \KRAS{}, \KRAS{} G12R, or \KRAS{} G12V \cite{Bournet2016}.
 
 Unfortunately, the \kras{} protein is still considered "undruggable" in most circumstances because of its relatively smooth surface and picomolar affinity for its nucleotide substrate, GTP \cite{Spencer-Smith2019}.
-Promising results of a \KRAS{} G12C inhibitor have been recently demonstrated in combating LUAD, however, because the drug is exploiting a covalent bond with the cysteine residue, these results are unlikely to extend to other \KRAS{} alleles, leaving most patients still without a \kras{} inhibitor \cite{Lim2014, Ostrem2013K-RasG12CInteractions., Patricelli2016SelectiveState., Lito2016Allele-specificMechanism., Canon2019}.
+Promising results of a \KRAS{} G12C inhibitor have been recently demonstrated in combating LUAD, however, because the drug is exploiting a covalent bond with the cysteine residue, these results are unlikely to extend to other \KRAS{} alleles, leaving most patients still without a \kras{} inhibitor \cite{Lim2014,Ostrem2013, Patricelli2016, Lito2016, Canon2019}.
 Others have explored disrupting the processing of the \kras{} protein, signaling partners, and downstream pathways with mixed results \cite{Spencer-Smith2019, Zeitouni2016}.
 
 For the reasons noted above, understanding the heterogeneous properties of the \KRAS{} alleles is likely essential to effectively treating \KRAS{}-driven cancers.
@@ -213,20 +213,40 @@ Interestingly, this was about equal to the rate of \emph{NRAS} mutation in \KRAS
 Instead, the Q61H allele showed a reduced frequency of comutation with \emph{BRAF} and \emph{TRAF3}.
 The G12D allele had a comutation frequency of 25 \% with both of those genes, again suggesting varying signaling properties of these two common \KRAS{} alleles.
 
-% next: PAAD
-The \KRAS{} allele comutation network found in the PAAD tumor samples demonstrated that many genes had detectable comutation interactions with several alleles (Supplemental Fig. \ref{sfig:paad-comutation}a, Supplemental Fig \ref{sfig:paad_labeled-comutation}).
-Most of these interactions were reduced comutation.
-Interestingly, there were numerous genes that had comutation interactions of opposing direction with different alleles.
+The \KRAS{} allele comutation network found in the PAAD tumor samples demonstrated that many genes had detectable comutation interactions with multiple alleles (Supplemental Fig. \ref{sfig:paad-comutation}a, Supplemental Fig \ref{sfig:paad_labeled-comutation}).
+Most of these interactions were reduced comutation interactions.
+Interestingly, there were numerous genes that had opposing comutation interactions with different alleles.
 Four of these were direct interactors of \KRAS{} \cite{Kovalski2019}, signal through \KRAS{} \cite{Kanehisa2017, Kanehisa2016KEGGAnnotation.}, or are known oncogenes \cite{Bamford2004TheWebsite., Sondka2018} (Supplemental Fig. \ref{sfig:paad-comutation}b, c).
 Notably, \emph{TP53} was more likely than not to comutate with \KRAS{} G12V, it was at a significantly lower rate than expected by random chance, given the mutation rate of \emph{TP53} and the mutational burden of the cancers (Supplemental Fig. \ref{sfig:paad-comutation}c).
-There were many notable cellular functions and processes enriched in the comutation networks of the \KRAS{} alleles (Supplemental Fig. \ref{sfig:paad-comutation}d) including a string enrichment of genes involved in calcium ion transport in the network of G12V (Supplemental Fig. \ref{sfig:paad-comutation}e).
+There were many notable cellular functions and processes enriched in the comutation networks of the \KRAS{} alleles (Supplemental Fig. \ref{sfig:paad-comutation}d) including a strong enrichment of genes involved in calcium ion transport in the network of G12V (Supplemental Fig. \ref{sfig:paad-comutation}e).
 Also, the PPI of SMAD1-3 were enriched in the comutation networks of multiple alleles, though the genes that caused the enrichment varied for each gene (Supplemental Fig. \ref{sfig:paad-comutation}f).
 For instance, the comutation events of \emph{ACVR1B} with a mutant \KRAS{} allele were primarily with Q61H whereas those with \emph{FLNA} were mostly with G12R.
 These subtle differences suggest that specific and nuanced alterations of SMAD signaling best complement a given \KRAS{} allele.
 
 
-% NEXT: DepMap analysis
 
+\subsection*{\KRAS{} allele-specific genetic dependencies reveal potential synthetic lethal vulnerabilities.}
+
+The perturbations necessary to drive cancer expose vulnerabilities not present in the native cell.
+For example, the microsatellite instability that often leads to cancer simultaneously makes the inhibition of Werner syndrome ATP-dependent helicase (WRN) lethal to the tumor cells \cite{Behan2019, Chan2019}.
+As the \KRAS{} alleles have measurably different signaling behaviour, they likely have specific genetic vulnerabilities.
+Data from a genome-wide, CRISPR-Cas9 knock-out screen of cancer cell lines \cite{Tsherniak2017, Meyers2017} were used to identify genes with \KRAS{} allele-specific genetic dependencies.
+Measuring for gene set enrichment revealed strong patterns in differential dependency of various cellular processes (Fig. \ref{fig:coad-dependency-main}a).
+For example, many genes comprising Complex I of the electron transport chain had a greater lethal effect when knocked out in cell lines with \KRAS{} G12V mutations than those with G12D or G13D or were \KRAS{} WT (Fig. \ref{fig:coad-dependency-main}b).
+Alternatively, the \KRAS{} G13D cell lines were less effected when genes involved in the complement immune pathway were targeted (Fig. \ref{fig:coad-dependency-main}b).
+To discover individual genes to target, each gene was tested for differential genetic dependency with the cell lines grouped by \KRAS{} allele. 
+The resulting 35 genes were hierarchically clustered into five groups by the dependency scores associated with each \KRAS{} allele (Figure \ref{fig:coad-dependency-main}c, d).
+Genes in cluster 1 tended to have a stronger dependency in \KRAS{} WT cell lines, especially compared to \KRAS{} G12D cell lines, and clusters 3, 4, and 5 had stronger dependency scores in \KRAS{} G12V, G12D, and G13D, respectively. Cluster 2 was more heterogeneous.
+One notable gene with allele-specific associations was the kinetochore-associated protein (\emph{KNTC1}) which demonstrated moderate to strong lethal effects when knocked out in almost every cell line except for those with a \KRAS{} G12V allele.
+Also, isocitrate dehydrogenase (\emph{IDH1}), a component of the citric acid cycle in cellular carbon metabolism, was found to have a negligible effect on growth reduction when knocked-out in \KRAS{} G12D cell lines, an intermediate effect in G12V cell lines, and the strongest effect in G13D and WT cell lines.
+Interestingly, a negative regulator of the MAPK pathway, \emph{WDR26}, was found to be almost essential for the \KRAS{} G12D cell lines though resulted in more moderate growth reduction when knocked out in the other cell lines.
+
+% NEXT: LUAD genetic dependency -- add to Fig with COAD.
+
+
+
+% COAD LUAD PAAD
+%   35  251   35
 
 \section*{Discussion}
 
@@ -236,7 +256,7 @@ These subtle differences suggest that specific and nuanced alterations of SMAD s
 
 \section*{Methods}
 
-\subsection*{Data sources and acquisition}
+\subsection*{Cancer sample data sources and acquisition}
 
 Whole genome sequencing (WGS), whole exome sequencing (WXS), and targeted gene panel sequencing data were collected of colorectal adenocarcinoma (COAD), lung adenocarcinoma (LUAD), multiple myeloma (MM), and pancreatic adenocarcinoma (PAAD).
 WXS and WGS data were downloaded from cBioportal \cite{Gao2013, Cerami2012}, which included relevant project from The Cancer Genome Atlas (TCGA) \cite{CancerGenomeAtlasNetwork2012, CancerGenomeAtlasResearchNetwork2014, CancerGenomeAtlasResearchNetwork.Electronicaddress:andrew_aguirredfci.harvard.edu2017} and other smaller studies. 
@@ -288,6 +308,13 @@ Three of the signatures discovered via NMF were likely to be artifacts \cite{Cos
 Signatures present at very low levels were removed and the levels of each signature were recalculated using Non-Negative Least Squares (NNLS) \cite{Gulhan2019DetectingSamples.}.
 
 
+\subsection*{Predicting \KRAS{} allele frequency by mutational signatures}
+
+The mutational signatures are linear combinations of the 96-dimension spectrum of possible mutations (see "Identifying mutational signatures" above).
+Thus, assuming the null hypothesis that the prevalence of active mutational processes alone determines the frequency of \KRAS{} alleles in a cancer, the predicted frequency of each \KRAS{} allele can be calculated as the frequency of the same mutation across the entire genome.
+The 95 \% confidence intervals were bootstrapped \cite{R-boot}.
+
+
 \subsection*{Probability of \KRAS{} mutations from mutational signatures}
 
 For each sample harboring a \KRAS{} mutation, the probability of occurrence given the mutational signatures present was calculated by considering the weight of the base change among the 96 possibilities and the relative contribution of the signature to the mutations in the sample. 
@@ -316,11 +343,18 @@ Thus, the test conditions on both the frequency of mutation of the gene and the 
 Only genes with a mutational frequency of at least 2 \% and 10 mutually exclusive events were considered.
 
 
-\subsection*{Predicting \KRAS{} allele frequency by mutational signatures}
+\subsection*{Functional enrichment}
+The R interface to the online \emph{Enrichr} tool was used to identify enriched gene sets in the comutation networks and allele-specific synthetic lethal clusters \cite{Chen2013, Kuleshov2016Enrichr:Update., R-enrichR}.
+Genesets from the following sources were used: TODO.
 
-The mutational signatures are linear combinations of the 96-dimension spectrum of possible mutations (see "Identifying mutational signatures" above).
-Thus, assuming the null hypothesis that the prevalence of active mutational processes alone determines the frequency of \KRAS{} alleles in a cancer, the predicted frequency of each \KRAS{} allele can be calculated as the frequency of the same mutation across the entire genome.
-The 95 \% confidence intervals were bootstrapped \cite{R-boot}.
+\subsection*{Linear modeling of cancer cell line genetic dependencies}
+TODO.
+
+
+
+
+
+\subsection{}
 
 
 \subsection*{Code availability}
@@ -391,6 +425,19 @@ A competing interests statement is required for all papers accepted by and publi
     \textbf{c.} The combined rate of comutation of the genes underlying the enriched functions shown in \textbf{b}. The x-axis indicates the rate at which one of the genes in the enriched function is mutated in the samples with the indicated \KRAS{} allele (dark) or the other samples (light). The genes were separated into those with an increase (blue, going right) or a reduced (green, going left) rate of comutation with the \KRAS{} allele.
 }
 \label{fig:luad-comutation-main}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{figures/Figure_04.jpeg}
+\caption{
+    \textbf{Allele-specific genetic dependencies in COAD cell lines.}
+    \textbf{a.} Gene sets with significant enrichment for increased (lower dependency score; purple) or reduced (higher dependency score; orange) genetic dependency in COAD cell lines. The size of the dot related the p-value of the association and the color indicated the strength of the enrichment.
+    \textbf{b.} Heat maps of the ranking of cell lines by dependency score of genes at the leading edge of enrichment for two gene sets in \textbf{a}. Each row represented a gene and each cell represented a cell line colored by its \KRAS{} allele. The cell lines were arranged in ranking order by their dependency score for the gene. Thus, each column indicated a rank.
+    \textbf{c.} A clustered heat map of the genes that demonstrated differential genetic dependency amongst cell lines of different \KRAS{} alleles. Each column was a cell line labeled by its DepMap ID and each row is a gene.
+    \textbf{d.} Examples of genes that demonstrated differential genetic dependency amongst cell lines of different \KRAS{} alleles (*: p < 0.05, **: p < 0.01, ***: p < 0.001; p-values were adjusted using the Benjamini-Hochberg FDR correction).
+}
+\label{fig:coad-dependency-main}
 \end{figure}
 
 
