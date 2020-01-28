@@ -231,18 +231,28 @@ The perturbations necessary to drive cancer expose vulnerabilities not present i
 For example, the microsatellite instability that often leads to cancer simultaneously makes the inhibition of Werner syndrome ATP-dependent helicase (WRN) lethal to the tumor cells \cite{Behan2019, Chan2019}.
 As the \KRAS{} alleles have measurably different signaling behaviour, they likely have specific genetic vulnerabilities.
 Data from a genome-wide, CRISPR-Cas9 knock-out screen of cancer cell lines \cite{Tsherniak2017, Meyers2017} were used to identify genes with \KRAS{} allele-specific genetic dependencies.
-Measuring for gene set enrichment revealed strong patterns in differential dependency of various cellular processes (Fig. \ref{fig:coad-dependency-main}a).
-For example, many genes comprising Complex I of the electron transport chain had a greater lethal effect when knocked out in cell lines with \KRAS{} G12V mutations than those with G12D or G13D or were \KRAS{} WT (Fig. \ref{fig:coad-dependency-main}b).
-Alternatively, the \KRAS{} G13D cell lines were less effected when genes involved in the complement immune pathway were targeted (Fig. \ref{fig:coad-dependency-main}b).
+For COAD, there were only a sufficient number of cell lines (at least 3) with \KRAS{} G12D, G12V, and G13D mutations and WT \KRAS{} for this analysis.
+Measuring for gene set enrichment revealed strong patterns in differential dependency of various cellular processes (Fig. \ref{fig:coadluad-dependency-main}a).
+For example, many genes comprising Complex I of the electron transport chain had a greater lethal effect when knocked out in cell lines with \KRAS{} G12V mutations than those with G12D or G13D or were \KRAS{} WT (Fig. \ref{fig:coadluad-dependency-main}b).
+Alternatively, the \KRAS{} G13D cell lines were less effected when genes involved in the complement immune pathway were targeted (Fig. \ref{fig:coadluad-dependency-main}b).
 To discover individual genes to target, each gene was tested for differential genetic dependency with the cell lines grouped by \KRAS{} allele. 
-The resulting 35 genes were hierarchically clustered into five groups by the dependency scores associated with each \KRAS{} allele (Figure \ref{fig:coad-dependency-main}c, d).
+The resulting 35 genes were hierarchically clustered into five groups by the dependency scores associated with each \KRAS{} allele (Figure \ref{fig:coadluad-dependency-main}c, d).
 Genes in cluster 1 tended to have a stronger dependency in \KRAS{} WT cell lines, especially compared to \KRAS{} G12D cell lines, and clusters 3, 4, and 5 had stronger dependency scores in \KRAS{} G12V, G12D, and G13D, respectively. Cluster 2 was more heterogeneous.
 One notable gene with allele-specific associations was the kinetochore-associated protein (\emph{KNTC1}) which demonstrated moderate to strong lethal effects when knocked out in almost every cell line except for those with a \KRAS{} G12V allele.
 Also, isocitrate dehydrogenase (\emph{IDH1}), a component of the citric acid cycle in cellular carbon metabolism, was found to have a negligible effect on growth reduction when knocked-out in \KRAS{} G12D cell lines, an intermediate effect in G12V cell lines, and the strongest effect in G13D and WT cell lines.
 Interestingly, a negative regulator of the MAPK pathway, \emph{WDR26}, was found to be almost essential for the \KRAS{} G12D cell lines though resulted in more moderate growth reduction when knocked out in the other cell lines.
 
 % NEXT: LUAD genetic dependency -- add to Fig with COAD.
+The same analysis was conducted on the LUAD cell lines with WT \KRAS{} or \KRAS{} G12C, G12V, or G13D mutations.
+The gene set enrichment analysis of the dependency scores highlighted a reduced dependency on the genes in the Erk pathway (Fig. \ref{fig:coadluad-dependency-main}f) and an increased dependency for genes in the Bard1 pathway (Fig. \ref{fig:coadluad-dependency-main}g) for G12C cell lines.
+The former suggests that these cells would react less severely to inhibition of the MAPK pathway, though were more susceptible to inhibitors of DNA-damage repair mechanisms.
+A gene-by-gene analysis revealed allele-specific genetic dependencies in 251 genes which were further clustered into four groups (Fig. \ref{fig:coadluad-dependency-main}h).
+The first group was enriched in genes regulated by estrogen receptor (\emph{ESR1}) including \emph{RPL4}, \emph{SRRM2}, \emph{UGDH}, \emph{HDAC1}, \emph{VAPB}, \emph{RPS3}, \emph{AHR}, and \emph{RPS1} (Supplemental Fig. XX).
+Further, cluster 4 contained a large component of the cellular PPIN centered around components of the ubiquitination complex including \emph{UBC}, \emph{UBA3}, \emph{UBE2F}, \emph{RNF19B}, \emph{STAMBP}, \emph{USP14}, \emph{FEM1A}.
+Interestingly, the gene encoded by \emph{STAMBP}, STAM-binding protein, is a negative regulator of the PI3K-Akt pathway.
+Also included in this PPIN is MAPK6 (ERK3), a component of the MAPK signaling pathway. 
 
+% To-Do: DepMap for PAAD.
 
 
 % COAD LUAD PAAD
@@ -429,15 +439,16 @@ A competing interests statement is required for all papers accepted by and publi
 
 \begin{figure}
 \centering
-\includegraphics[width=\textwidth]{figures/Figure_04.jpeg}
+\includegraphics[height=70mm]{figures/Figure_04.jpeg}
 \caption{
-    \textbf{Allele-specific genetic dependencies in COAD cell lines.}
+    \textbf{Allele-specific genetic dependencies in COAD and LUAD cell lines.}
     \textbf{a.} Gene sets with significant enrichment for increased (lower dependency score; purple) or reduced (higher dependency score; orange) genetic dependency in COAD cell lines. The size of the dot related the p-value of the association and the color indicated the strength of the enrichment.
-    \textbf{b.} Heat maps of the ranking of cell lines by dependency score of genes at the leading edge of enrichment for two gene sets in \textbf{a}. Each row represented a gene and each cell represented a cell line colored by its \KRAS{} allele. The cell lines were arranged in ranking order by their dependency score for the gene. Thus, each column indicated a rank.
-    \textbf{c.} A clustered heat map of the genes that demonstrated differential genetic dependency amongst cell lines of different \KRAS{} alleles. Each column was a cell line labeled by its DepMap ID and each row is a gene.
-    \textbf{d.} Examples of genes that demonstrated differential genetic dependency amongst cell lines of different \KRAS{} alleles (*: p < 0.05, **: p < 0.01, ***: p < 0.001; p-values were adjusted using the Benjamini-Hochberg FDR correction).
+    \textbf{b, c, f, g.} Heat maps of the ranking of cell lines by dependency score of genes at the leading edge of enrichment for two gene sets in COAD (\textbf{b}, \textbf{c}) and two enriched gene sets in LUAD cell lines (\textbf{f}, \textbf{g}). Each row represented a gene and each cell represented a cell line colored by its \KRAS{} allele. The cell lines were arranged in ranking order by their dependency score for the gene. Thus, each column indicated a rank. The lines plots above the heatmaps indicate the density of representation (density) of each \KRAS{} allele at each rank across the genes.
+    \textbf{d, h.} Clustered heat maps of the genes that demonstrated differential genetic dependency amongst cell lines of different \KRAS{} alleles in COAD (\textbf{d}) or LUAD (\textbf{h}) cell lines. Each column was a cell line labeled by its DepMap ID and each row is a gene. For \textbf{h}, only genes known to be involved in \KRAS{} signaling or previously implicated in driving cancer are labeled. Also, the scores of the WT cell lines were averaged into a single, representative group, labeled "WT (avg.)" because there were too many to show here. The full heatmap is in Supplemental Fig. XX.
+    \textbf{e.} Examples of genes that demonstrated differential genetic dependency amongst cell lines of different \KRAS{} alleles (*: p < 0.05, **: p < 0.01, ***: p < 0.001; p-values were adjusted using the Benjamini-Hochberg FDR correction).
+    \textbf{i.} A PPI comprised of proteins whose genes were in cluster 4 of the deferentially dependent genes in LUAD cell lines (\textbf{h}).
 }
-\label{fig:coad-dependency-main}
+\label{fig:coadluad-dependency-main}
 \end{figure}
 
 
