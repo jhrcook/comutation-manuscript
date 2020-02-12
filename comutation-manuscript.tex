@@ -227,7 +227,6 @@ For instance, the comutation events of \emph{ACVR1B} with \KRAS{} were primarily
 These subtle differences suggest that specific and nuanced alterations of SMAD signaling best complement a given \KRAS{} allele.
 
 
-
 \subsection*{\KRAS{} allele-specific genetic dependencies reveal potential synthetic lethal vulnerabilities.}
 
 The perturbations necessary to drive cancer expose vulnerabilities not present in the native cell.
@@ -240,32 +239,63 @@ Measuring for gene set enrichment revealed strong patterns in differential depen
 For example, many genes comprising Complex I of the electron transport chain had a greater lethal effect when knocked out in cell lines with \KRAS{} G12V mutations than those with G12D or G13D or were \KRAS{} WT (Fig. \ref{fig:coadluad-dependency-main}b).
 Alternatively, the \KRAS{} G13D cell lines were less effected when genes involved in the complement immune pathway were targeted (Fig. \ref{fig:coadluad-dependency-main}b).
 To discover individual genes to target, each gene was tested for differential genetic dependency with the cell lines grouped by \KRAS{} allele. 
-The resulting 35 genes were hierarchically clustered into five groups by the dependency scores associated with each \KRAS{} allele (Figure \ref{fig:coadluad-dependency-main}c, d).
+The resulting 77 genes were hierarchically clustered into six groups by the dependency scores associated with each \KRAS{} allele (Figure \ref{fig:coadluad-dependency-main}c, d).
 Genes in cluster 1 tended to have a stronger dependency in \KRAS{} WT cell lines, especially compared to \KRAS{} G12D cell lines, and clusters 3, 4, and 5 had stronger dependency scores in \KRAS{} G12V, G12D, and G13D, respectively. Cluster 2 was more heterogeneous.
 One notable gene with allele-specific associations was the kinetochore-associated protein (\emph{KNTC1}) which demonstrated moderate to strong lethal effects when knocked out in almost every cell line except for those with a \KRAS{} G12V allele.
-Also, isocitrate dehydrogenase (\emph{IDH1}), a component of the citric acid cycle in cellular carbon metabolism, was found to have a negligible effect on growth reduction when knocked-out in \KRAS{} G12D cell lines, an intermediate effect in G12V cell lines, and the strongest effect in G13D and WT cell lines.
-Interestingly, a negative regulator of the MAPK pathway, \emph{WDR26}, was found to be almost essential for the \KRAS{} G12D cell lines though resulted in more moderate growth reduction when knocked out in the other cell lines.
+Also, isocitrate dehydrogenase (\emph{IDH1}), a component of the citric acid cycle in cellular carbon metabolism \cite{Geisbrecht1999TheDehydrogenase.}, was found to have a negligible effect on growth reduction when knocked-out in \KRAS{} G12D cell lines, an intermediate effect in G12V cell lines, and the strongest effect in G13D and WT cell lines.
+Interestingly, a negative regulator of the MAPK pathway \cite{Goto2016WDR26Pathway.}, \emph{WDR26}, was found to be almost essential for the \KRAS{} G12D cell lines though resulted in more moderate growth reduction when knocked out in the other cell lines.
+Increased expression of \emph{WDR26} has previously been implicated in driving breast cancer by serving as a scaffolding protein in the PI3K-Akt pathway \cite{Ye2016UpregulatedInvasion.}, though there does not appear to be a link between RNA levels and genetic dependency in the COAD cell lines (Supplementary Fig. \ref{sfig:coad_dep_wdr26}a).
 
-% NEXT: LUAD genetic dependency -- add to Fig with COAD.
 The same analysis was conducted on the LUAD cell lines with WT \KRAS{} or \KRAS{} G12C, G12V, or G13D mutations.
 The gene set enrichment analysis of the dependency scores highlighted a reduced dependency on the genes in the Erk pathway (Fig. \ref{fig:coadluad-dependency-main}f) and an increased dependency for genes in the Bard1 pathway (Fig. \ref{fig:coadluad-dependency-main}g) for G12C cell lines.
 The former enrichment suggests that these cells would react less severely to inhibition of the MAPK pathway, though were more susceptible to inhibitors of DNA-damage repair mechanisms.
-A gene-by-gene analysis revealed allele-specific genetic dependencies in 251 genes which were further clustered into four groups (Fig. \ref{fig:coadluad-dependency-main}h).
-The first group was enriched in genes regulated by estrogen receptor (\emph{ESR1}) including \emph{RPL4}, \emph{SRRM2}, \emph{UGDH}, \emph{HDAC1}, \emph{VAPB}, \emph{RPS3}, \emph{AHR}, and \emph{RPS1} (Supplemental Fig. XX).
-Further, cluster 4 contained a large component of the cellular PPIN centered around components of the ubiquitination complex including \emph{UBC}, \emph{UBA3}, \emph{UBE2F}, \emph{RNF19B}, \emph{STAMBP}, \emph{USP14}, \emph{FEM1A}.
+A gene-by-gene analysis revealed allele-specific genetic dependencies in 583 genes which were further clustered into four groups (Fig. \ref{fig:coadluad-dependency-main}h).
+The second group was enriched in genes that encode for proteins in the integrin signaling pathway including \emph{RAP2C}, \emph{MAPK8} (JNK1), \emph{MAPK9} (JNK2), \emph{ITGB5} ($\beta_5$ integrin), \emph{ELMO2}, \emph{PTK2} (FAK) (Supplemental Fig. XX). % TODO
+These genes ended to have lower dependency in \KRAS{} G12V mutant cell lines that in G12C or WT cell lines.
+Further, cluster 4 contained a large component of the cellular PPIN centered around components of the ubiquitination complex including \emph{UBC}, \emph{UBA3}, \emph{UBE2F}, \emph{RNF19B}, \emph{STAMBP}, \emph{USP14}, and \emph{FEM1A} (Fig. \ref{fig:coadluad-dependency-main}i).
 Interestingly, the gene encoded by \emph{STAMBP}, STAM-binding protein, is a negative regulator of the PI3K-Akt pathway.
 Also included in this PPIN was MAPK6 (ERK3), a component of the MAPK signaling pathway. 
 
-% To-Do: DepMap for PAAD.
+For the genetic dependency analysis of PAAD, the only \KRAS{} alleles with a sufficient number of cell lines were G12D, G12R, and G12V.
+A gene set enrichment analysis revealed substantial difference in the dependencies of critical cellular pathways (Fig. \ref{sfig:paad-dependency-main}a).
+For instance, the G12D cell lines tended to be more dependent on the pathway involving the G12/G13 $\alpha$ subunits of G protein-coupled receptors which regulate the actin cytoskeleton during proliferation \cite{Worzfeld2008G12/G13-mediatedDisease., Siehler2009RegulationReceptors., Suzuki2009RegulationPathways.} (Figure \ref{sfig:paad-dependency-main}b).
+Also, the G12R cell lines demonstrated a greater dependency on the genes at the DNA-damage checkpoint between the G2 and M phases of mitosis (Figure \ref{sfig:paad-dependency-main}c).
+In particular, this enrichment is driven by two of the three components of the MRE11-RAD50-NBN (MRN) complex, \emph{MRE11} and \emph{NBN}.
+Interestingly, the cell lines with \KRAS{} G12V mutations were more sensitive to knock-out of genes in the Hedgehog pathway (Figure \ref{sfig:paad-dependency-main}d).
+Of the genes in this pathway with the greatest level of enrichment, several are specifically involved in cellular adhesion and migration including \emph{CRMP1}, \emph{NRCAM}, \emph{CDK6}, and \emph{NRP1}.
+94 individual genes demonstrated \KRAS{} allele-specific genetic dependency, too (Figure \ref{sfig:paad-dependency-main}e).
+Interestingly, the deletion of \emph{JUN} had no effect in \KRAS{} G12V cell lines while it slowed growth in G12D and G12R cell lines.
+\emph{JUN} encodes the transcription factor cJUN which was previously demonstrated to play a role in the transcriptional repression of the tumor suppressors \emph{CDKN2A} and \emph{CDKN2B} in \kras{}-driven COAD \cite{Serra2014APhenotype.}.
+This agreed with the reduced dependency of G12V cell lines on c-Jun NH2 terminal kinases (JNK) activation from the gene set analysis (of note, the enriched gene set did not include \emph{JUN}, itself; Fig. \ref{sfig:paad-dependency-main}a, Supplemental Fig. \ref{sfig:paad-dependency-JUN}a).
+Leading this enrichment was \emph{MAPK8} (JNK-1) which, when knocked out, lead to increased growth in every case, though most strongly in G12V cell lines (Supplemental Fig. \ref{sfig:paad-dependency-JUN}b).
+These data suggest a reduced dependency on the activation of c-JUN via JNK signaling, potentially pointing to a tumor suppression pathway with greater potency in PAAD with \KRAS{} G12V.
 
 
-% COAD LUAD PAAD
-%   35  251   35
+\subsection*{An integrative analysis of allele-specific comutation and genetic dependencies.}
+
+Integrating the results from the allele-specific comutation with those from the dependency analyses provided further insight into the distinctions between the \KRAS{} alleles.
+Surprisingly, there was little overlap between the genes found to comutate with an allele and those with differential dependency - the only overlap was found with in the genes resulting from analysis of \KRAS{} G12C in LUAD (Fig. \ref{fig:results_integration_main}a).
+One of these genes was \emph{STK11}, the gene encoding STK11 (LKB1), a tumor suppressor that controls the activity of AMP activated protein kinases (AMPK) to regulate cellular processes including metabolism, apoptosis, and the DNA-damage response \cite{Momcilovic2015TargetingVulnerabilities., Korsse2013TargetingCancer.}.
+The high rate of comutation between \KRAS{} and \emph{STK11} has been documented previously, though not specifically with \KRAS{} G12C.
+Previous studies have indicated unique biological properties of LUAD tumors with mutations in both \KRAS{} and \emph{STK11} including distinct expression profiles \cite{Skoulidis2015Co-occurringVulnerabilities.}, worse clinical prognosis \cite{LaFleur2019MutationSTK11, Bange2019ImpactCancer.}, and reduced response to immunotherapy \cite{Skoulidis2018STK11/LKB1Adenocarcinoma.}.
+% Look into STK11 + KRAS in LUAD. --> STK11 D194Y and some other hotspots different between G12C and others
+
+
+
 
 \section*{Discussion}
 
+% Limitations of study:
+%   - data types: only used mutation data for comutation --> CNA, SV, non-coding mutations
+%   - final integration study limited by cell lines in DepMap
 
+The comutation and genetic dependency analyses each revealed different properties of the \KRAS{} alleles.
+The former identified co-alterations that possibly adjust the behavior of the tumor in coordination with the specific biology of the \KRAS{} allele, while the latter demonstrated the functional requirements that differed by each allele.
 
+% see PMID: 26069186
+Previously, \KRAS{}-mutant LUAD were demonstrated to separate into 3 groups using RNA expression data.
+These groups were found to not associate with specific \KRAS{} alleles, but instead with mutations to \emph{STK11}, mutations to \emph{TP53}, or depeltion of \emph{CDKN2A} and \emph{CDKN2B}.
+The results presented here, an increased comutation frequency between \KRAS{} G12C and \emph{STK11} and an increased dependency on \emph{STK11} in \KRAS{} G12C-mutant LUAD cell lines, suggest that the G12C allele does have an association with ...
 
 
 \section*{Methods}
@@ -278,7 +308,7 @@ Additional data were acquired from the International Cancer Genome Consortium (I
 Panel data for multiple cancers were retrieved from AACR Project Genomics Evidence Neoplasia Information Exchange (GENIE) \cite{AACRProjectGENIEConsortium2017AACRConsortium.}.
 GENIE data are an aggregation of several different panels ranging from 30 genes to 600.
 \KRAS{} was included in all of the libraries. 
-A detailed list of all cancer studies can be found in Supplementary Table 1.
+A detailed list of all cancer studies can be found in Supplementary Table 1. %TODO
 
 
 \subsection*{Hypermutated sample cutoff}
@@ -295,7 +325,7 @@ Samples with less than 40 mutations were removed.
 
 A conservative filter of tissue-specific gene expression was used to remove genes not expressed in the tissues of study. 
 Normal tissue gene expression data was gathered from the GTEx Portal (12/03/2018) \cite{GTExConsortium2017} and The Human Protein Atlas (HPA, 12/03/2018) \cite{Uhlen2015, Uhlen2016}, and tumor expression data was collected from MMRF-CoMMpass (01/14/2019), TCGA-COAD, TCGA-LUAD, and TCGA-PAAD \cite{CancerGenomeAtlasNetwork2012, CancerGenomeAtlasResearchNetwork2014, CancerGenomeAtlasResearchNetwork.Electronicaddress:andrew_aguirredfci.harvard.edu2017}. 
-Supplementary Table 2 indicates the number of samples per tissue in the GTEx and tumor gene expression data. 
+Supplementary Table 2 indicates the number of samples per tissue in the GTEx and tumor gene expression data. % TODO
 A gene was considered “expressed” in a tissue if it met at least one of the following criteria: 1) a median expression level of at least 1 TPM across all samples of the tissue in GTEx, 2) indicated as expressed at at least 1 TPM in the HPA data set for the tissue, 3) expressed with a median level of 1 RESM in the corresponding tumor RNA-sequencing data.
 Supplementary Fig \ref{sfig:mutfreq-of-unexpressed-genes} indicates the frequency of mutation of genes that were removed from each tumor type according to this filter.
 
@@ -359,10 +389,10 @@ Only genes with a mutational frequency of at least 2 \% and 10 mutually exclusiv
 
 \subsection*{Functional enrichment}
 The R interface to the online \emph{Enrichr} tool was used to identify enriched gene sets in the comutation networks and allele-specific synthetic lethal clusters \cite{Chen2013, Kuleshov2016Enrichr:Update., R-enrichR}.
-Genesets from the following sources were used: TODO.
+Genesets from the following sources were used: % TODO
 
 \subsection*{Linear modeling of cancer cell line genetic dependencies}
-TODO.
+% TODO
 
 
 
@@ -449,15 +479,30 @@ A competing interests statement is required for all papers accepted by and publi
     \textbf{a.} Gene sets with significant enrichment for increased (lower dependency score; purple) or reduced (higher dependency score; orange) genetic dependency in COAD cell lines. The size of the dot relates the p-value of the association and the color indicated the strength of the enrichment.
     \textbf{b, c, f, g.} Heatmaps ranking the cell lines by dependency score of genes at the leading edge of enrichment for two gene sets in COAD (\textbf{b}, \textbf{c}) and two enriched gene sets in LUAD cell lines (\textbf{f}, \textbf{g}). Each row represents a gene and each cell represents a cell line colored by its \KRAS{} allele. The cell lines were arranged in ranking order by their dependency score for the gene. Thus, each column indicates a rank. The lines plots above the heatmaps indicate the representation (density) of each \KRAS{} allele at each rank across the genes.
     \textbf{d, h.} Clustered heatmaps of the genes that demonstrated differential genetic dependency amongst cell lines of different \KRAS{} alleles in COAD (\textbf{d}) or LUAD (\textbf{h}) cell lines. Each column is a cell line labeled by its DepMap ID and each row is a gene. For \textbf{h}, only genes known to be involved in \KRAS{} signaling or previously implicated in driving cancer are labeled. Also, for simplicity, the scores of the WT cell lines were averaged into a single, representative group, labeled "WT (avg.)." The full heatmap is in Supplemental Fig. XX.
-    \textbf{e.} Examples of genes that demonstrated differential genetic dependency amongst cell lines of different \KRAS{} alleles in COAD (*: p < 0.05, **: p < 0.01, ***: p < 0.001; p-values were adjusted using the Benjamini-Hochberg FDR correction).
+    \textbf{e.} Examples of genes that demonstrated differential genetic dependency amongst cell lines of different \KRAS{} alleles in COAD (*: p < 0.05, **: p < 0.01, ***: p < 0.001; p-values were adjusted using the Benjamini-Hochberg FDR correction method).
     \textbf{i.} A PPI comprised of proteins whose genes were in cluster 4 of the deferentially dependent genes in LUAD cell lines (\textbf{h}).
 }
 \label{fig:coadluad-dependency-main}
 \end{figure}
 
+\begin{figure}
+\centering
+\includegraphics[height=150mm]{figures/Figure_05.jpeg}
+\caption{
+    \textbf{Integration of comutation and genetic dependency results.}
+    \textbf{a.} A table of the genes found to comutate and demonstrate differential dependency with the same \KRAS{} allele. The "Dependency comparison" indicates the comparison of dependency scores found to be statistically significant; the "Adj. p-value" is the Bonferroni-adjusted p-value for the comparison. The "Comutation interaction" indicates if the comutation interaction was a reduced or increased rate of comutation; the "P-value" is the p-value for the interaction.
+    \textbf{b.} The mutations of STK11 separated by those in \KRAS{} G12C-mutant samples (top) and the rest of the samples (bottom). The color of the vertical bars indicates the type of mutation. The domains of STK11 are shown between the bar-plots. The magenta portion of the N-terminus is the nuclear localization signal.
+    \textbf{c.} The connectivity of the proteins encoded by the genes found to comutate or demonstrate differential dependence with each \KRAS{} allele on the PPIN. The right-most column represents the null distribution of the connectivity of randomly selected pairs of nodes. The bars indicate the distribution of the geodesic distances (shortest path length) between nodes in the PPIN.
+    \textbf{d.} The largest connected subnetwork of the PPIN of genes found to comutate or demonstrate differential dependence with each \KRAS{} allele was extracted. The network shown is the overlap of the subnetworks for each \KRAS{} allele in COAD. Nodes present in multiple subnetworks are colored shades of brown, save for prominent oncogenes and tumor suppressors in COAD, shown in red ("special"). The rest of the nodes are colored by which allele they are associated with. The edges are colored by the nodes they connect if the nodes are the same color, otherwise are grey.
+}
+\label{fig:results_integration_main}
+\end{figure}
+
 
 
 \beginsupplement
+
+
 
 \begin{figure}[p]
 \centering
@@ -573,7 +618,7 @@ A competing interests statement is required for all papers accepted by and publi
 
 \begin{figure}[p]
 \centering
-\includegraphics[height=120mm]{figures/SuppFigure_12.jpeg}
+\includegraphics[height=110mm]{figures/SuppFigure_12.jpeg}
 \caption{
     \textbf{Opposing comutation interactions were detected between the \KRAS{} alleles in PAAD.}
     \textbf{a.} The comutation network of the \KRAS{} alleles in PAAD where each edge represents a comutation interaction between an allele and another gene. The color of the edge indicates whether the interaction was an increase (blue) or decrease (green) in the frequency of comutation.
@@ -591,9 +636,50 @@ A competing interests statement is required for all papers accepted by and publi
 \centering
 \includegraphics[height=150mm]{figures/SuppFigure_10.jpeg}
 \caption{
-    \textbf{The comutation network of the \KRAS{} alleles in PAAD.} Each edge represents a comutation interaction between an allele and the indicated gene. The color of the edge indicates whether the interaction was an increase (blue) or decrease (green) in the frequency of comutation.
+    \textbf{The comutation network of the \KRAS{} alleles in PAAD.}
+    Each edge represents a comutation interaction between an allele and the indicated gene. The color of the edge indicates whether the interaction was an increase (blue) or decrease (green) in the frequency of comutation.
 }
 \label{sfig:paad_labeled-comutation}
+\end{figure}
+
+
+\begin{figure}[p]
+\centering
+\includegraphics[height=100mm]{figures/SuppFigure_15.jpeg}
+\caption{
+    \textbf{Association between \emph{WDR26} RNA expression and dependency score in COAD cell lines.}
+    \textbf{a.} The dependency score of knocking out \emph{WDR26} against the gene's RNA expression (log-transformed TPM with a pseudocount of 1). Each point represents a COAD cell line, colored by the \KRAS{} allele. The size of the point represents the copy number of \emph{WDR26} ("norm" is 2 copies, "amp" is amplified).
+    The dashed line represents the line-of-best fit.
+    The equation, p-value, and $R^2$ for the line is shown in the top-right.
+}
+\label{sfig:coad_dep_wdr26}
+\end{figure}
+
+
+\begin{figure}
+\centering
+\includegraphics[height=145mm]{figures/SuppFigure_13.jpeg}
+\caption{
+    \textbf{Allele-specific genetic dependencies in PAAD cell lines.}
+    \textbf{a.} Gene sets with significant enrichment for increased (lower dependency score; purple) or reduced (higher dependency score; orange) genetic dependency in PAAD cell lines. The size of the dot relates the p-value of the association and the color indicated the strength of the enrichment.
+    \textbf{b, c, d.} Heatmaps ranking the cell lines by dependency score of genes at the leading edge of enrichment for three gene sets in PAAD. Each row represents a gene and each cell represents a cell line colored by its \KRAS{} allele. The cell lines were arranged in ranking order by their dependency score for the gene. Thus, each column indicates a rank. The lines plots above the heatmaps indicate the representation (density) of each \KRAS{} allele at each rank across the genes.
+    \textbf{e.} Clustered heatmaps of the genes that demonstrated differential genetic dependency amongst cell lines of different \KRAS{} alleles in PAAD cell lines. Each column is a cell line labeled by its DepMap ID and each row is a gene.
+    \textbf{f.} Examples of genes that demonstrated differential genetic dependency amongst cell lines of different \KRAS{} alleles in PAAD (*: p < 0.05, **: p < 0.01, ***: p < 0.001; p-values were adjusted using the Benjamini-Hochberg FDR correction method).
+}
+\label{sfig:paad-dependency-main}
+\end{figure}
+
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{figures/SuppFigure_14.jpeg}
+\caption{
+    \textbf{Reduced dependency on JNK signaling in PAAD cell lines with \KRAS{} G12V mutations.}
+    \textbf{a.} The "JNK phosphorylation and activation by activated TAK1" gene set was significantly enriched for reduced genetic dependency in PAAD cell lines with \KRAS{} G12V. Each row represents a gene and each cell represents a cell line colored by its \KRAS{} allele. The cell lines were arranged in ranking order by their dependency score for each gene. Thus, each column indicates a rank. The lines plots above the heatmap indicate the representation (density) of each \KRAS{} allele at each rank across the genes.
+    \textbf{b.} The genetic dependency on \emph{MAPK8} of cell lines of different \KRAS{} alleles in PAAD (**: p < 0.01; p-values were adjusted using the Benjamini-Hochberg FDR correction method).
+    \textbf{c.} The genetic dependency on \emph{JUN} and \emph{MAPK8} of cell lines of different \KRAS{} alleles in PAAD. Each point is a cell line colored according to its \KRAS{} allele.
+}
+\label{sfig:paad-dependency-JUN}
 \end{figure}
 
 
