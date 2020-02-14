@@ -124,12 +124,13 @@ Notably, the most variation in \KRAS{} alleles was found in MM, and it was the o
 COAD had a unique enrichment of G13D and A146T alleles while PAAD was unique in its high frequency of G12R mutations.
 
 
-\subsection*{The \KRAS{}-alleles have different mutagenic origins.}
+\subsection*{The \KRAS{} alleles have different mutagenic origins.}
 
 Most \KRAS{} mutations were caused by single nucleotide variants.
-An exception was the exceedingly rare, though transformative \emph{in vitro} \cite{Barbacid1987}, G12F allele (0.4 \%) caused by the dinucleotide substitution c.34\_35GG>TT. Glycine 12 and 13 can be transformed to six different amino acids (C, D, S, R, A, and V) through single nucleotide changes in the first two cytosines.
-Glutamine 61 can mutate to only four other amino acids (H, K, L, and R).
-% TODO: add information for A146T mutations.
+An exception was the exceedingly rare, though transformative \emph{in vitro} \cite{Barbacid1987}, G12F allele (0.4 \%) caused by the dinucleotide substitution c.34\_35GG>TT.
+Glycine 12 and 13 can be transformed to six different amino acids (A, C, D, R, S, and V) through single nucleotide changes in the first two cytosines.
+Glutamine 61 can be mutated to six other amino acids (E, H, K, L, P, and R) and a stop codon via a single nucleotide mutation.
+Alanine 146 can become one of six other amino acids (E, G, P, S, T, and V) from mutations to a single nucleotide.
 
 The active mutational processes in the tumor samples were elucidated using mutational signatures \cite{Alexandrov2013}. 
 Briefly, all single-nucleotide mutations can be represented by the combination of the six possible pyrimidine to purine base substitutions (C>T, C>A, C>G, T>A, T>C, T>G) and all possible 3’ and 5’ flanking bases. 
@@ -144,9 +145,9 @@ LUAD was the only cancer with \KRAS{}-mutant samples enriched for a mutational s
 Signature 8, of unknown etiology, had a substantial probability of causing some of the \KRAS{} alleles across all four cancers.
 
 There were some interesting links between specific alleles and mutational signatures.
-In COAD and PAAD, signature 18, likely caused by erroneous base excision repair of damage caused by reactive oxygen species \cite{Viel2017, Pilati2017}, was highly associated with G12C mutations (Fig. \ref{fig:mutational-signatures-main}c, d). 
-This corroborated the previous finding that \KRAS{} G12C mutations were more frequent in patients with MUTYH-Associated Polyposis \cite{Viel2017}, a recessive autosomal disease with increased risk for colorectal cancer. 
-In MM, signature 9, associated with mutations introduced by polymerase $\eta$ linked to activation-induced deaminase (AID) \cite{Pavri2010Activation-inducedSpt5.}, was strongly linked with Q61H (Fig. \ref{fig:mutational-signatures-main}c, d), the most common \KRAS{} mutation in the cancer.
+In COAD and PAAD, signature 18, likely caused by damage from reactive oxygen species \cite{Viel2017, Pilati2017}, was highly associated with G12C mutations (Fig. \ref{fig:mutational-signatures-main}c, d).
+This corroborated the previous finding that \KRAS{} G12C mutations were more frequent in patients with MUTYH-Associated Polyposis \cite{Viel2017}, a recessive autosomal disease caused by biallelic loss-of-function mutations to the gene encoding the DNA glycosylase \emph{MUTYH}.
+In MM, signature 9, associated with mutations introduced by polymerase $\eta$ linked to activation-induced deaminase (AID) \cite{Alexandrov2013, Rogozin2018DNACancer., Petljak2016UnderstandingCancer.}, was strongly linked with Q61H (Fig. \ref{fig:mutational-signatures-main}c, d), the most common \KRAS{} mutation in the cancer.
 
 Overall, with the exceptions noted above, most of the \KRAS{} alleles cannot be attributed to a unique mutational signature. 
 Instead, they are primarily attributable to the most common mutational process in the tumors: age-related mutation in COAD, MM, and PAAD, and tobacco smoke in LUAD.
@@ -244,7 +245,7 @@ The same analysis was conducted on the LUAD cell lines with WT \KRAS{} or \KRAS{
 The gene set enrichment analysis of the dependency scores highlighted a reduced dependency on the genes in the Erk pathway (Fig. \ref{fig:coadluad-dependency-main}f) and an increased dependency for genes in the Bard1 pathway (Fig. \ref{fig:coadluad-dependency-main}g) for G12C cell lines.
 The former enrichment suggests that these cells would react less severely to inhibition of the MAPK pathway, though were more susceptible to inhibitors of DNA-damage repair mechanisms.
 A gene-by-gene analysis revealed allele-specific genetic dependencies in 583 genes which were further clustered into four groups (Fig. \ref{fig:coadluad-dependency-main}h).
-The second group was enriched in genes that encode for proteins in the integrin signaling pathway including \emph{RAP2C}, \emph{MAPK8} (JNK1), \emph{MAPK9} (JNK2), \emph{ITGB5} ($\beta_5$ integrin), \emph{ELMO2}, \emph{PTK2} (FAK) (Supplemental Fig. XX). % TODO
+The second group was enriched in genes that encode for proteins in the integrin signaling pathway including \emph{RAP2C}, \emph{MAPK8} (JNK1), \emph{MAPK9} (JNK2), \emph{ITGB5} ($\beta_5$ integrin), \emph{ELMO2}, \emph{PTK2} (FAK) (Supplemental Fig. XX).
 These genes ended to have lower dependency in \KRAS{} G12V mutant cell lines that in G12C or WT cell lines.
 Further, cluster 4 contained a large component of the cellular protein-protein interaction network (PPIN) centered around components of the ubiquitination complex including \emph{UBC}, \emph{UBA3}, \emph{UBE2F}, \emph{RNF19B}, \emph{STAMBP}, \emph{USP14}, and \emph{FEM1A} (Fig. \ref{fig:coadluad-dependency-main}i).
 Interestingly, the gene encoded by \emph{STAMBP}, STAM-binding protein, is a negative regulator of the PI3K-Akt pathway.
@@ -317,7 +318,7 @@ Additional data were acquired from the International Cancer Genome Consortium (I
 Panel data for multiple cancers were retrieved from AACR Project Genomics Evidence Neoplasia Information Exchange (GENIE) \cite{AACRProjectGENIEConsortium2017AACRConsortium.}.
 GENIE data are an aggregation of several different panels ranging from 30 genes to 600.
 \KRAS{} was included in all of the libraries. 
-A detailed list of all cancer studies can be found in Supplementary Table 1. %TODO
+A detailed list of all cancer studies can be found in Supplementary Table XX.
 
 
 \subsection*{Hypermutated sample cutoff}
@@ -334,7 +335,7 @@ Samples with less than 40 mutations were removed.
 
 A conservative filter of tissue-specific gene expression was used to remove genes not expressed in the tissues of study. 
 Normal tissue gene expression data was gathered from the GTEx Portal (12/03/2018) \cite{GTExConsortium2017} and The Human Protein Atlas (HPA, 12/03/2018) \cite{Uhlen2015, Uhlen2016}, and tumor expression data was collected from MMRF-CoMMpass (01/14/2019), TCGA-COAD, TCGA-LUAD, and TCGA-PAAD \cite{CancerGenomeAtlasNetwork2012, CancerGenomeAtlasResearchNetwork2014, CancerGenomeAtlasResearchNetwork.Electronicaddress:andrew_aguirredfci.harvard.edu2017}. 
-Supplementary Table 2 indicates the number of samples per tissue in the GTEx and tumor gene expression data. % TODO
+Supplementary Table XX indicates the number of samples per tissue in the GTEx and tumor gene expression data.
 A gene was considered “expressed” in a tissue if it met at least one of the following criteria: 1) a median expression level of at least 1 TPM across all samples of the tissue in GTEx, 2) indicated as expressed at at least 1 TPM in the HPA data set for the tissue, 3) expressed with a median level of 1 RESM in the corresponding tumor RNA-sequencing data.
 Supplementary Fig \ref{sfig:mutfreq-of-unexpressed-genes} indicates the frequency of mutation of genes that were removed from each tumor type according to this filter.
 
