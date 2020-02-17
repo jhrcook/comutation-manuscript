@@ -68,8 +68,8 @@ As such, the genetic interactions associated with \KRAS{} mutants are likely to 
 To explore this concept, 13,492 samples were collated from four tumor types with the highest frequency of mutation in \KRAS{}: colorectal adenocarcinoma (COAD), lung adenocarcinoma (LUAD), multiple myeloma (MM), and pancreatic adenocarcinoma (PAAD).
 Each cancer had a distinct spectrum of \KRAS{} activating mutations, although most mutant alleles could not be predicted by the prevalence of known mutagenic mechanisms.
 Moreover, each allele was associated with a distinct comutation network that was also tissue-specific.
-Integrating the results of analyzing genetic dependencies highlighted cellular functions and individual genes that were required or unnecessary for tumors with specific \KRAS{} alleles.
-Overall, the analysis demonstrated that the \KRAS{} alleles have distinct genetic interactions linked to their biological differences that can be further investigated as therapeutic targets.
+Integrating the results of analyzing genetic dependencies highlighted cellular functions and individual genes that were or were not required for tumors with specific \KRAS{} alleles.
+Overall, the analysis demonstrated that the \KRAS{} alleles have distinct genetic interactions likely linked to their biological differences that can be further investigated as therapeutic targets.
 \end{abstract}
 
 
@@ -290,7 +290,7 @@ For instance, the G12D allele was again associated with cell adhesion and motili
 This subnetwork succinctly demonstrated the overall pattern observed in the analysis of the \KRAS{} allele comutation and genetic dependency interactions: the strongest interactions were common within a cancer type, though each allele had distinguishing features pointing to distinct biological properties of the mutation.
 
 
-\section*{Discussion}
+\section*{Discussion (in progress)}
 
 % Limitations of study:
 %   - data types: only used mutation data for comutation --> CNA, SV, non-coding mutations
@@ -313,10 +313,10 @@ Presented here is a relatively minute analysis of the complex integration of com
 \subsection*{Cancer sample data sources and acquisition}
 
 Whole genome sequencing (WGS), whole exome sequencing (WXS), and targeted gene panel sequencing data were collected of colorectal adenocarcinoma (COAD), lung adenocarcinoma (LUAD), multiple myeloma (MM), and pancreatic adenocarcinoma (PAAD).
-WXS and WGS data were downloaded from cBioportal \cite{Gao2013, Cerami2012}, which included relevant project from The Cancer Genome Atlas (TCGA) \cite{CancerGenomeAtlasNetwork2012, CancerGenomeAtlasResearchNetwork2014, CancerGenomeAtlasResearchNetwork.Electronicaddress:andrew_aguirredfci.harvard.edu2017} and other smaller studies. 
+WXS and WGS data were downloaded from cBioportal \cite{Gao2013, Cerami2012}, which included relevant projects from The Cancer Genome Atlas (TCGA) \cite{CancerGenomeAtlasNetwork2012, CancerGenomeAtlasResearchNetwork2014, CancerGenomeAtlasResearchNetwork.Electronicaddress:andrew_aguirredfci.harvard.edu2017} and other smaller studies. 
 Additional data were acquired from the International Cancer Genome Consortium (ICGC) for pancreatic cancer \cite{Scarlett2011} and colorectal cancer. 
 Panel data for multiple cancers were retrieved from AACR Project Genomics Evidence Neoplasia Information Exchange (GENIE) \cite{AACRProjectGENIEConsortium2017AACRConsortium.}.
-GENIE data are an aggregation of several different panels ranging from 30 genes to 600.
+GENIE data are an aggregation of several different panels ranging from 30 to 600 genes.
 \KRAS{} was included in all of the libraries. 
 A detailed list of all cancer studies can be found in Supplementary Table XX.
 
@@ -327,17 +327,30 @@ Some of the COAD samples had 5 to 10-times more mutations than average, often du
 A Gaussian mixed model was used to find the optimal cutoff based on available WGS and WXS data. 
 The top 17 \% and 21 \% of samples were considered hypermutants in WGS and WXS, respectively.
 The same 17 \% cutoff was applied to the gene panel data. 
-Hypermutants were not excluded from the identification of mutational signatures as they signature 6 is caused by MSI.
-Samples with less than 40 mutations were removed.
+Hypermutants were not excluded from the identification of mutational signatures because signature 6 (marked as "MSI") is caused by MSI.
 
 
 \subsection*{Tissue gene expression filter}
 
-A conservative filter of tissue-specific gene expression was used to remove genes not expressed in the tissues of study. 
+A conservative filter for tissue-specific gene expression was used to remove genes not expressed in the tissues of study. 
 Normal tissue gene expression data was gathered from the GTEx Portal (12/03/2018) \cite{GTExConsortium2017} and The Human Protein Atlas (HPA, 12/03/2018) \cite{Uhlen2015, Uhlen2016}, and tumor expression data was collected from MMRF-CoMMpass (01/14/2019), TCGA-COAD, TCGA-LUAD, and TCGA-PAAD \cite{CancerGenomeAtlasNetwork2012, CancerGenomeAtlasResearchNetwork2014, CancerGenomeAtlasResearchNetwork.Electronicaddress:andrew_aguirredfci.harvard.edu2017}. 
 Supplementary Table XX indicates the number of samples per tissue in the GTEx and tumor gene expression data.
-A gene was considered “expressed” in a tissue if it met at least one of the following criteria: 1) a median expression level of at least 1 TPM across all samples of the tissue in GTEx, 2) indicated as expressed at at least 1 TPM in the HPA data set for the tissue, 3) expressed with a median level of 1 RESM in the corresponding tumor RNA-sequencing data.
+A gene was considered “expressed” in a tissue if it met at least one of the following criteria: 1) a median expression level of at least 1 TPM across all samples of the tissue in GTEx, 2) indicated as expressed at at least 1 TPM in the HPA data set for the tissue, 3) expressed with a median level of 1 batch-normalized raw counts (using RSEM) in the corresponding tumor RNA-sequencing data.
 Supplementary Fig \ref{sfig:mutfreq-of-unexpressed-genes} indicates the frequency of mutation of genes that were removed from each tumor type according to this filter.
+
+
+\subsection*{Predicting effect of mutations on gene or protein function}
+
+The effect of a mutation on the function of a gene or encoded protein was predicted using SIFT \cite{Kumar2009, Vaser2016}, PolyPhen2 \cite{Adzhubei2010}, LRT \cite{Chun2009IdentificationGenomes.}, MutationTaster \cite{Schwarz2014MutationTaster2:Age.}, MutationAssessor \cite{Reva2007DeterminantsOptimization., Reva2011}, FATHMM \cite{Shihab2013}, MetaSVM \cite{Dong2015ComparisonStudies.}, and MetaLR \cite{Dong2015ComparisonStudies.}.
+Known clinically significant mutations were acquired from ClinVar \cite{Landrum2018ClinVar:Evidence.}.
+Annotations were applied using ANNOVAR \cite{Wang2010ANNOVAR:Data.}
+A mutation was marked as deleterious if it was predicted as such by at least one of the prediction methods or declared as such by CinVar.
+
+
+\subsection*{Protein-Protein Interaction Network (PPIN)}
+
+The PPIN used throughout the study was the combination of interactions from STRING \cite{VonMering2005, Szklarczyk2019}, HINT \cite{Das2012}, and BioPlex \cite{Huttlin2015}.
+The full edge list is available in the Supplementary Data.
 
 
 \subsection*{Identifying mutational signatures}
@@ -362,13 +375,6 @@ Three of the signatures discovered via NMF were likely to be artifacts \cite{Cos
 Signatures present at very low levels were removed and the levels of each signature were recalculated using Non-Negative Least Squares (NNLS) \cite{Gulhan2019DetectingSamples.}.
 
 
-\subsection*{Predicting \KRAS{} allele frequency by mutational signatures}
-
-The mutational signatures are linear combinations of the 96-dimension spectrum of possible mutations (see "Identifying mutational signatures" above).
-Thus, assuming the null hypothesis that the prevalence of active mutational processes alone determines the frequency of \KRAS{} alleles in a cancer, the predicted frequency of each \KRAS{} allele can be calculated as the frequency of the same mutation across the entire genome.
-The 95 \% confidence intervals were bootstrapped \cite{R-boot}.
-
-
 \subsection*{Probability of \KRAS{} mutations from mutational signatures}
 
 For each sample harboring a \KRAS{} mutation, the probability of occurrence given the mutational signatures present was calculated by considering the weight of the base change among the 96 possibilities and the relative contribution of the signature to the mutations in the sample. 
@@ -387,6 +393,13 @@ p_{k,s} = \frac{c_{s,a} w_{k,s}}{\sum_{s}^{S} c_{s,a} w_{k,s}}
 \end{equation*}
 
 
+\subsection*{Predicting \KRAS{} allele frequency by mutational signatures}
+
+The mutational signatures are linear combinations of the 96-dimension spectrum of possible mutations (see "Identifying mutational signatures" above).
+Thus, assuming the null hypothesis that the prevalence of active mutational processes alone determines the frequency of \KRAS{} alleles in a cancer, the predicted frequency of each \KRAS{} allele can be calculated as the frequency of the same mutation across the entire genome.
+The 95 \% confidence intervals were bootstrapped \cite{R-boot}.
+
+
 \subsection*{Comutation with \KRAS{} alleles}
 
 A one-tailed Fisher’s exact test of independence was used to identify increased frequency of comutation between \KRAS{} alleles and other mutated genes. Only comutation partners with at least three comutation events were considered. Further, only genes with a mutation frequency of at least 1 \% or a comutation frequency of at least 10 \% were considered. 
@@ -394,16 +407,32 @@ A one-tailed Fisher’s exact test of independence was used to identify increase
 The Row-Column Test for Exclusivity (RC-test) was used to identify reduced frequency of comutation between \KRAS{} alleles and other mutated genes \cite{Leiserson2016}. 
 This is a permutation-based test that finds the probability of observing the actual number of mutually exclusive events given than the number of time the genes is mutated in all samples is fixed and the number of mutations in each sample is fixed.
 Thus, the test conditions on both the frequency of mutation of the gene and the mutational burden of the samples.
+For this reason, only WGS and WXS data could be used for this analysis.
 Only genes with a mutational frequency of at least 2 \% and 10 mutually exclusive events were considered.
 
 
 \subsection*{Functional enrichment}
 The R interface to the online \emph{Enrichr} tool was used to identify enriched gene sets in the comutation networks and allele-specific synthetic lethal clusters \cite{Chen2013, Kuleshov2016Enrichr:Update., R-enrichR}.
-Genesets from the following sources were used: % TODO
+Genesets from the following sources provided by Enrichr were used: BioCarta (2016), GO Biological Process (2018), KEA (2015), KEGG (2019), Panther (2016), PPI Hub Proteins, Reactome (2016), Transcription Factor PPIs, and WikiPathways (2019).
 
 
 \subsection*{Modeling of cancer cell line genetic dependencies}
-% TODO
+Genetic dependency data was downloaded from the online DepMap portal (https://depmap.org/portal/download/) (2019 quarter 3).
+Cell lines with multiple reported activating \KRAS{} mutations or an activating mutation in \emph{BRAF}, \emph{EGFR}, or \emph{NRAS} were removed from the data set.
+For each cancer, only cell lines with a \KRAS{} allele found in at least 3 cell lines were included in the study.
+The genetic dependency score is often linked to the expression of the gene.
+Thus, if the RNA expression of the gene could explain the dependency score (linear model, p-value < 0.01), the gene was not tested for \KRAS{} allele-specific genetic dependency.
+Of the remaining genes, an ANOVA was used to measure if the mean dependency scores for the cell lines grouped by \KRAS{} allele were different.
+These genes are declared as deferentially dependent.
+For these genes, pairwise Student's t-tests were used to compare the dependency scores of each group.
+These contrasts were used to decide with which \KRAS{} allele(s) a gene shows differential dependency (Benjamini-Hochberg FDR adjusted p-value < 0.05).
+
+
+\subsection*{Gene Set Enrichment Analysis (GSEA) of genetic dependency}
+The GSEA tool (version 3.0) was acquired from the online GSEA portal (https://www.gsea-msigdb.org/gsea/index.jsp).
+Gene sets were acquired through MSigDB (https://www.gsea-msigdb.org/gsea/msigdb/index.jsp).
+The analysis used the Hallmark and C2 gene sets and permuted the genes 10,000 times for the statistical test.
+All other settings were set to default values.
 
 
 \subsection*{Code availability}
@@ -451,6 +480,7 @@ A competing interests statement is required for all papers accepted by and publi
 \label{fig:mutational-signatures-main}
 \end{figure}
 
+
 \begin{figure}[p]
 \centering
 \includegraphics[height=135mm]{figures/Figure_02.jpeg}
@@ -464,6 +494,7 @@ A competing interests statement is required for all papers accepted by and publi
 \label{fig:coad-comutation-main}
 \end{figure}
 
+
 \begin{figure}
 \centering
 \includegraphics[height=150mm]{figures/Figure_03.jpeg}
@@ -475,6 +506,7 @@ A competing interests statement is required for all papers accepted by and publi
 }
 \label{fig:luad-comutation-main}
 \end{figure}
+
 
 \begin{figure}
 \centering
@@ -490,12 +522,13 @@ A competing interests statement is required for all papers accepted by and publi
 \label{fig:coadluad-dependency-main}
 \end{figure}
 
+
 \begin{figure}
 \centering
 \includegraphics[height=100mm]{figures/Figure_05.jpeg}
 \caption{
     \textbf{Integration of comutation and genetic dependency results.}
-    \textbf{a.} A table of the genes found to comutate and demonstrate differential dependency with the same \KRAS{} allele. The "Dependency comparison" indicates the comparison of dependency scores found to be statistically significant; the "Adj. p-value" is the Bonferroni-adjusted p-value for the comparison. The "Comutation interaction" indicates if the comutation interaction was a reduced or increased rate of comutation; the "P-value" is the p-value for this interaction.
+    \textbf{a.} A table of the genes found to comutate and demonstrate differential dependency with the same \KRAS{} allele. The "Dependency comparison" indicates the comparison of dependency scores found to be statistically significant; the "Adj. p-value" is the Benjamini-Hochberg-adjusted p-value for the comparison. The "Comutation interaction" indicates if the comutation interaction was a reduced or increased rate of comutation; the "P-value" is the p-value for this interaction.
     \textbf{b.} The mutations along STK11 separated by those in \KRAS{} G12C-mutant samples (top) and the rest of the samples (bottom). The color of the vertical bars indicates the type of mutation, and a red dot at the top indicates if missense mutations at the location are predicted or known to be functionally damaging. The domains of STK11 are shown between the bar-plots. The magenta portion of the N-terminus is the nuclear localization signal.
     \textbf{c.} The connectivity of the proteins encoded by the genes found to comutate or demonstrate differential dependence with each \KRAS{} allele on the PPIN. The right-most column represents the null distribution of the connectivity of randomly selected pairs of nodes. The bars indicate the distribution of the geodesic distances (shortest path length) between nodes in the PPIN.
     \textbf{d.} The largest connected subnetwork of the PPIN of genes found to comutate or demonstrate differential dependence with each \KRAS{} allele was extracted. The network shown is the overlap of the subnetworks for each \KRAS{} allele in COAD. Nodes present in multiple subnetworks are colored shades of brown, save for prominent oncogenes and tumor suppressors in COAD, shown in red ("special"). The rest of the nodes are colored by which allele they are associated with. The edges share the color of the nodes they connect if the nodes are the same color, otherwise are grey.
