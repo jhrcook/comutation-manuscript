@@ -65,11 +65,11 @@
 Mutational activation of the  \KRAS{} oncogene promotes initiation and/or progression of cancer in a variety of tissues.
 Though the mutant variants seemingly exert similar biological outputs, the biochemical properties and downstream signaling  of each is distinct and highly context-dependent.
 As such, the genetic interactions associated with \KRAS{} mutants are likely to vary according to the specific allele and the tissue-of-origin of the cancer.
-To explore this concept, 13,492 samples were collated from four tumor types with the highest frequency of mutation in \KRAS{}: colorectal adenocarcinoma (COAD), lung adenocarcinoma (LUAD), multiple myeloma (MM), and pancreatic adenocarcinoma (PAAD).
-Each cancer had a distinct spectrum of \KRAS{} activating mutations, although most mutant alleles could not be predicted by the prevalence of known mutagenic mechanisms.
+To explore this concept, 13,492 samples were collated from four tumor types with the highest frequency of mutation in \KRAS{}: colorectal adenocarcinoma, lung adenocarcinoma, multiple myeloma, and pancreatic adenocarcinoma.
+Each cancer had a distinct spectrum of \KRAS{} activating mutations that could not be predicted by the prevalence of known mutagenic mechanisms.
 Moreover, each allele was associated with a distinct comutation network that was also tissue-specific.
-Integrating the results of analyzing genetic dependencies highlighted cellular functions and individual genes that were or were not required for tumors with specific \KRAS{} alleles.
-Overall, the analysis demonstrated that the \KRAS{} alleles have distinct genetic interactions likely linked to their biological differences that can be further investigated as therapeutic targets.
+Analyzing genetic dependencies highlighted cellular functions and individual genes that were or were not required for tumors with specific \KRAS{} alleles.
+Overall, this analysis demonstrates that the \KRAS{} alleles have distinct genetic interactions likely linked to their biological differences that can be further investigated as therapeutic targets.
 \end{abstract}
 
 
@@ -79,30 +79,31 @@ Overall, the analysis demonstrated that the \KRAS{} alleles have distinct geneti
 
 Sitting at a critical signaling junction between extracellular growth receptors and pro-growth, anti-apoptotic pathways, \KRAS{} is one of the most commonly mutated genes in cancer \cite{Barbacid1987, Bailey2018}.
 However, it is only found frequently mutated in just a few cancers, colorectal adenocarcinoma (COAD), lung adenocarcinoma (LUAD), multiple myeloma (MM), and pancreatic adenocarcinoma (PAAD) being among the cancers with the highest rate of oncogenic \KRAS{} mutations.
-When mutated at one if its four hotspot codons, 12, 13, 61, and 146, \KRAS{} hyperactivates many downstream effector pathways, namely the MAPK and PI3K-Akt signaling pathways \cite{Simanshu2017}.
+When mutated at one if its four hotspot codons, 12, 13, 61, and 146, \KRAS{} is thought to hyperactivate many downstream effector pathways, for instance the MAPK and PI3K-Akt signaling pathways \cite{Simanshu2017}.
 However, the mutations found in \KRAS{} vary substantially across cancers, pointing to significant differences in signaling behavior that complement the environment of the specific cellular context.
 
 Previous studies have documented substantial differences in the biochemistry and signaling properties of the common \kras{} variants (extensively reviewed by \cite{Miller2012, Li2018}).
 \kras{} operates as a molecular switch, activating and signaling to downstream pathways when bound to GTP, but inactive when GDP-bound following the hydrolysis of the $\gamma$-phosphate.
 This reaction is catalyzed by a GTPase-activating protein (GAP), and the exchange of the GDP molecule for a new GTP molecule is facilitated by a guanine nucleotide exchange factor (GEF) \cite{Barbacid1987}.
-Mutations to any of the four hotspot codons causes an increase in downstream activation by increasing the amount of GTP-bound \kras{}.
+Mutations to any of the four hotspot codons causes an increase in downstream activation by increasing the steady-state amount of GTP-bound \kras{}.
 More specifically, mutations to codons 12, 13, and 61 reduce the rate of intrinsic and GAP-mediated hydrolysis, and mutants at 13 and 61, but not 12, also increase the rate of GDP exchange \cite{Hunter2015a, Smith2013}.
-Further, the A146T mutation does not alter the rate of GTP hydrolysis, but causes hyperactivation almost entirely though an increased rate of GDP exchange \cite{Edkins2006, Janakiraman2010, Poulin2019}.
+Further, the A146 mutations do not alter the rate of GTP hydrolysis, but cause hyperactivation almost entirely though an increased rate of GDP exchange \cite{Feig1988RelationshipProteins., Edkins2006, Janakiraman2010, Poulin2019}.
 Additional biochemical, structural, and signaling distinctions have been identified between different mutant alleles at the same amino acid position \cite{Poulin2019, Hobbs2019AtypicalCancer., Hunter2015a, Li2018, Yu2018, Kovalski2019, Ihle2012, Spoerner2004, Smith2014a, Pantsar2018}.
 
-Likely as a consequence of their distinct properties, associations have been uncovered between the specific \KRAS{} mutation status of the patient's tumor and the tumor's drug-response or clinical outcome \cite{Haigis2017, Li2018}.
+Likely as a consequence of their distinct properties, associations have been uncovered between the specific \KRAS{} mutation status of a patient's tumor and the tumor's drug-response or clinical outcome \cite{Haigis2017, Li2018}.
 For instance, a retrospective study indicated that COAD tumors with a \KRAS{} G13D allele may be susceptible to anti-EGFR therapies, a treatment generally discouraged for \KRAS{}-mutant tumors \cite{DeRoock2010}. 
-Recently, McFall \emph{et al.} \cite{McFall2019} proposed that the reason was due to differential interaction kinetics between the mutant protein with the GAP, NF-1.
-An almost simultaneous publication by Rabara \emph{et al.} \cite{Rabara2019} provided additional and diverse experimental support for this hypothesis.
+It has recently been proposed, via computational and experimental means, that differential interaction kinetics between \kras{} G13D and the Ras GAP NF-1 explain this effect \cite{McFall2019, Rabara2019}.
 Another example is that the \KRAS{} G12D allele is associated with reduced overall survival in advanced PAAD when separately compared to patients with WT \KRAS{}, \KRAS{} G12R, or \KRAS{} G12V \cite{Bournet2016}.
+So far, the hypothesis has been that the different biological properties of the mutant \KRAS{} alleles is the cause of these clinical distinctions.
+However, it is also possible that the genetic interactions associated with the alleles is the true driver of the varying clinical outcomes.
 
-Unfortunately, the \kras{} protein is still considered "undruggable" in most circumstances because of its relatively smooth surface and picomolar affinity for its nucleotide substrate, GTP \cite{Spencer-Smith2019}.
-Promising results of a \KRAS{} G12C inhibitor have been recently demonstrated in combating LUAD, however, because the drug is exploiting a covalent bond with the cysteine residue, these results are unlikely to extend to other \KRAS{} alleles, leaving most patients still without a \kras{} inhibitor \cite{Lim2014,Ostrem2013, Patricelli2016, Lito2016, Canon2019}.
-Others have explored disrupting the processing of the \kras{} protein, signaling partners, and downstream pathways with mixed results \cite{Spencer-Smith2019, Zeitouni2016}.
+% Unfortunately, the \kras{} protein is still considered "undruggable" in most circumstances because of its relatively smooth surface and picomolar affinity for its nucleotide substrate, GTP \cite{Spencer-Smith2019}.
+% Promising results of a \KRAS{} G12C inhibitor have been recently demonstrated in combating LUAD, however, because the drug is exploiting a covalent bond with the cysteine residue, these results are unlikely to extend to other \KRAS{} alleles, leaving most patients still without a \kras{} inhibitor \cite{Lim2014,Ostrem2013, Patricelli2016, Lito2016, Canon2019}.
+% Others have explored disrupting the processing of the \kras{} protein, signaling partners, and downstream pathways with mixed results \cite{Spencer-Smith2019, Zeitouni2016}.
 
 For the reasons noted above, understanding the heterogeneous properties of the \KRAS{} alleles is likely essential to effectively treating \KRAS{}-driven cancers.
 The prominent reductionist strategy of treating all \KRAS{} mutants the same has so far proven insufficient.
-Thus, the current study describes genetic patterns found in tumors with the common \KRAS{} alleles in COAD, LUAD, MM, and PAAD.
+Thus, the current study describes genetic interactions found in tumors with the common \KRAS{} alleles in COAD, LUAD, MM, and PAAD.
 The origins of \KRAS{} mutations were studied to assess the extent to which latent mutational processes determined the frequency of the mutant alleles.
 Further, comutation networks were constructed for each \KRAS{} allele and interrogated to identify properties of the alleles.
 Finally, allele-specific genetic dependency interactions were integrated into the analysis to identify potential drug targets.
@@ -114,12 +115,12 @@ Integrating these two forms of genetic interactions highlighted the distinct eff
 
 This study utilized publicly available sequencing data of COAD, LUAD, MM, and PAAD tumors.
 There were whole exome or genome data available for 1,536 COAD, 891 LUAD, 1,201 MM, and 1,395 PAAD samples.
-In addition, there were panel-sequencing data (also called targeted sequencing) available for 3,329 COAD, 4,160 LUAD, 61 MM, and 919 PAAD sample.
-More information on the sequencing data is available in the Methods and Supplemental Table XX.
+In addition, there were targeted-sequencing data available for 3,329 COAD, 4,160 LUAD, 61 MM, and 919 PAAD sample.
+More information on the sequencing data is available in the Methods and Supplemental Data.
 
-In the data collected for this study,\KRAS{} was most frequently mutated at four “hotspots.” 
-Of these hotspots, codon 12 mutations accounted for 81 \% of all mutations followed by codons 13 (8.4 \%), 61 (7.3 \%) and 146 (2.5 \%) (Fig. \ref{fig:mutational-signatures-main}a, Supplementary Fig. \ref{sfig:expanded-kras-allele-distribution}). 
-Further, there was substantial variability of the alleles found at these hotspots across the \KRAS{}-driven cancers, COAD, LUAD, MM, and PAAD (Fig. \ref{fig:mutational-signatures-main}b, Supplemental Fig. \ref{sfig:expanded-kras-allele-distribution}). 
+In the data collected for this study, \KRAS{} was most frequently mutated at four “hotspots.” 
+Of these hotspots, codon 12 mutations accounted for 78.9 \% of all mutations followed by codons 13 (10.5 \%), 61 (7.5 \%) and 146 (3.1 \%) when adjusted for the incidence of the cancer (Fig. \ref{fig:mutational-signatures-main}a, Supplementary Fig. \ref{sfig:expanded-kras-allele-distribution}).
+Further, there was substantial variability of the alleles found at these hotspots across the \KRAS{}-driven cancers (Fig. \ref{fig:mutational-signatures-main}b, Supplemental Fig. \ref{sfig:expanded-kras-allele-distribution}). 
 Notably, the most variation in \KRAS{} alleles was found in MM, and it was the only cancer where a non-G12 allele was the most frequent. 
 COAD had a unique enrichment of G13D and A146T alleles while PAAD was unique in its high frequency of G12R mutations.
 
@@ -128,7 +129,7 @@ COAD had a unique enrichment of G13D and A146T alleles while PAAD was unique in 
 
 Most \KRAS{} mutations were caused by single nucleotide variants.
 An exception was the exceedingly rare, though transformative \emph{in vitro} \cite{Barbacid1987}, G12F allele (0.4 \%) caused by the dinucleotide substitution c.34\_35GG>TT.
-Glycine 12 and 13 can be transformed to six different amino acids (A, C, D, R, S, and V) through single nucleotide changes in the first two cytosines.
+Glycine 12 and 13 can be transformed to six different amino acids (A, C, D, R, S, and V) through single nucleotide changes in the first two guanine residues.
 Glutamine 61 can be mutated to six other amino acids (E, H, K, L, P, and R) and a stop codon via a single nucleotide mutation.
 Alanine 146 can become one of six other amino acids (E, G, P, S, T, and V) from mutations to a single nucleotide.
 
@@ -139,7 +140,7 @@ The signatures were discovered using non-negative matrix factorization and measu
 The distribution of the levels of each mutational signature were generally uniform within a cancer, regardless of the \KRAS{} allele of the tumor (Supplementary Fig. \ref{sfig:mutational-signatures-summary}a, b, c). 
 An apparent exception was for microsatellite instable (MSI) tumors, where the signatures associated with that characteristic dominated (these samples were only included in Supplementary Fig. \ref{sfig:mutational-signatures-summary}a and b, but were removed for the rest of the study). 
 For each tumor with a \KRAS{} mutation, the probability that the allele was caused by each detectable mutational process was calculated. 
-The average of these probabilities for each allele were shown in Fig. \ref{fig:mutational-signatures-main}c. 
+The average of these probabilities for each allele are shown in Fig. \ref{fig:mutational-signatures-main}c. 
 Most of the common \KRAS{} mutations in COAD, MM, and PAAD, were likely caused by mutations in “clock-like” signatures 1 and 5, mutations believed to accumulate with age \cite{Alexandrov2015} (Supplementary Fig. \ref{sfig:mutational-signatures-summary}b). 
 LUAD was the only cancer with \KRAS{}-mutant samples enriched for a mutational signature of exogenous cause: the \KRAS{} G12A/C/V and G13C mutations were primarily attributable to mutations caused by tobacco smoke (signature 4 \cite{Alexandrov2016}) while \KRAS{} G12D mutations were most likely attributable to clock-like mutations (Fig. \ref{fig:mutational-signatures-main}c, d).
 Signature 8, of unknown etiology, had a substantial probability of causing some of the \KRAS{} alleles across all four cancers.
@@ -147,44 +148,44 @@ Signature 8, of unknown etiology, had a substantial probability of causing some 
 There were some interesting links between specific alleles and mutational signatures.
 In COAD and PAAD, signature 18, likely caused by damage from reactive oxygen species \cite{Viel2017, Pilati2017}, was highly associated with G12C mutations (Fig. \ref{fig:mutational-signatures-main}c, d).
 This corroborated the previous finding that \KRAS{} G12C mutations were more frequent in patients with MUTYH-Associated Polyposis \cite{Viel2017}, a recessive autosomal disease caused by biallelic loss-of-function mutations to the gene encoding the DNA glycosylase \emph{MUTYH}.
-In MM, signature 9, associated with mutations introduced by polymerase $\eta$ linked to activation-induced deaminase (AID) \cite{Alexandrov2013, Rogozin2018DNACancer., Petljak2016UnderstandingCancer.}, was strongly linked with Q61H (Fig. \ref{fig:mutational-signatures-main}c, d), the most common \KRAS{} mutation in the cancer.
+In MM, signature 9, associated with mutations introduced by polymerase $\eta$ repair of activation-induced deaminase (AID) activity \cite{Alexandrov2013, Rogozin2018DNACancer., Petljak2016UnderstandingCancer.}, was strongly linked with Q61H (Fig. \ref{fig:mutational-signatures-main}c, d), the most common \KRAS{} mutation in the cancer.
 
-Overall, with the exceptions noted above, most of the \KRAS{} alleles cannot be attributed to a unique mutational signature. 
-Instead, they are primarily attributable to the most common mutational process in the tumors: age-related mutation in COAD, MM, and PAAD, and tobacco smoke in LUAD.
+% Overall, with the exceptions noted above, most of the \KRAS{} alleles cannot be attributed to a unique mutational signature. 
+% Instead, they are primarily attributable to the most common mutational process in the tumors: age-related mutation in COAD, MM, and PAAD, and tobacco smoke in LUAD.
 
 
 \subsection*{The frequency of most \KRAS{} alleles cannot be attributed to the prevalence of detected mutagens.}
 
 The explanatory value of the mutational signatures was further analyzed by calculating the predicted frequency of each allele based on the frequency of mutations in the same trinucleotide context throughout the genome (Fig. \ref{fig:mutational-signatures-main}e, f).
 The first null hypothesis tested was that, assuming the cancer would acquire a \KRAS{} mutation, any of the common alleles were sufficient. Thus the frequency of the \KRAS{} alleles would be determined by the mutational processes, alone (Fig. \ref{fig:mutational-signatures-main}e).
-The second null hypothesis was similar, but restricted to just codon 12 mutants (Fig. \ref{fig:mutational-signatures-main}f).
+The second null hypothesis was similar, but restricted to just codon 12 mutations (Fig. \ref{fig:mutational-signatures-main}f).
 The predicted frequencies were compared against the observed allele frequencies.
-The alleles above the diagonal line were predicted to be more frequent than observed, while those below the line were in fact more frequent than predicted by the mutational signatures.
+The alleles above the diagonal line were predicted to be more frequent than observed, while those below the line were more frequently observed than predicted by the mutational signatures.
 In LUAD and MM, most of the frequencies were predicted in the correct order, though the frequencies were significantly different in most cases (binomial test, p < 0.05, circles); this is especially apparent in MM when only considering the codon 12 mutants.
 In COAD, G13D was predicted to be the most frequent allele, and G12D/V mutations were considerably underestimated.
 However, if only codon 12 mutants were considered, the null hypothesis could not be rejected for G12D and G12V.
-Importantly, the predictions have large confidence intervals suggesting a high amount of variation amongst the samples.
+Importantly, the predictions have large 95 \% confidence intervals suggesting a high amount of variation amongst the samples.
 Inversely, the frequencies of G12S and A146T mutations were highly overestimated.
 In MM, the most frequent allele, Q61H, was dramatically underestimated with a predicted frequency of 22 \% but actual frequency of 45 \% of \KRAS{} mutations.
 In PAAD, all of the alleles were observed at a significantly different frequency than predicted by mutational signatures for both null hypotheses.
 Thus, while it was likely that the active mutational processes in a tissue contributed to determining which \KRAS{} mutation was gained, they were unlikely to be deterministic.
-This suggested that the particular properties of the alleles drive their selection, warranting further investigation into their genetic interactions.
+This suggested that the particular biologic properties of the alleles drive their selection, warranting further investigation into their genetic interactions.
 
 
 \subsection*{The \KRAS{} alleles have distinct comutation networks.}
 
-The \KRAS{} alleles can be further characterized by the genes they tended to comutate with.
-An increased frequency of comutation suggests a synergistic effect whereas a reduced frequency of comutation suggests an inhibitory effect on growth, potentially through a mechanism of collateral lethality.
+The \KRAS{} alleles can be further characterized by the genes they tend to comutate with.
+An increased frequency of comutation suggests a cooperative effect whereas a reduced frequency of comutation suggests either the second event is functionally redundant or introduces an inhibitory effect on growth, potentially through a mechanism of collateral lethality.
 The extreme of the latter effect is commonly known as "mutual exclusivity" and can be used to identify drugs that exploit a synthetic lethal interaction.
 For instance, in COAD, \emph{APC} comutation enhances the effects of oncogenic \KRAS{}-induced hyperactivation of the Wnt signaling pathway, essential for the growth of cancer stem cells in the intestinal crypts \cite{Janssen2006, Fearon2014, Sakai2018, Jauhri2017}.
 Alternatively, the activation of \emph{BRAF} via a V600E mutation was demonstrated to induce senescence in the presence of a \KRAS{} mutant, and, thus, the two are rarely found in the same tumor \cite{Seth2009ConcomitantCancer., Cisowski2016, Jauhri2017}.
 
 The result of the comutation analysis on COAD tumors was a weakly connected network of the \KRAS{} alleles with only a few genes linking the alleles together (Fig. \ref{fig:coad-comutation-main}a, Supplemental Fig. \ref{sfig:coad_labeled-comutation}).
 These linking genes tended to be well-studied oncogenes such as \emph{BRAF}, \emph{APC}, and \emph{TP53}.
-Contrary to a common assumption, while \KRAS{} and \emph{TP53} are frequently found mutated in the same tumor, there is a detectable reduction in comutation between \emph{TP53} with \KRAS{} G12D and G13D compared to the rest of the tumor samples (Fig. \ref{fig:coad-comutation-main}a, b).
+Contrary to a common assumption, while \KRAS{} and \emph{TP53} are frequently found mutated in the same tumor, there is a detectable reduction in comutation between \emph{TP53} with \KRAS{} G12D and G13D compared to the rest of the alleles (Fig. \ref{fig:coad-comutation-main}a, b).
 
-Surprisingly, there were a substantial number of genes detected to comutate with just one \KRAS{} allele.
-To gain functional insight into the network, genes known to physically interact with \KRAS{} \cite{Kovalski2019}, signal up- or downstream of \KRAS{} \cite{Kanehisa2017, Kanehisa2016KEGGAnnotation.}, or are known oncogenes \cite{Bamford2004TheWebsite., Sondka2018} were extracted (Fig. \ref{fig:coad-comutation-main}b).
+Surprisingly, there were a substantial number of genes detected to comutate with just one allele.
+To gain functional insight into the network, genes known to physically interact with \kras{} \cite{Kovalski2019}, signal up- or downstream of \kras{} \cite{Kanehisa2017, Kanehisa2016KEGGAnnotation.}, or are known oncogenes \cite{Bamford2004TheWebsite., Sondka2018} were extracted (Fig. \ref{fig:coad-comutation-main}b).
 As expected, several alleles had reduced comutation with \emph{NRAS} and \emph{BRAF} and increased comutation with \emph{APC} and \emph{PIK3CA}. Some novel interactions included increased comutation of \emph{PORCN} with \KRAS{} A146T, \emph{MTOR} with G12C, and \emph{SMAD4} with G12V.
 Further, several of the alleles showed enrichment for cellular functions in their comutation networks (Fig. \ref{fig:coad-comutation-main}c).
 One of the strongest effects was an enrichment in the G12D comutation network of interactors with \emph{YWHAZ}, a 14-3-3 scaffolding protein implicated in modulating many interactions including Arhgef7 activity on Rac1 in regulating membrane dynamics for activities such as phagocytosis and cell adhesion \cite{Angrand2006TransgenicSignaling.}.
@@ -197,7 +198,7 @@ The \KRAS{} allele-specific comutation network uncovered in LUAD was far larger 
 This was likely caused by the higher mutation rate in this cancer (Supplemental Fig. \ref{sfig:mutation-burden-of-cancer-samples}b) increasing the power to detect both increased and reduced comutation interactions.
 There were several intriguing cellular processes enriched in the networks of each allele (Fig. \ref{fig:luad-comutation-main}b, c).
 Interestingly, some of the enrichments were driven by \emph{both} increased and reduced comutation interactions while others were driven by increased \emph{or} reduced comutation interactions (Fig. \ref{fig:luad-comutation-main}c).
-For example, \KRAS{} G12C had increased and reduced comutation interactions with many genes that interact with Myc ("PPI of MYC (TF)"), compared to how reduced comutation interactions drove the enrichment of focal adhesion genes with \KRAS{} G12D (Fig. \ref{fig:luad-comutation-main}c, Supplemental Fig. \ref{sfig:luad-enriched-comutation-ppi-examples}).
+For example, \KRAS{} G12C had increased and reduced comutation interactions with many genes encoding proteins that interact with Myc ("PPI of MYC (TF)"), compared to how reduced comutation interactions drove the enrichment of focal adhesion genes with \KRAS{} G12D (Fig. \ref{fig:luad-comutation-main}c, Supplemental Fig. \ref{sfig:luad-enriched-comutation-ppi-examples}).
 
 In MM, the \KRAS{} comutation network was sparse and highly disconnected (Supplemental Fig. \ref{sfig:mm_labeled-comutation}a).
 In fact, the only three alleles that shared a detectable interaction were \KRAS{} G12D, Q61L, and Q61R, which all demonstrated strongly reduced comutation with \emph{NRAS}, a gene previously reported to be mutually exclusive with \KRAS{} in this and other cancers \cite{Lohr2014WidespreadTherapy.}.
@@ -218,7 +219,7 @@ Notably, while \emph{TP53} tended to comutate with \KRAS{} G12V, it was at a sig
 There were many notable cellular functions and processes enriched in the comutation networks of the \KRAS{} alleles (Supplemental Fig. \ref{sfig:paad-comutation}d) including a strong enrichment of genes involved in calcium ion transport in the network of G12V (Supplemental Fig. \ref{sfig:paad-comutation}e).
 Also, the PPI of SMAD1-3 were enriched in the comutation networks of multiple alleles, though the genes that caused the enrichment varied for each protein (Supplemental Fig. \ref{sfig:paad-comutation}f).
 For instance, the comutation events of \emph{ACVR1B} with \KRAS{} were primarily with Q61H whereas those with \emph{FLNA} were mostly with G12R.
-These subtle differences suggest that specific and nuanced alterations of SMAD signaling best complement a given \KRAS{} allele.
+These subtle differences suggest that specific and nuanced alterations of SMAD signaling best complement a given \KRAS{} allele in PAAD.
 
 
 \subsection*{\KRAS{} allele-specific genetic dependencies reveal potential synthetic lethal vulnerabilities.}
@@ -231,9 +232,9 @@ To this end, data from a genome-wide, CRISPR-Cas9 knock-out screen of cancer cel
 For COAD, there were only a sufficient number of cell lines (at least 3) with \KRAS{} G12D, G12V, and G13D mutations and WT \KRAS{} for this analysis.
 Measuring for gene set enrichment revealed strong patterns in differential dependency of various cellular processes (Fig. \ref{fig:coadluad-dependency-main}a).
 For example, many genes comprising Complex I of the electron transport chain had a greater lethal effect when knocked out in cell lines with \KRAS{} G12V mutations than \KRAS{} G12D, G13D or WT cell lines (Fig. \ref{fig:coadluad-dependency-main}b).
-Alternatively, the \KRAS{} G13D cell lines were less effected when genes involved in the complement immune pathway were targeted (Fig. \ref{fig:coadluad-dependency-main}b).
+Alternatively, the \KRAS{} G13D cell lines were less affected when genes involved in the complement immune pathway were targeted (Fig. \ref{fig:coadluad-dependency-main}b).
 To discover individual genes as potential drug-screen targets, each gene was tested for differential genetic dependency with the cell lines grouped by \KRAS{} allele. 
-The resulting 77 genes were hierarchically clustered into six groups by the dependency scores associated with each \KRAS{} allele (Figure \ref{fig:coadluad-dependency-main}c, d).
+The resulting 77 genes were hierarchically clustered into six groups by their dependency scores (Figure \ref{fig:coadluad-dependency-main}c, d).
 Genes in cluster 1 tended to have a stronger dependency in \KRAS{} WT cell lines, especially compared to \KRAS{} G12D cell lines, and clusters 3, 4, and 5 had stronger dependency scores in \KRAS{} G12V, G12D, and G13D, respectively. 
 Cluster 2 was rather heterogeneous.
 One notable gene with allele-specific associations was the kinetochore-associated protein (\emph{KNTC1}) which demonstrated moderate to strong lethal effects when knocked out in almost every cell line except for those with a \KRAS{} G12V allele.
@@ -246,27 +247,26 @@ The gene set enrichment analysis of the dependency scores highlighted a reduced 
 The former enrichment suggests that these cells would react less severely to inhibition of the MAPK pathway, though were more susceptible to inhibitors of DNA-damage repair mechanisms.
 A gene-by-gene analysis revealed allele-specific genetic dependencies in 583 genes which were further clustered into four groups (Fig. \ref{fig:coadluad-dependency-main}h).
 The second group was enriched in genes that encode for proteins in the integrin signaling pathway including \emph{RAP2C}, \emph{MAPK8} (JNK1), \emph{MAPK9} (JNK2), \emph{ITGB5} ($\beta_5$ integrin), \emph{ELMO2}, \emph{PTK2} (FAK) (Supplemental Fig. XX).
-These genes ended to have lower dependency in \KRAS{} G12V mutant cell lines that in G12C or WT cell lines.
+These genes tended to have lower dependency in \KRAS{} G12V mutant cell lines that in G12C or WT cell lines.
 Further, cluster 4 contained a large component of the cellular protein-protein interaction network (PPIN) centered around components of the ubiquitination complex including \emph{UBC}, \emph{UBA3}, \emph{UBE2F}, \emph{RNF19B}, \emph{STAMBP}, \emph{USP14}, and \emph{FEM1A} (Fig. \ref{fig:coadluad-dependency-main}i).
-Interestingly, the gene encoded by \emph{STAMBP}, STAM-binding protein, is a negative regulator of the PI3K-Akt pathway.
-Also included in this PPIN was MAPK6 (ERK3), a component of the MAPK signaling pathway. 
+Notably, the gene encoded by \emph{STAMBP}, STAM-binding protein, is a negative regulator of the PI3K-Akt pathway, and MAPK6 (ERK3), a component of the MAPK signaling pathway was included in this PPI subnetwork. 
 
 For the genetic dependency analysis of PAAD, the only \KRAS{} alleles with a sufficient number of cell lines were G12D, G12R, and G12V.
-A gene set enrichment analysis revealed substantial difference in the dependencies of critical cellular pathways (Fig. \ref{sfig:paad-dependency-main}a).
-For instance, the G12D cell lines tended to be more dependent on the pathway involving the G12/G13 $\alpha$ subunits of G protein-coupled receptors which regulate the actin cytoskeleton during proliferation \cite{Worzfeld2008G12/G13-mediatedDisease., Siehler2009RegulationReceptors., Suzuki2009RegulationPathways.} (Figure \ref{sfig:paad-dependency-main}b).
-Also, the G12R cell lines demonstrated a greater dependency on the genes at the DNA-damage checkpoint between the G2 and M phases of mitosis (Figure \ref{sfig:paad-dependency-main}c).
-In particular, this enrichment is driven by two of the three components of the MRE11-RAD50-NBN (MRN) complex, \emph{MRE11} and \emph{NBN}.
-Interestingly, the cell lines with \KRAS{} G12V mutations were more sensitive to knock-out of genes in the Hedgehog pathway (Figure \ref{sfig:paad-dependency-main}d).
+A gene set enrichment analysis revealed substantial difference in the dependencies of critical cellular pathways (Supplemental Fig. \ref{sfig:paad-dependency-main}a).
+For instance, the G12D cell lines tended to be more dependent on the pathway involving the G12/G13 $\alpha$ subunits of G protein-coupled receptors which regulate the actin cytoskeleton during proliferation \cite{Worzfeld2008G12/G13-mediatedDisease., Siehler2009RegulationReceptors., Suzuki2009RegulationPathways.} (Supplemental Fig. \ref{sfig:paad-dependency-main}b).
+Also, the G12R cell lines demonstrated a greater dependency on the genes at the DNA-damage checkpoint between the G2 and M phases of mitosis (Supplemental Fig. \ref{sfig:paad-dependency-main}c).
+This enrichment is driven by two of the three components of the MRE11-RAD50-NBN (MRN) complex, \emph{MRE11} and \emph{NBN}.
+Interestingly, the cell lines with \KRAS{} G12V mutations were more sensitive to knock-out of genes in the Hedgehog pathway (Supplemental Fig. \ref{sfig:paad-dependency-main}d).
 Of the genes in this pathway with the greatest level of enrichment, several are specifically involved in cellular adhesion and migration including \emph{CRMP1}, \emph{NRCAM}, \emph{CDK6}, and \emph{NRP1}.
-94 individual genes demonstrated \KRAS{} allele-specific genetic dependency, too (Figure \ref{sfig:paad-dependency-main}e).
+94 individual genes demonstrated \KRAS{} allele-specific genetic dependency, too (Supplemental Fig. \ref{sfig:paad-dependency-main}e).
 Interestingly, the deletion of \emph{JUN} had no effect in \KRAS{} G12V cell lines while it slowed growth in G12D and G12R cell lines.
 \emph{JUN} encodes the transcription factor c-Jun which was previously demonstrated to play a role in the transcriptional repression of the tumor suppressors \emph{CDKN2A} and \emph{CDKN2B} in \KRAS{}-driven COAD \cite{Serra2014APhenotype.}.
-This agreed with the reduced dependency of G12V cell lines on c-Jun NH2 terminal kinases (JNK) activation from the gene set analysis (of note, the enriched gene set did not include \emph{JUN}, itself (Fig. \ref{sfig:paad-dependency-main}a, Supplemental Fig. \ref{sfig:paad-dependency-JUN}a).
+This agreed with the reduced dependency of G12V cell lines on c-Jun NH2 terminal kinases (JNK) activation from the gene set analysis (of note, the enriched gene set did not include \emph{JUN}, itself (Supplemental Fig. \ref{sfig:paad-dependency-main}a, Supplemental Fig. \ref{sfig:paad-dependency-JUN}a).
 Leading this enrichment was \emph{MAPK8} (JNK-1) which, when knocked out, lead to increased growth in every case, though most strongly in G12V cell lines (Supplemental Fig. \ref{sfig:paad-dependency-JUN}b).
 These data suggest a reduced dependency on the activation of c-JUN via JNK signaling, potentially pointing to a tumor suppression pathway with greater potency in PAAD with \KRAS{} G12V.
 
 
-\subsection*{An integrative analysis of allele-specific comutation and genetic dependencies.}
+\subsection*{An integrated analysis of allele-specific comutation and genetic dependencies.}
 
 Integrating the results from the allele-specific comutation with those from the dependency analyses provided further insight into the distinctions between the \KRAS{} alleles.
 Surprisingly, there was little overlap between the genes found to comutate with an allele and those with differential dependency - the only overlap was found with in the genes resulting from analysis of \KRAS{} G12C in LUAD (Fig. \ref{fig:results_integration_main}a).
@@ -280,7 +280,7 @@ Thus, it is unlikely that the genetic associations found here were driven by lat
 
 To further mine the genetic interactions found for each \KRAS{} allele, functional information was incorporated by annotating the nodes of the PPIN with the associations.
 For each allele in each cancer, the geodesic distance (the number of nodes on the shorted path) between the genes with allele-specific interactions was on average shorter than between nodes selected randomly on the network (Fig. \ref{fig:results_integration_main}c).
-This indicated that the genes had patterns in their functionality because they are not randomly distributed throughout the PPIN.
+This indicated that, instead of being randomly distributed throughout the PPIN, there were functional patterns in the identified genes.
 
 To inspect these cellular functions, subnetworks of the PPIN of the proteins with allele-specific interactions were extracted and compared.
 For COAD, the largest components of each allele's subnetwork were centered around \kras{} and the other oncogenes most frequently mutated in the cancer: p53, BRaf, PI3K-$\alpha$, Apc, and NRas (Fig. \ref{fig:results_integration_main}d highlighted in red).
@@ -301,7 +301,7 @@ The former identified co-alterations that possibly adjust the behavior of the tu
 
 % see PMID: 26069186
 Previously, \KRAS{}-mutant LUAD were demonstrated to separate into 3 groups using RNA expression data.
-These groups were found to not associate with specific \KRAS{} alleles, but instead with mutations to \emph{STK11}, mutations to \emph{TP53}, or depeltion of \emph{CDKN2A} and \emph{CDKN2B}.
+These groups were found to not associate with specific \KRAS{} alleles, but instead with mutations to \emph{STK11}, mutations to \emph{TP53}, or depletion of \emph{CDKN2A} and \emph{CDKN2B}.
 The results presented here, an increased comutation frequency between \KRAS{} G12C and \emph{STK11} and an increased dependency on \emph{STK11} in \KRAS{} G12C-mutant LUAD cell lines, suggest that the G12C allele does have an association with ...
 
 
@@ -473,7 +473,7 @@ A competing interests statement is required for all papers accepted by and publi
     \textbf{The contribution of mutational processes to \KRAS{} mutagenesis.}
     \textbf{a.} The number of samples with mutations along the \KRAS{} protein sequence. The most frequently mutated locations are labeled. The color of the bar indicates the abundance per cancer. 
     \textbf{b.} The distribution of \KRAS{} alleles in each cancer. The "Other" group includes the infrequent \KRAS{} alleles of the cancer. The adjacent bar indicates the fraction of samples with each \KRAS{} allele over all samples, including those with WT \KRAS{}.
-    \textbf{c.} The average probability that each mutational signature caused the \KRAS{} mutant allele in a sample.
+    \textbf{c.} The average probability of each mutational signature to have caused the \KRAS{} mutation in a sample.
     \textbf{d.} The levels of select mutational signatures in samples with \KRAS{} mutations.
     \textbf{e, f.} The predicted vs. observed frequency of \KRAS{} alleles for all common alleles of the cancer (\textbf{e}) or only codon 12 alleles (\textbf{f}). Triangles indicate the failure to reject the null hypothesis that the observed and predicted frequencies are the same. Error bars indicate 95 \% confidence intervals of the predicted values.
 }
