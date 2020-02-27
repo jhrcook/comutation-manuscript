@@ -1,6 +1,6 @@
 # KRAS comutation manuscript
 
-Joshua Cook, Giorgio Melloni, Peter J. Park ([lab](https://compbio.hms.harvard.edu/index)), Kevin M. Haigis ([lab]((https://www.haigislab.org))
+Joshua Cook, Giorgio Melloni, Peter J. Park ([lab](https://compbio.hms.harvard.edu/index)), Kevin M. Haigis ([lab](https://www.haigislab.org))
 
 ## Abstract
 

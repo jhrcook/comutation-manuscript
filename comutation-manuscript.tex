@@ -74,7 +74,7 @@ Overall, this analysis demonstrates that the \KRAS{} alleles have distinct genet
 
 
 
-\section*{Introduction}
+\section*{}
 % Keep to ~500 words.
 
 Sitting at a critical signaling junction between extracellular growth receptors and pro-growth, anti-apoptotic pathways, \KRAS{} is one of the most commonly mutated genes in cancer \cite{Barbacid1987, Bailey2018}.
@@ -180,7 +180,7 @@ The extreme of the latter effect is commonly known as "mutual exclusivity" and c
 For instance, in COAD, \emph{APC} comutation enhances the effects of oncogenic \KRAS{}-induced hyperactivation of the Wnt signaling pathway, essential for the growth of cancer stem cells in the intestinal crypts \cite{Janssen2006, Fearon2014, Sakai2018, Jauhri2017}.
 Alternatively, the activation of \emph{BRAF} via a V600E mutation was demonstrated to induce senescence in the presence of a \KRAS{} mutant, and, thus, the two are rarely found in the same tumor \cite{Seth2009ConcomitantCancer., Cisowski2016, Jauhri2017}.
 
-The result of the comutation analysis on COAD tumors was a weakly connected network of the \KRAS{} alleles with only a few genes linking the alleles together (Fig. \ref{fig:coad-comutation-main}a, Supplemental Fig. \ref{sfig:coad_labeled-comutation}).
+The result of the comutation analysis on COAD tumors was a weakly connected network of the \KRAS{} alleles with only a few genes linking the alleles together (Fig. \ref{fig:coad-comutation-main}a).
 These linking genes tended to be well-studied oncogenes such as \emph{BRAF}, \emph{APC}, and \emph{TP53}.
 Contrary to a common assumption, while \KRAS{} and \emph{TP53} are frequently found mutated in the same tumor, there is a detectable reduction in comutation between \emph{TP53} with \KRAS{} G12D and G13D compared to the rest of the alleles (Fig. \ref{fig:coad-comutation-main}a, b).
 
@@ -194,7 +194,7 @@ The comutation network of the G13D allele was enriched for genes implicated in a
 
 % I didn't reference Fig. 2 e-g because there wasn't anything specific to say about them, and there is not enough space to expand upon them for each cancer. They are explained in the legend and are just an additional visualization of comutation interactions.
 
-The \KRAS{} allele-specific comutation network uncovered in LUAD was far larger than that of COAD (Fig. \ref{fig:luad-comutation-main}a, Supplemental Fig. \ref{sfig:luad_labeled-increased-comutation}-\ref{sfig:luad_labeled-reduced-comutation}).
+The \KRAS{} allele-specific comutation network uncovered in LUAD was far larger than that of COAD (Fig. \ref{fig:luad-comutation-main}a).
 This was likely caused by the higher mutation rate in this cancer (Supplemental Fig. \ref{sfig:mutation-burden-of-cancer-samples}b) increasing the power to detect both increased and reduced comutation interactions.
 There were several intriguing cellular processes enriched in the networks of each allele (Fig. \ref{fig:luad-comutation-main}b, c).
 Interestingly, some of the enrichments were driven by \emph{both} increased and reduced comutation interactions while others were driven by increased \emph{or} reduced comutation interactions (Fig. \ref{fig:luad-comutation-main}c).
@@ -211,7 +211,7 @@ Interestingly, this was comparable to the rate of \emph{NRAS} mutation in \KRAS{
 Instead, the Q61H allele showed a reduced frequency of comutation with \emph{BRAF} (2.9 \%) and \emph{TRAF3} (8.6 \%).
 The G12D allele had a comutation frequency of 25 \% with both of those genes, again suggesting varying signaling properties of these two common \KRAS{} alleles.
 
-The \KRAS{} allele comutation network found in the PAAD tumor samples demonstrated that many genes had detectable comutation interactions with multiple alleles (Supplemental Fig. \ref{sfig:paad-comutation}a, Supplemental Fig \ref{sfig:paad_labeled-comutation}).
+The \KRAS{} allele comutation network found in the PAAD tumor samples demonstrated that many genes had detectable comutation interactions with multiple alleles (Supplemental Fig. \ref{sfig:paad-comutation}a).
 Most of these interactions were reduced comutation interactions.
 There were numerous genes that had opposing comutation interactions with different alleles.
 Four of these were direct interactors of \KRAS{} \cite{Kovalski2019}, signal through \KRAS{} \cite{Kanehisa2017, Kanehisa2016KEGGAnnotation.}, or are known oncogenes \cite{Bamford2004TheWebsite., Sondka2018} (Supplemental Fig. \ref{sfig:paad-comutation}b, c).
@@ -336,7 +336,6 @@ A conservative filter for tissue-specific gene expression was used to remove gen
 Normal tissue gene expression data was gathered from the GTEx Portal (12/03/2018) \cite{GTExConsortium2017} and The Human Protein Atlas (HPA, 12/03/2018) \cite{Uhlen2015, Uhlen2016}, and tumor expression data was collected from MMRF-CoMMpass (01/14/2019), TCGA-COAD, TCGA-LUAD, and TCGA-PAAD \cite{CancerGenomeAtlasNetwork2012, CancerGenomeAtlasResearchNetwork2014, CancerGenomeAtlasResearchNetwork.Electronicaddress:andrew_aguirredfci.harvard.edu2017}. 
 Supplementary Table XX indicates the number of samples per tissue in the GTEx and tumor gene expression data.
 A gene was considered “expressed” in a tissue if it met at least one of the following criteria: 1) a median expression level of at least 1 TPM across all samples of the tissue in GTEx, 2) indicated as expressed at at least 1 TPM in the HPA data set for the tissue, 3) expressed with a median level of 1 batch-normalized raw counts (using RSEM) in the corresponding tumor RNA-sequencing data.
-Supplementary Fig \ref{sfig:mutfreq-of-unexpressed-genes} indicates the frequency of mutation of genes that were removed from each tumor type according to this filter.
 
 
 \subsection*{Predicting effect of mutations on gene or protein function}
@@ -525,6 +524,20 @@ A competing interests statement is required for all papers accepted by and publi
 
 \begin{figure}
 \centering
+\includegraphics[height=145mm]{figures/SuppFigure_13.jpeg}
+\caption{
+    \textbf{Allele-specific genetic dependencies in PAAD cell lines.}
+    \textbf{a.} Gene sets with significant enrichment for increased (lower dependency score; purple) or reduced (higher dependency score; orange) genetic dependency in PAAD cell lines. The size of the dot relates the p-value of the association and the color indicated the strength of the enrichment.
+    \textbf{b, c, d.} Heatmaps ranking the cell lines by dependency score of genes at the leading edge of enrichment for three gene sets in PAAD. Each row represents a gene and each cell represents a cell line colored by its \KRAS{} allele. The cell lines were arranged in ranking order by their dependency score for the gene. Thus, each column indicates a rank. The line plots above the heatmaps indicate the representation (density) of each \KRAS{} allele at each rank across the genes.
+    \textbf{e.} Clustered heatmaps of the genes that demonstrated differential genetic dependency amongst cell lines of different \KRAS{} alleles in PAAD cell lines. Each column is a cell line labeled by its DepMap ID and each row is a gene.
+    \textbf{f.} Examples of genes that demonstrated differential genetic dependency amongst cell lines of different \KRAS{} alleles in PAAD (*: p < 0.05, **: p < 0.01, ***: p < 0.001; p-values were adjusted using the Benjamini-Hochberg FDR correction method).
+}
+\label{sfig:paad-dependency-main}
+\end{figure}
+
+
+\begin{figure}
+\centering
 \includegraphics[height=100mm]{figures/Figure_05.jpeg}
 \caption{
     \textbf{Integration of comutation and genetic dependency results.}
@@ -567,16 +580,6 @@ A competing interests statement is required for all papers accepted by and publi
 
 \begin{figure}[p]
 \centering
-\includegraphics[width=\textwidth]{figures/SuppFigure_03.jpeg}
-\caption{
-    \textbf{The frequency of mutation of unexpressed genes.} Genes with no detectable level of expression in either cancer samples nor normal tissue samples.
-}
-\label{sfig:mutfreq-of-unexpressed-genes}
-\end{figure}
-
-
-\begin{figure}[p]
-\centering
 \includegraphics[height=150mm]{figures/SuppFigure_04.jpeg}
 \caption{
     \textbf{The mutation burden and types of mutations of coding regions in human cancer samples.}
@@ -584,46 +587,6 @@ A competing interests statement is required for all papers accepted by and publi
     For COAD (\textbf{a}), the location of MSI-H and hypermutants are indicated by the tick marks along the x-axis of the scatter plot.
 }
 \label{sfig:mutation-burden-of-cancer-samples}
-\end{figure}
-
-
-\begin{figure}[p]
-\centering
-\includegraphics[height=150mm]{figures/SuppFigure_05.jpeg}
-\caption{
-    \textbf{The comutation network of the \KRAS{} alleles in COAD.} Each edge represents a comutation interaction between an allele and the indicated gene. The color of the edge indicates whether the interaction was an increase (blue) or decrease (green) in the frequency of comutation.
-}
-\label{sfig:coad_labeled-comutation}
-\end{figure}
-
-
-\begin{figure}[p]
-\centering
-\includegraphics[height=150mm]{figures/SuppFigure_06.jpeg}
-\caption{
-    \textbf{The network of increased comutation interactions with \KRAS{} alleles in LUAD.} Each edge represents an increased comutation interaction between an allele and the indicated gene.
-}
-\label{sfig:luad_labeled-increased-comutation}
-\end{figure}
-
-
-\begin{figure}[p]
-\centering
-\includegraphics[height=150mm]{figures/SuppFigure_07.jpeg}
-\caption{
-    \textbf{The network of reduced comutation interactions with \KRAS{} G12C in LUAD.} Each edge represents a reduced comutation interaction between \KRAS{} G12C and the indicated gene. Only genes that only have a detectable interaction with \KRAS{} G12C were included.
-}
-\label{sfig:luad_labeled-G12C-reduced-comutation}
-\end{figure}
-
-
-\begin{figure}[p]
-\centering
-\includegraphics[height=150mm]{figures/SuppFigure_08.jpeg}
-\caption{
-    \textbf{The network of reduced comutation interactions with \KRAS{} alleles in LUAD.} Each edge represents a reduced comutation interaction between a \KRAS{} allele and the indicated gene. Genes that only have a detectable interaction with \KRAS{} G12C were not included.
-}
-\label{sfig:luad_labeled-reduced-comutation}
 \end{figure}
 
 
@@ -672,17 +635,6 @@ A competing interests statement is required for all papers accepted by and publi
 
 \begin{figure}[p]
 \centering
-\includegraphics[height=150mm]{figures/SuppFigure_10.jpeg}
-\caption{
-    \textbf{The comutation network of the \KRAS{} alleles in PAAD.}
-    Each edge represents a comutation interaction between an allele and the indicated gene. The color of the edge indicates whether the interaction was an increase (blue) or decrease (green) in the frequency of comutation.
-}
-\label{sfig:paad_labeled-comutation}
-\end{figure}
-
-
-\begin{figure}[p]
-\centering
 \includegraphics[height=100mm]{figures/SuppFigure_15.jpeg}
 \caption{
     \textbf{Association between \emph{WDR26} RNA expression and dependency score in COAD cell lines.}
@@ -691,20 +643,6 @@ A competing interests statement is required for all papers accepted by and publi
     The equation, p-value, and $R^2$ for the line are shown in the top-right.
 }
 \label{sfig:coad_dep_wdr26}
-\end{figure}
-
-
-\begin{figure}
-\centering
-\includegraphics[height=145mm]{figures/SuppFigure_13.jpeg}
-\caption{
-    \textbf{Allele-specific genetic dependencies in PAAD cell lines.}
-    \textbf{a.} Gene sets with significant enrichment for increased (lower dependency score; purple) or reduced (higher dependency score; orange) genetic dependency in PAAD cell lines. The size of the dot relates the p-value of the association and the color indicated the strength of the enrichment.
-    \textbf{b, c, d.} Heatmaps ranking the cell lines by dependency score of genes at the leading edge of enrichment for three gene sets in PAAD. Each row represents a gene and each cell represents a cell line colored by its \KRAS{} allele. The cell lines were arranged in ranking order by their dependency score for the gene. Thus, each column indicates a rank. The line plots above the heatmaps indicate the representation (density) of each \KRAS{} allele at each rank across the genes.
-    \textbf{e.} Clustered heatmaps of the genes that demonstrated differential genetic dependency amongst cell lines of different \KRAS{} alleles in PAAD cell lines. Each column is a cell line labeled by its DepMap ID and each row is a gene.
-    \textbf{f.} Examples of genes that demonstrated differential genetic dependency amongst cell lines of different \KRAS{} alleles in PAAD (*: p < 0.05, **: p < 0.01, ***: p < 0.001; p-values were adjusted using the Benjamini-Hochberg FDR correction method).
-}
-\label{sfig:paad-dependency-main}
 \end{figure}
 
 
