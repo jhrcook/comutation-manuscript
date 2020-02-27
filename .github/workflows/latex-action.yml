@@ -7,6 +7,6 @@ jobs:
       - name: Set up Git repository
         uses: actions/checkout@v1
       - name: Compile LaTeX document
-        uses: jhrcook/comutation-manuscript@master
+        uses: xu-cheng/latex-action@master
         with:
           root_file: comutation-manuscript.tex
