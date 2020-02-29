@@ -197,14 +197,14 @@ The comutation network of the G13D allele was enriched for genes implicated in a
 The \KRAS{} allele-specific comutation network uncovered in LUAD was far larger than that of COAD (Fig. \ref{fig:luadmm-comutation-main}a).
 This was likely caused by the higher mutation rate in this cancer (Supplemental Fig. \ref{sfig:mutation-burden-of-cancer-samples}b) increasing the power to detect both increased and reduced comutation interactions.
 Clinical data from TCGA \cite{CancerGenomeAtlasResearchNetwork2014} were collected to assess the effect of these comutation events on the overall survival (OS) of patients with LUAD.
-There was no detectable difference in survival between patients with \KRAS{} mutant and WT tumors (log-rank test, p-value: 0.29), though, when stratified by \KRAS{} allele, the strongest contrast was between G12C and WT tumors (log-rank test, p-value: 0.052) (Supplementary Fig. XX).
+There was no detectable difference in survival between patients with \KRAS{} mutant and WT tumors (log-rank test, p-value: 0.290), though, when stratified by \KRAS{} allele, the strongest contrast was between G12C and WT tumors (log-rank test, p-value: 0.052) (Supplementary Fig. \ref{sfig:luad-comutation-supplementary}).
 Thus, for each gene found to comutate with G12C, the patients were divided into four groups: those with WT \KRAS{} and comutating gene (grey), \KRAS{} G12C and WT comutating gene (black), \KRAS{} WT and mutated comutating gene (pink), or \KRAS{} G12C and mutant comutating gene.
-Several were found to have statistically significant differences between the four groups (Cox proportional hazards, p-value < 0.05), four of which are shown in Fig. \ref{fig:luadmm-comutation-main}b.
+Several were found to have statistically significant differences between these groups (Cox proportional hazards, p-value < 0.05), four of which are shown in Fig. \ref{fig:luadmm-comutation-main}b.
 \emph{CHRNB4}, \emph{VN1R2}, and \emph{ZNF445} were found to have increased rates of comutation with G12C, and patients with these comutations tended to have worse overall survival than the other three groups.
 Alternatively, \emph{ZNF804A} had reduced comutation with the G12C allele, and the patients with both \KRAS{} G12C and mutated \emph{ZNF804A} tended to have better overall survival than the other three groups.
 There were several intriguing cellular processes enriched in the networks of each allele (Fig. \ref{fig:luadmm-comutation-main}c, d).
 Interestingly, some of the enrichments were driven by \emph{both} increased and reduced comutation interactions while others were driven by increased \emph{or} reduced comutation interactions (Fig. \ref{fig:luadmm-comutation-main}d).
-For example, \KRAS{} G12C had increased and reduced comutation interactions with many genes encoding proteins that interact with Myc ("PPI of MYC (TF)"), compared to how reduced comutation interactions drove the enrichment of focal adhesion genes with \KRAS{} G12D (Fig. \ref{fig:luadmm-comutation-main}d, Supplemental Fig. \ref{sfig:luad-enriched-comutation-ppi-examples}).
+For example, \KRAS{} G12C had increased and reduced comutation interactions with many genes encoding proteins that interact with Myc ("PPI of MYC (TF)"), compared to how reduced comutation interactions drove the enrichment of focal adhesion genes with \KRAS{} G12D (Fig. \ref{fig:luadmm-comutation-main}d, Supplemental Fig. \ref{sfig:luad-comutation-supplementary}).
 
 In MM, the \KRAS{} comutation network was sparse and highly disconnected (Supplemental Fig. \ref{fig:luadmm-comutation-main}e).
 In fact, the only three alleles that shared a detectable interaction were \KRAS{} G12D, Q61L, and Q61R, which all demonstrated strongly reduced comutation with \emph{NRAS}, a gene previously reported to be mutually exclusive with \KRAS{} in this and other cancers \cite{Lohr2014WidespreadTherapy.}.
@@ -321,6 +321,7 @@ Presented here is a relatively minute analysis of the complex integration of com
 Whole genome sequencing (WGS), whole exome sequencing (WXS), and targeted gene panel sequencing data were collected of colorectal adenocarcinoma (COAD), lung adenocarcinoma (LUAD), multiple myeloma (MM), and pancreatic adenocarcinoma (PAAD).
 WXS and WGS data were downloaded from cBioportal \cite{Gao2013, Cerami2012}, which included relevant projects from The Cancer Genome Atlas (TCGA) \cite{CancerGenomeAtlasNetwork2012, CancerGenomeAtlasResearchNetwork2014, CancerGenomeAtlasResearchNetwork.Electronicaddress:andrew_aguirredfci.harvard.edu2017} and other smaller studies. 
 Additional data were acquired from the International Cancer Genome Consortium (ICGC) for pancreatic cancer \cite{Scarlett2011} and colorectal cancer. 
+MM
 Panel data for multiple cancers were retrieved from AACR Project Genomics Evidence Neoplasia Information Exchange (GENIE) \cite{AACRProjectGENIEConsortium2017AACRConsortium.}.
 GENIE data are an aggregation of several different panels ranging from 30 to 600 genes.
 \KRAS{} was included in all of the libraries. 
@@ -339,7 +340,7 @@ Hypermutants were not excluded from the identification of mutational signatures 
 \subsection*{Tissue gene expression filter}
 
 A conservative filter for tissue-specific gene expression was used to remove genes not expressed in the tissues of study. 
-Normal tissue gene expression data was gathered from the GTEx Portal (12/03/2018) \cite{GTExConsortium2017} and The Human Protein Atlas (HPA, 12/03/2018) \cite{Uhlen2015, Uhlen2016}, and tumor expression data was collected from MMRF-CoMMpass (01/14/2019), TCGA-COAD, TCGA-LUAD, and TCGA-PAAD \cite{CancerGenomeAtlasNetwork2012, CancerGenomeAtlasResearchNetwork2014, CancerGenomeAtlasResearchNetwork.Electronicaddress:andrew_aguirredfci.harvard.edu2017}. 
+Normal tissue gene expression data was gathered from the GTEx Portal (12/03/2018) \cite{GTExConsortium2017} and The Human Protein Atlas (HPA, 12/03/2018) \cite{Uhlen2015, Uhlen2016}, and tumor expression data was collected from MMRF-CoMMpass (01/14/2019), TCGA-COAD, TCGA-LUAD, and TCGA-PAAD \cite{Walker2019AAnalysis., CancerGenomeAtlasNetwork2012, CancerGenomeAtlasResearchNetwork2014, CancerGenomeAtlasResearchNetwork.Electronicaddress:andrew_aguirredfci.harvard.edu2017}. 
 Supplementary Table XX indicates the number of samples per tissue in the GTEx and tumor gene expression data.
 A gene was considered “expressed” in a tissue if it met at least one of the following criteria: 1) a median expression level of at least 1 TPM across all samples of the tissue in GTEx, 2) indicated as expressed at at least 1 TPM in the HPA data set for the tissue, 3) expressed with a median level of 1 batch-normalized raw counts (using RSEM) in the corresponding tumor RNA-sequencing data.
 
@@ -419,6 +420,13 @@ Only genes with a mutational frequency of at least 2 \% and 10 mutually exclusiv
 \subsection*{Functional enrichment}
 The R interface to the online \emph{Enrichr} tool was used to identify enriched gene sets in the comutation networks and allele-specific synthetic lethal clusters \cite{Chen2013, Kuleshov2016Enrichr:Update., R-enrichR}.
 Genesets from the following sources provided by Enrichr were used: BioCarta (2016), GO Biological Process (2018), KEA (2015), KEGG (2019), Panther (2016), PPI Hub Proteins, Reactome (2016), Transcription Factor PPIs, and WikiPathways (2019).
+
+
+\subsection*{Survival analysis}
+Overall survival data of patients with COAD, LUAD, and PAAD were acquired from TCGA (\cite{CancerGenomeAtlasNetwork2012, CancerGenomeAtlasResearchNetwork2014, CancerGenomeAtlasResearchNetwork.Electronicaddress:andrew_aguirredfci.harvard.edu2017}) and of patients with MM from the MMRF-CoMMpass \cite{Walker2019AAnalysis.}.
+The log-rank test was used when comparing the overall survival of two groups and the likelihood test was used when comparing the overall survival of more than two groups.
+When the patients were stratified into one of four groups depending on the \KRAS{} mutation and mutation status of a comutating gene in their tumor (Fig. \ref{fig:luadmm-comutation-main}), a group was only included in the model if there were at least 5 samples.
+The 'survival' package in R was used for computing these statistics \cite{survival-package}.
 
 
 \subsection*{Modeling of cancer cell line genetic dependencies}
@@ -601,17 +609,17 @@ A competing interests statement is required for all papers accepted by and publi
 
 \begin{figure}
 \centering
-\includegraphics[height=180mm]{figures/SuppFigure_11.jpeg}
+\includegraphics[height=170mm]{figures/SuppFigure_11.jpeg}
 \caption{
     \textbf{The survival curves of patients with LUAD stratified by \KRAS{} mutation and protein-protein interactions (PPI) of enriched functions in the \KRAS{} allele comutation networks in LUAD.}
-    \textbf{a-c.} Survival curves of LUAD patients stratified by (\textbf{a}) \KRAS{} WT or mutant, (\textbf{b}) \KRAS{} allele, and (\textbf{c}) only \KRAS{} WT and \KRAS{} G12C.
+    \textbf{a-c.} Survival curves of LUAD patients stratified by (\textbf{a}) \KRAS{} WT or mutant, (\textbf{b}) \KRAS{} allele, and (\textbf{c}) only \KRAS{} WT and \KRAS{} G12C. Each survival curve is labeled with the p-value from either the (\textbf{a, c}) log-rank test or (\textbf{b}) likelihood ratio test.
     \textbf{d.} The PPI of the transcription factor Myc that was detected to comutate with \KRAS{} G12C in LUAD.
     \textbf{e.} The subnetwork of the focal adhesion PPI that was detected to comutate with \KRAS{} G12D in LUAD.
     For both subnetworks, the nodes represent proteins and edges represent physical PPI. Colored nodes had a comutation interaction with the respective \KRAS{} allele, the color indicating whether it was a reduced (green) or increased (blue) rate of comutation.
     The bold protein names indicate that the gene was included in the enriched gene set.
     Edge thickness is related to the centrality of the interaction to the presented subnetwork.
 }
-\label{sfig:luad-enriched-comutation-ppi-examples}
+\label{sfig:luad-comutation-supplementary}
 \end{figure}
 
 
