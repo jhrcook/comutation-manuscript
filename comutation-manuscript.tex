@@ -196,6 +196,12 @@ The comutation network of the G13D allele was enriched for genes implicated in a
 
 The \KRAS{} allele-specific comutation network uncovered in LUAD was far larger than that of COAD (Fig. \ref{fig:luadmm-comutation-main}a).
 This was likely caused by the higher mutation rate in this cancer (Supplemental Fig. \ref{sfig:mutation-burden-of-cancer-samples}b) increasing the power to detect both increased and reduced comutation interactions.
+Clinical data from TCGA \cite{CancerGenomeAtlasResearchNetwork2014} were collected to assess the effect of these comutation events on the overall survival (OS) of patients with LUAD.
+There was no detectable difference in survival between patients with \KRAS{} mutant and WT tumors (log-rank test, p-value: 0.29), though, when stratified by \KRAS{} allele, the strongest contrast was between G12C and WT tumors (log-rank test, p-value: 0.052) (Supplementary Fig. XX).
+Thus, for each gene found to comutate with G12C, the patients were divided into four groups: those with WT \KRAS{} and comutating gene (grey), \KRAS{} G12C and WT comutating gene (black), \KRAS{} WT and mutated comutating gene (pink), or \KRAS{} G12C and mutant comutating gene.
+Several were found to have statistically significant differences between the four groups (Cox proportional hazards, p-value < 0.05), four of which are shown in Fig. \ref{fig:luadmm-comutation-main}b.
+\emph{CHRNB4}, \emph{VN1R2}, and \emph{ZNF445} were found to have increased rates of comutation with G12C, and patients with these comutations tended to have worse overall survival than the other three groups.
+Alternatively, \emph{ZNF804A} had reduced comutation with the G12C allele, and the patients with both \KRAS{} G12C and mutated \emph{ZNF804A} tended to have better overall survival than the other three groups.
 There were several intriguing cellular processes enriched in the networks of each allele (Fig. \ref{fig:luadmm-comutation-main}c, d).
 Interestingly, some of the enrichments were driven by \emph{both} increased and reduced comutation interactions while others were driven by increased \emph{or} reduced comutation interactions (Fig. \ref{fig:luadmm-comutation-main}d).
 For example, \KRAS{} G12C had increased and reduced comutation interactions with many genes encoding proteins that interact with Myc ("PPI of MYC (TF)"), compared to how reduced comutation interactions drove the enrichment of focal adhesion genes with \KRAS{} G12D (Fig. \ref{fig:luadmm-comutation-main}d, Supplemental Fig. \ref{sfig:luad-enriched-comutation-ppi-examples}).
@@ -206,10 +212,10 @@ A major limitation of this study was that MM is known to be highly heterogeneous
 Thus, some comutation events were in fact mutations acquired by distinct populations in a single patient, potentially obfuscating comutation interactions.
 Due to this caveat, focusing on genes known to be recurrently mutated in MM reduces the chances of highlighting a false positive. 
 Previous studies have indicated that mutations in \emph{ACTG1}, \emph{ATR}, \emph{BRAF}, \emph{CYLD}, \emph{DIS3}, \emph{FAM46C}, \emph{NBEA}, \emph{NRAS}, \emph{PRDM1}, \emph{RB1}, \emph{SOX21}, \emph{TP53} and \emph{TRAF3} tend to drive progression of MM \cite{Lohr2014WidespreadTherapy., Sondka2018} and several showed patterns of comutation with the \KRAS{} alleles.
-\emph{NRAS} had reduced comutation with \KRAS{} G12D and \KRAS{} Q61L, but one of the highest rates of comutation (42.9 \%) with \KRAS{} Q61H, the most common \KRAS{} mutation in MM (Supplemental Fig. \ref{fig:luadmm-comutation-main}f).
-Interestingly, this was comparable to the rate of \emph{NRAS} mutation in \KRAS{} WT tumors (42.3 \%), suggesting that the signaling of the Q61H allele is fundamentally different from the other \KRAS{} mutations in MM, especially G12D.
-Instead, the Q61H allele showed a reduced frequency of comutation with \emph{BRAF} (2.9 \%) and \emph{TRAF3} (8.6 \%).
-The G12D allele had a comutation frequency of 25 \% with both of those genes, again suggesting varying signaling properties of these two common \KRAS{} alleles.
+\emph{NRAS} had reduced comutation with \KRAS{} G12D, Q61L, and Q61R, but one of the highest rates of comutation (18.5 \%) with \KRAS{} Q61H, the most common \KRAS{} mutation in MM (Supplemental Fig. \ref{fig:luadmm-comutation-main}f).
+Interestingly, this was comparable to the rate of \emph{NRAS} mutation in \KRAS{} WT tumors (23.6 \%), suggesting that the signaling of the Q61H allele is fundamentally different from the other \KRAS{} mutations in MM, especially G12D.
+Instead, the Q61H allele showed a reduced frequency of comutation with \emph{BRAF} (1.2 \%) and \emph{TRAF3} (3.7 \%).
+The G12D allele had a comutation frequency of 9.4 \% with both of those genes, again suggesting varying signaling properties of these two common \KRAS{} alleles in MM.
 
 The \KRAS{} allele comutation network found in the PAAD tumor samples demonstrated that many genes had detectable comutation interactions with multiple alleles (Supplemental Fig. \ref{sfig:paad-comutation}a).
 Most of these interactions were reduced comutation interactions.
@@ -500,7 +506,7 @@ A competing interests statement is required for all papers accepted by and publi
 \caption{
     \textbf{The comutation networks of \KRAS{} alleles in LUAD and MM.}
     \textbf{a.} The comutation network of the \KRAS{} alleles in LUAD where each edge represents a comutation interaction between an allele and another gene. The color of the edge indicates whether the interaction was an increase (blue) or decrease (green) in the frequency of comutation.
-    \textbf{b.} Survival curves of patients with or without comutation of \KRAS{} G12C and a gene found to comutate with the allele (labeled above each plot). The color of the curve indicates the mutations of the tumor (grey: neither \KRAS{} nor the other gene are mutated; black: \KRAS{} G12C; pink: the other gene is mutated; purple: both \KRAS{} G12C and the other gene is mutated). The p-values for the likelihood ratio test and the regression covariates for the \KRAS{} G12C allele and other gene are indicated on the plot.
+    \textbf{b.} Survival curves of patients with or without comutation of \KRAS{} G12C and a gene found to comutate with the allele (labeled above each plot). The color of the curve indicates the mutations of the tumor (grey: \KRAS{} and the other gene are WT; black: \KRAS{} G12C; pink: the other gene is mutated; purple: both \KRAS{} G12C and the other gene is mutated). The p-values for the likelihood ratio test and the regression covariates for the \KRAS{} G12C allele and the other gene are indicated on the plot.
     \textbf{c.} Cellular functions enriched in the comutation networks of the \KRAS{} alleles. The size of the dot indicates the p-value of the enrichment and the transparency indicates the number of genes in both the function and the comutation network.
     \textbf{d.} The combined rate of comutation of the genes underlying the enriched functions shown in \textbf{b}. The x-axis indicates the fraction of samples with at least one of the interacting genes mutated in the samples with the indicated \KRAS{} allele (dark) or the other samples (light). The genes were separated into those with an increase (blue, going right) or a reduced (green, going left) rate of comutation with the \KRAS{} allele.
     \textbf{e.} Each edge represents a comutation interaction between an allele and the indicated gene. The color of the edge indicates whether the interaction was an increase (blue) or decrease (green) in the frequency of comutation.
@@ -595,11 +601,12 @@ A competing interests statement is required for all papers accepted by and publi
 
 \begin{figure}
 \centering
-\includegraphics[width=\textwidth]{figures/SuppFigure_11.jpeg}
+\includegraphics[height=180mm]{figures/SuppFigure_11.jpeg}
 \caption{
-    \textbf{The protein-protein interactions (PPI) of enriched functions in the \KRAS{} allele comutation networks in LUAD.}
-    \textbf{a.} The PPI of the transcription factor Myc that was detected to comutate with \KRAS{} G12C in LUAD.
-    \textbf{b.} The subnetwork of the focal adhesion PPI that was detected to comutate with \KRAS{} G12D in LUAD.
+    \textbf{The survival curves of patients with LUAD stratified by \KRAS{} mutation and protein-protein interactions (PPI) of enriched functions in the \KRAS{} allele comutation networks in LUAD.}
+    \textbf{a-c.} Survival curves of LUAD patients stratified by (\textbf{a}) \KRAS{} WT or mutant, (\textbf{b}) \KRAS{} allele, and (\textbf{c}) only \KRAS{} WT and \KRAS{} G12C.
+    \textbf{d.} The PPI of the transcription factor Myc that was detected to comutate with \KRAS{} G12C in LUAD.
+    \textbf{e.} The subnetwork of the focal adhesion PPI that was detected to comutate with \KRAS{} G12D in LUAD.
     For both subnetworks, the nodes represent proteins and edges represent physical PPI. Colored nodes had a comutation interaction with the respective \KRAS{} allele, the color indicating whether it was a reduced (green) or increased (blue) rate of comutation.
     The bold protein names indicate that the gene was included in the enriched gene set.
     Edge thickness is related to the centrality of the interaction to the presented subnetwork.
