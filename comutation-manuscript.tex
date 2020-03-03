@@ -187,7 +187,7 @@ Contrary to a common assumption, while \KRAS{} and \emph{TP53} are frequently fo
 
 Surprisingly, there were a substantial number of genes detected to comutate with just one allele.
 To gain functional insight into the network, genes known to physically interact with \kras{} \cite{Kovalski2019}, signal up- or downstream of \kras{} \cite{Kanehisa2017, Kanehisa2016KEGGAnnotation.}, or are known oncogenes \cite{Bamford2004TheWebsite., Sondka2018} were extracted (Fig. \ref{fig:coad-comutation-main}b).
-As expected, several alleles had reduced comutation with \emph{NRAS} and \emph{BRAF} and increased comutation with \emph{APC} and \emph{PIK3CA}. 
+As expected, several alleles had reduced comutation with \emph{NRAS} and \emph{BRAF} and increased comutation with \emph{APC} and \emph{PIK3CA} \cite{Sensi2006MutuallyMelanoma., Jauhri2017, Seth2009ConcomitantCancer., Cisowski2016, Janssen2006, Sakai2018, Kennedy2011, Wang2013, Green2015, Yeang2008CombinatorialCancer., CancerGenomeAtlasNetwork2012}. 
 Some novel interactions included increased comutation of \emph{PORCN} with \KRAS{} A146T, \emph{MTOR} with G12C, and \emph{SMAD4} with G12V.
 Further, several of the alleles showed enrichment for cellular functions in their comutation networks (Fig. \ref{fig:coad-comutation-main}c).
 One of the strongest effects was an enrichment in the G12D comutation network of interactors with \emph{YWHAZ}, a 14-3-3 scaffolding protein implicated in modulating many interactions including Arhgef7 activity on Rac1 in regulating membrane dynamics for activities such as phagocytosis and cell adhesion \cite{Angrand2006TransgenicSignaling.}.
@@ -257,8 +257,8 @@ The former enrichment suggests that these cells would react less severely to inh
 A gene-by-gene analysis revealed allele-specific genetic dependencies in 583 genes which were further clustered into four groups (Fig. \ref{fig:coadluad-dependency-main}h).
 The second group was enriched in genes that encode for proteins in the integrin signaling pathway including \emph{RAP2C}, \emph{MAPK8} (JNK1), \emph{MAPK9} (JNK2), \emph{ITGB5} ($\beta_5$ integrin), \emph{ELMO2}, and \emph{PTK2} (FAK) (Supplemental Fig. XX).
 These genes tended to have lower dependency in \KRAS{} G12V mutant cell lines that in G12C or WT cell lines.
-Further, cluster 4 contained a large component of the cellular protein-protein interaction network (PPIN) centered around components of the ubiquitination complex including \emph{UBC}, \emph{UBA3}, \emph{UBE2F}, \emph{RNF19B}, \emph{STAMBP}, \emph{USP14}, and \emph{FEM1A} (Fig. \ref{fig:coadluad-dependency-main}i).
-Notably, the gene encoded by \emph{STAMBP}, STAM-binding protein, is a negative regulator of the PI3K-Akt pathway, and MAPK6 (ERK3), a component of the MAPK signaling pathway was included in this PPI subnetwork. 
+Further, cluster 1 contained a large component of the cellular protein-protein interaction network (PPIN) centered around components of the ubiquitination complex including \emph{UBC}, \emph{UBA3}, \emph{UBE2F}, \emph{RNF19B}, \emph{USP14}, and \emph{FEM1A} (Fig. \ref{fig:coadluad-dependency-main}i).
+These interactions stretched through the PPIN to regulators of the RAS/MAPK pathway, including \emph{MAPK6} (ERK3), \emph{SOS1}, and \emph{RASGRP3}, and the PI3K-$\alpha$-Akt pathway, including the negative regulator, \emph{STAMBP}, encoding STAM-binding protein.
 
 For the genetic dependency analysis of PAAD, the only \KRAS{} alleles with a sufficient number of cell lines were G12D, G12R, and G12V.
 A gene set enrichment analysis revealed substantial difference in the dependencies of critical cellular pathways (Fig. \ref{fig:paad-dependency-main}a).
