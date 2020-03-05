@@ -151,9 +151,6 @@ In COAD and PAAD, signature 18, likely caused by damage from reactive oxygen spe
 This corroborated the previous finding that \KRAS{} G12C mutations were more frequent in patients with MUTYH-Associated Polyposis \cite{Viel2017}, a recessive autosomal disease caused by biallelic loss-of-function mutations to the gene encoding the DNA glycosylase, \emph{MUTYH}, responsible for clearing 8-oxoguanine:A mismatches that can cause the G12C mutation.
 In MM, signature 9, associated with mutations introduced by polymerase $\eta$ repair of activation-induced deaminase (AID) activity \cite{Alexandrov2013, Rogozin2018DNACancer., Petljak2016UnderstandingCancer.}, was strongly linked with Q61H (Fig. \ref{fig:mutational-signatures-main}c, d), the most common \KRAS{} mutation in the cancer.
 
-% Overall, with the exceptions noted above, most of the \KRAS{} alleles cannot be attributed to a unique mutational signature. 
-% Instead, they are primarily attributable to the most common mutational process in the tumors: age-related mutation in COAD, MM, and PAAD, and tobacco smoke in LUAD.
-
 
 \subsection*{The frequency of most \KRAS{} alleles cannot be attributed to the prevalence of detected mutagens.}
 
@@ -277,15 +274,15 @@ These data suggest a reduced dependency on the activation of c-Jun via JNK signa
 
 \subsection*{An integrated analysis of allele-specific comutation and genetic dependencies.}
 
-% Integrating the results from the allele-specific comutation with those from the dependency analyses provided further insight into the distinctions between the \KRAS{} alleles.
-% Surprisingly, there was little overlap between the genes found to comutate with an allele and those with differential dependency - the only overlap was found with in the genes resulting from analysis of \KRAS{} G12C in LUAD (Fig. \ref{fig:results_integration_main}a).
-% One of these genes was \emph{STK11}, the gene encoding STK11 (LKB1), a tumor suppressor that controls the activity of AMP activated protein kinases (AMPK) to regulate cellular processes including metabolism, apoptosis, and the DNA-damage response \cite{Momcilovic2015TargetingVulnerabilities., Korsse2013TargetingCancer.}.
-% The high rate of comutation between \KRAS{} and \emph{STK11} has been documented previously, though not specifically with \KRAS{} G12C.
-% Previous studies have indicated unique biological properties of LUAD tumors with mutations in both \KRAS{} and \emph{STK11} including distinct expression profiles \cite{Skoulidis2015Co-occurringVulnerabilities.}, worse clinical prognosis \cite{LaFleur2019MutationSTK11, Bange2019ImpactCancer.}, and reduced response to immunotherapy \cite{Skoulidis2018STK11/LKB1Adenocarcinoma.}.
-% The results presented here may suggest a unique synergism between the G12C mutant and \emph{STK11} loss-of-function mutations.
-% Further analysis of the comutation and dependency networks may provide deeper insight into this clinically significant association.
-% Importantly, due to the strong influence of smoking-induced mutations to the prevalence of \KRAS{} G12C in LUAD, there was no apparent nor statistically detectable difference in the types or locations of \emph{STK11} mutations between G12C-mutant samples and the rest of the LUAD tumor samples (Fig. \ref{fig:results_integration_main}b).
-% Thus, it is unlikely that the genetic associations found here were driven by latent mutational processes, but instead they were determined by the selective advantage that concomitant \KRAS{} G12C and \emph{STK11} mutations have in a nascent tumor.
+Integrating the results from the allele-specific comutation with those from the dependency analyses provided further insight into the distinctions between the \KRAS{} alleles.
+Surprisingly, there was little overlap between the genes found to comutate with an allele and those with differential dependency - the only overlap was found with in the genes resulting from analysis of \KRAS{} G12C in LUAD (Fig. \ref{fig:results_integration_main}a).
+One of these genes was \emph{STK11}, the gene encoding STK11 (LKB1), a tumor suppressor that controls the activity of AMP activated protein kinases (AMPK) to regulate cellular processes including metabolism, apoptosis, and the DNA-damage response \cite{Momcilovic2015TargetingVulnerabilities., Korsse2013TargetingCancer.}.
+The high rate of comutation between \KRAS{} and \emph{STK11} has been documented previously, though not specifically with \KRAS{} G12C.
+Previous studies have indicated unique biological properties of LUAD tumors with mutations in both \KRAS{} and \emph{STK11} including distinct expression profiles \cite{Skoulidis2015Co-occurringVulnerabilities.}, worse clinical prognosis \cite{LaFleur2019MutationSTK11, Bange2019ImpactCancer.}, and reduced response to immunotherapy \cite{Skoulidis2018STK11/LKB1Adenocarcinoma.}.
+The results presented here may suggest a unique synergism between the G12C mutant and \emph{STK11} loss-of-function mutations.
+Further analysis of the comutation and dependency networks may provide deeper insight into this clinically significant association.
+Importantly, due to the strong influence of smoking-induced mutations to the prevalence of \KRAS{} G12C in LUAD, there was no apparent nor statistically detectable difference in the types or locations of \emph{STK11} mutations between G12C-mutant samples and the rest of the LUAD tumor samples (Fig. \ref{fig:results_integration_main}b).
+Thus, it is unlikely that the genetic associations found here were driven by latent mutational processes, but instead they were determined by the selective advantage that concomitant \KRAS{} G12C and \emph{STK11} mutations have in a nascent tumor.
 
 To further mine the genetic interactions found for each \KRAS{} allele, functional information was incorporated by annotating the nodes of the PPIN with the associations.
 For each allele in each cancer, the geodesic distance (the number of nodes on the shorted path) between the genes with allele-specific interactions was on average shorter than between nodes selected randomly on the network (Fig. \ref{fig:results_integration_main}c).
@@ -324,7 +321,7 @@ Presented here is a relatively minute analysis of the complex integration of com
 Whole genome sequencing (WGS), whole exome sequencing (WXS), and targeted gene panel sequencing data were collected of colorectal adenocarcinoma (COAD), lung adenocarcinoma (LUAD), multiple myeloma (MM), and pancreatic adenocarcinoma (PAAD).
 WXS and WGS data were downloaded from cBioportal \cite{Gao2013, Cerami2012}, which included relevant projects from The Cancer Genome Atlas (TCGA) \cite{CancerGenomeAtlasNetwork2012, CancerGenomeAtlasResearchNetwork2014, CancerGenomeAtlasResearchNetwork.Electronicaddress:andrew_aguirredfci.harvard.edu2017} and other smaller studies. 
 Additional data were acquired from the International Cancer Genome Consortium (ICGC) for pancreatic cancer \cite{Scarlett2011} and colorectal cancer. 
-MM WXS data were gathered from the Multiple Myeloma Research Foundation(MMRF)-CoMMpass online repository \cite{Walker2019AAnalysis.}.
+MM WXS data were gathered from the Multiple Myeloma Research Foundation (MMRF)-CoMMpass online repository \cite{Walker2019AAnalysis.}.
 Panel data for multiple cancers were retrieved from AACR Project Genomics Evidence Neoplasia Information Exchange (GENIE) \cite{AACRProjectGENIEConsortium2017AACRConsortium.}.
 GENIE data are an aggregation of several different panels ranging from 30 to 600 genes.
 \KRAS{} was included in all of the libraries. 
@@ -348,12 +345,12 @@ Supplementary Data indicates the number of samples per tissue in the GTEx and tu
 A gene was considered “expressed” in a tissue if it met at least one of the following criteria: 1) a median expression level of at least 1 TPM across all samples of the tissue in GTEx, 2) indicated as expressed at at least 1 TPM in the HPA data set for the tissue, 3) expressed with a median level of 1 batch-normalized raw counts (using RSEM) in the corresponding tumor RNA-sequencing data.
 
 
-% \subsection*{Predicting effect of mutations on gene or protein function}
+\subsection*{Predicting effect of mutations on gene or protein function}
 
-% The effect of a mutation on the function of a gene or encoded protein was predicted using SIFT \cite{Kumar2009, Vaser2016}, PolyPhen2 \cite{Adzhubei2010}, LRT \cite{Chun2009IdentificationGenomes.}, MutationTaster \cite{Schwarz2014MutationTaster2:Age.}, MutationAssessor \cite{Reva2007DeterminantsOptimization., Reva2011}, FATHMM \cite{Shihab2013}, MetaSVM \cite{Dong2015ComparisonStudies.}, and MetaLR \cite{Dong2015ComparisonStudies.}.
-% Known clinically significant mutations were acquired from ClinVar \cite{Landrum2018ClinVar:Evidence.}.
-% Annotations were applied using ANNOVAR \cite{Wang2010ANNOVAR:Data.}.
-% A mutation was marked as deleterious if it was predicted as such by at least one of the prediction methods or declared as such by CinVar.
+The effect of a mutation on the function of a gene or encoded protein was predicted using SIFT \cite{Kumar2009, Vaser2016}, PolyPhen2 \cite{Adzhubei2010}, LRT \cite{Chun2009IdentificationGenomes.}, MutationTaster \cite{Schwarz2014MutationTaster2:Age.}, MutationAssessor \cite{Reva2007DeterminantsOptimization., Reva2011}, FATHMM \cite{Shihab2013}, MetaSVM \cite{Dong2015ComparisonStudies.}, and MetaLR \cite{Dong2015ComparisonStudies.}.
+Known clinically significant mutations were acquired from ClinVar \cite{Landrum2018ClinVar:Evidence.}.
+Annotations were applied using ANNOVAR \cite{Wang2010ANNOVAR:Data.}.
+A mutation was marked as deleterious if it was predicted as such by at least one of the prediction methods or declared as such by CinVar.
 
 
 \subsection*{Protein-Protein Interaction Network (PPIN)}
@@ -562,8 +559,8 @@ A competing interests statement is required for all papers accepted by and publi
 \includegraphics[height=100mm]{figures/Figure_05.jpeg}
 \caption{
     \textbf{Integration of comutation and genetic dependency results.}
-    \textbf{a.}
-    \textbf{b.} 
+    \textbf{a.} A table of the genes found to comutate and demonstrate differential dependency with the same \KRAS{} allele. The "Dependency comparison" indicates the comparison of dependency scores found to be statistically significant; the "Adj. p-value" is the Benjamini-Hochberg-adjusted p-value for the comparison. The "Comutation interaction" indicates if the comutation interaction was a reduced or increased rate of comutation; the "P-value" is the p-value for this interaction.
+    \textbf{b.} The mutations along STK11 separated by those in \KRAS{} G12C-mutant samples (top) and the rest of the samples (bottom). The color of the vertical bars indicates the type of mutation, and a red dot at the top indicates if missense mutations at the location are predicted or known to be functionally damaging. The domains of STK11 are shown between the bar-plots. The magenta portion of the N-terminus is the nuclear localization signal.
     \textbf{c.} The connectivity of the proteins encoded by the genes found to comutate or demonstrate differential dependence with each \KRAS{} allele on the PPIN. The right-most column represents the null distribution of the connectivity of randomly selected pairs of nodes. The bars indicate the distribution of the geodesic distances (shortest path length) between nodes in the PPIN.
     \textbf{d.} The largest connected subnetwork of the PPIN of genes found to comutate or demonstrate differential dependence with each \KRAS{} allele was extracted. The network shown is the overlap of the subnetworks for each \KRAS{} allele in COAD. Nodes present in multiple subnetworks are colored shades of brown, save for prominent oncogenes and tumor suppressors in COAD, shown in red ("special"). The rest of the nodes are colored by which allele they are associated with. The edges share the color of the nodes they connect if the nodes are the same color, otherwise are grey.
 }
