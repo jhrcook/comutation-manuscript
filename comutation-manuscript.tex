@@ -248,7 +248,7 @@ Also, isocitrate dehydrogenase (\emph{IDH1}), a component of the citric acid cyc
 Interestingly, a negative regulator of the MAPK pathway \cite{Goto2016WDR26Pathway.}, \emph{WDR26}, was found to be almost essential for the \KRAS{} G12D cell lines though resulted in more moderate growth reduction when knocked out in the other cell lines.
 Increased expression of \emph{WDR26} has previously been implicated in driving breast cancer by serving as a scaffolding protein in the PI3K-Akt pathway \cite{Ye2016UpregulatedInvasion.}, though there does not appear to be a link between RNA levels and genetic dependency in the COAD cell lines (Supplementary Fig. \ref{sfig:coad_dep_wdr26}a).
 
-The same analysis was conducted on the LUAD cell lines with WT \KRAS{} or \KRAS{} G12C, G12V, or G13D mutations.
+The same analysis was conducted on the LUAD cell lines with WT \KRAS{} or \KRAS{} G12C, or G12V mutations.
 The gene set enrichment analysis of the dependency scores highlighted a reduced dependency on the genes in the Erk pathway (Fig. \ref{fig:coadluad-dependency-main}f) and an increased dependency for genes in the Bard1 pathway (Fig. \ref{fig:coadluad-dependency-main}g) for G12C cell lines.
 The former enrichment suggests that these cells would react less severely to inhibition of the MAPK pathway, though were more susceptible to inhibitors of DNA-damage repair mechanisms.
 A gene-by-gene analysis revealed allele-specific genetic dependencies in 583 genes which were further clustered into four groups (Fig. \ref{fig:coadluad-dependency-main}h).
@@ -420,7 +420,7 @@ Only genes with a mutational frequency of at least 2 \% and 10 mutually exclusiv
 
 \subsection*{Functional enrichment}
 The R interface to the online \emph{Enrichr} tool was used to identify enriched gene sets in the comutation networks and allele-specific synthetic lethal clusters \cite{Chen2013, Kuleshov2016Enrichr:Update., R-enrichR}.
-Genesets from the following sources provided by Enrichr were used: BioCarta (2016), GO Biological Process (2018), KEA (2015), KEGG (2019), Panther (2016), PPI Hub Proteins, Reactome (2016), Transcription Factor PPIs, and WikiPathways (2019).
+Gene sets from the following sources provided by Enrichr were used: BioCarta (2016), GO Biological Process (2018), KEA (2015), KEGG (2019), Panther (2016), PPI Hub Proteins, Reactome (2016), Transcription Factor PPIs, and WikiPathways (2019).
 
 
 \subsection*{Survival analysis}
@@ -430,23 +430,25 @@ When the patients were stratified into one of four groups depending on the \KRAS
 The 'survival' package in R was used for computing these statistics \cite{survival-package}.
 
 
-\subsection*{Gene Set Enrichment Analysis (GSEA) of genetic dependency}
-The GSEA tool (version 3.0) was acquired from the online GSEA portal (https://www.gsea-msigdb.org/gsea/index.jsp).
-Gene sets were acquired through MSigDB (https://www.gsea-msigdb.org/gsea/msigdb/index.jsp).
-The analysis used the Hallmark and C2 gene sets and permuted the genes 10,000 times for the statistical test.
-All other settings were set to default values.
-
-
 \subsection*{Modeling of cancer cell line genetic dependencies}
 Genetic dependency data was downloaded from the online DepMap portal (https://depmap.org/portal/download/) (2019 quarter 3).
-Cell lines with multiple reported activating \KRAS{} mutations or an activating mutation in \emph{BRAF}, \emph{EGFR}, or \emph{NRAS} were removed from the data set.
+Cell lines with multiple activating \KRAS{} mutations or an activating mutation in \emph{BRAF}, \emph{EGFR}, or \emph{NRAS} were removed from the data set.
 For each cancer, only cell lines with a \KRAS{} allele found in at least 3 cell lines were included in the study.
+The only exception to this was the removal of the LUAD cell lines with \KRAS{} G13D mutations because this allele is exceedingly rare in LUAD.
+This is supported by the fact that knocking out \KRAS{} in these cell lines had an equivalent effect than when the gene was knocked out in \KRAS{} WT cell lines: the average ($\pm$ std. dev.) dependency score for G13D LUAD cell lines was -0.55 $\pm$ 0.26, compared to that of \KRAS{} WT cell lines: -0.55 $\pm$ 0.28. The rest of the \KRAS{} mutant samples demonstrated a far greater dependency on \KRAS{}: -1.26 $\pm$ 0.33.
 The genetic dependency score is often linked to the expression of the gene.
 Thus, if the RNA expression of the gene could explain the dependency score (linear model, p-value < 0.01), the gene was not tested for \KRAS{} allele-specific genetic dependency.
 Of the remaining genes, an ANOVA was used to measure if the mean dependency scores for the cell lines grouped by \KRAS{} allele were different.
 These genes are declared as deferentially dependent.
 For these genes, pairwise Student's t-tests were used to compare the dependency scores of each group.
 These contrasts were used to decide with which \KRAS{} allele(s) a gene shows differential dependency (Benjamini-Hochberg FDR adjusted p-value < 0.05).
+
+
+\subsection*{Gene Set Enrichment Analysis (GSEA) of genetic dependency}
+The GSEA tool (version 3.0) was acquired from the online GSEA portal (https://www.gsea-msigdb.org/gsea/index.jsp).
+Gene sets were acquired through MSigDB (https://www.gsea-msigdb.org/gsea/msigdb/index.jsp).
+The analysis used the Hallmark and C2 gene sets and permuted the genes 10,000 times for the statistical test.
+All other settings were set to default values.
 
 
 \subsection*{Code availability}
