@@ -20,5 +20,5 @@ jobs:
           args: "--standalone comutation-manuscript.tex --output=output/comutation-manuscript.docx"
       - uses: actions/upload-artifact@master
         with:
-          name: output
+          name: manuscript
           path: output
