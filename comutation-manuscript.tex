@@ -246,7 +246,7 @@ Cluster 2 was rather heterogeneous.
 One notable gene with allele-specific associations was the kinetochore-associated protein (\emph{KNTC1}) which demonstrated moderate to strong lethal effects when knocked out in almost every cell line except for those with a \KRAS{} G12V allele.
 Also, isocitrate dehydrogenase (\emph{IDH1}), a component of the citric acid cycle in cellular carbon metabolism \cite{Geisbrecht1999TheDehydrogenase.}, was found to have a negligible effect on growth reduction when knocked-out in \KRAS{} G12D cell lines, an intermediate effect in G12V cell lines, and the strongest effect in G13D and WT cell lines.
 Interestingly, a negative regulator of the MAPK pathway \cite{Goto2016WDR26Pathway.}, \emph{WDR26}, was found to be almost essential for the \KRAS{} G12D cell lines though resulted in more moderate growth reduction when knocked out in the other cell lines.
-Increased expression of \emph{WDR26} has previously been implicated in driving breast cancer by serving as a scaffolding protein in the PI3K-Akt pathway \cite{Ye2016UpregulatedInvasion.}, though there does not appear to be a link between RNA levels and genetic dependency in the COAD cell lines (Supplementary Fig. \ref{sfig:coad_dep_wdr26}a).
+Increased expression of \emph{WDR26} has previously been implicated in driving breast cancer by serving as a scaffolding protein in the PI3K-Akt pathway \cite{Ye2016UpregulatedInvasion.}, though there does not appear to be a link between RNA levels and genetic dependency in the COAD cell lines (Supplementary Fig. \ref{sfig:coad-dep-wdr26}a).
 
 The same analysis was conducted on the LUAD cell lines with WT \KRAS{} or \KRAS{} G12C or G12V mutations.
 The gene set enrichment analysis of the dependency scores highlighted a reduced dependency on the genes in the p53 hypoxia pathway (Fig. \ref{fig:coadluad-dependency-main}f) and an increased dependency for genes in the Bard1 pathway (Fig. \ref{fig:coadluad-dependency-main}g) for G12C cell lines.
@@ -275,21 +275,21 @@ These data suggest a reduced dependency on the activation of c-Jun via JNK signa
 \subsection*{An integrated analysis of allele-specific comutation and genetic dependencies.}
 
 Integrating the results from the allele-specific comutation with those from the dependency analyses provided further insight into the distinctions between the \KRAS{} alleles.
-Surprisingly, there was little overlap between the genes found to comutate with an allele and those with differential dependency - the only overlap was found with in the genes resulting from analysis of \KRAS{} G12C in LUAD (Fig. \ref{fig:results_integration_main}a).
+Surprisingly, there was little overlap between the genes found to comutate with an allele and those with differential dependency - the only overlap was found with in the genes resulting from analysis of \KRAS{} G12C in LUAD (Fig. \ref{fig:results-integration-main}a).
 One of these genes was \emph{STK11}, the gene encoding STK11 (LKB1), a tumor suppressor that controls the activity of AMP activated protein kinases (AMPK) to regulate cellular processes including metabolism, apoptosis, and the DNA-damage response \cite{Momcilovic2015TargetingVulnerabilities., Korsse2013TargetingCancer.}.
 The high rate of comutation between \KRAS{} and \emph{STK11} has been documented previously, though not specifically with \KRAS{} G12C.
 Previous studies have indicated unique biological properties of LUAD tumors with mutations in both \KRAS{} and \emph{STK11} including distinct expression profiles \cite{Skoulidis2015Co-occurringVulnerabilities.}, worse clinical prognosis \cite{LaFleur2019MutationSTK11, Bange2019ImpactCancer.}, and reduced response to immunotherapy \cite{Skoulidis2018STK11/LKB1Adenocarcinoma.}.
 The results presented here may suggest a unique synergism between the G12C mutant and \emph{STK11} loss-of-function mutations.
 Further analysis of the comutation and dependency networks may provide deeper insight into this clinically significant association.
-Importantly, due to the strong influence of smoking-induced mutations to the prevalence of \KRAS{} G12C in LUAD, there was no apparent nor statistically detectable difference in the types or locations of \emph{STK11} mutations between G12C-mutant samples and the rest of the LUAD tumor samples (Fig. \ref{fig:results_integration_main}b).
+Importantly, due to the strong influence of smoking-induced mutations to the prevalence of \KRAS{} G12C in LUAD, there was no apparent nor statistically detectable difference in the types or locations of \emph{STK11} mutations between G12C-mutant samples and the rest of the LUAD tumor samples (Fig. \ref{fig:results-integration-main}b).
 Thus, it is unlikely that the genetic associations found here were driven by latent mutational processes, but instead they were determined by the selective advantage that concomitant \KRAS{} G12C and \emph{STK11} mutations have in a nascent tumor.
 
 To further mine the genetic interactions found for each \KRAS{} allele, functional information was incorporated by annotating the nodes of the PPIN with the associations.
-For each allele in each cancer, the geodesic distance (the number of nodes on the shorted path) between the genes with allele-specific interactions was on average shorter than between nodes selected randomly on the network (Fig. \ref{fig:results_integration_main}c).
+For each allele in each cancer, the geodesic distance (the number of nodes on the shorted path) between the genes with allele-specific interactions was on average shorter than between nodes selected randomly on the network (Fig. \ref{fig:results-integration-main}c).
 This indicated that, instead of being randomly distributed throughout the PPIN, there were functional patterns in the identified genes.
 
 To inspect these cellular functions, subnetworks of the PPIN of the proteins with allele-specific interactions were extracted and compared.
-For COAD, the largest components of each allele's subnetwork were centered around \kras{} and the other oncogenes most frequently mutated in the cancer: p53, BRaf, PI3K-$\alpha$, Apc, and NRas (Fig. \ref{fig:results_integration_main}d highlighted in red).
+For COAD, the largest components of each allele's subnetwork were centered around \kras{} and the other oncogenes most frequently mutated in the cancer: p53, BRaf, PI3K-$\alpha$, Apc, and NRas (Fig. \ref{fig:results-integration-main}d highlighted in red).
 Surrounding these nodes were others that had either comutation or dependency interactions with multiple \KRAS{} alleles (in brown).
 Finally, there were communities of nodes with associations to only a single \KRAS{} allele, some representing distinct biological functions.
 For instance, the G12D allele was again associated with cell adhesion and motility via the module consisting of Myosin-6 and 9 (MYH6/9) two components of lamanin (LAMA1/2), and neural cell adhesion molecule L1 (L1CAM) signaled to via $\alpha$6 integrin (ITGA6), PI3K-$\alpha$ (PIK3CA), and PIP5K1-$\alpha$ (PIP5KA).
@@ -609,7 +609,7 @@ A competing interests statement is required for all papers accepted by and publi
     \textbf{c.} The connectivity of the proteins encoded by the genes found to comutate or demonstrate differential dependence with each \KRAS{} allele on the PPIN. The right-most column represents the null distribution of the connectivity of randomly selected pairs of nodes. The bars indicate the distribution of the geodesic distances (shortest path length) between nodes in the PPIN.
     \textbf{d.} The largest connected subnetwork of the PPIN of genes found to comutate or demonstrate differential dependence with each \KRAS{} allele was extracted. The network shown is the overlap of the subnetworks for each \KRAS{} allele in COAD. Nodes present in multiple subnetworks are colored shades of brown, save for prominent oncogenes and tumor suppressors in COAD, shown in red ("special"). The rest of the nodes are colored by which allele they are associated with. The edges share the color of the nodes they connect if the nodes are the same color, otherwise are grey.
 }
-\label{fig:results_integration_main}
+\label{fig:results-integration-main}
 \end{figure}
 
 
@@ -692,7 +692,7 @@ A competing interests statement is required for all papers accepted by and publi
     \textbf{Association between \emph{WDR26} RNA expression and dependency score in COAD cell lines.}
     \textbf{a.} The dependency score of knocking out \emph{WDR26} against the gene's RNA expression (log-transformed TPM with a pseudocount of 1). Each point represents a COAD cell line, colored by the \KRAS{} allele. The size of the point represents the copy number of \emph{WDR26} where "norm" is 2 copies and "amp" is amplified. The dashed line represents the line-of-best fit. The equation, p-value, and $R^2$ for the line are shown in the top-right.
 }
-\label{sfig:coad_dep_wdr26}
+\label{sfig:coad-dep-wdr26}
 \end{figure}
 
 
