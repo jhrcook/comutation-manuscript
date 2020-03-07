@@ -304,23 +304,29 @@ This subnetwork succinctly demonstrated the overall pattern observed in the anal
 % Intro: a brief statement about the main conclusions of the paper.
 This study was a genetic analysis of the common oncogenic \KRAS{} alleles in COAD, LUAD, MM, and PAAD.
 Measuring the levels of mutational signatures revealed that the cancer-specific distribution of \KRAS{} mutations was not determined by the active mutational processes in the tumor samples.
-This result suggested that the biological properties of the \KRAS{} alleles, within the context of the tissue of origin and tumor microenvironment, was an important factor in the positive selection of the \KRAS{} mutations during tumor evolution.
-Thus, to investigate these properties, we conducted tests to determine patterns of comutating genes and dependency for each \KRAS{} allele.
-The former identified genes that comutated with specific \KRAS{} alleles at an unexpectedly high right, suggesting they were co-alterations that cooperate with the \KRAS{} allele to promote positive selection in the tumor.
-On the other hand, some genes comutated with a \KRAS{} allele less frequently than expected by random chance, suggesting they are either functionally redundant or inhibitory.
-Finally, functional interactions, often distal to \kras{} in the cellular signaling network, were identified between specific \KRAS{} alleles and cellular processes and individual genes.
+This result suggested that the biological properties of the \KRAS{} alleles, within the context of the tissue of origin and tumor microenvironment, was an important factor in the positive selection of the \KRAS{} mutations over the evolution of a tumor.
+To investigate these properties, we conducted tests to determine patterns of comutating genes and genetic dependency for each \KRAS{} allele.
+The former identified genes that comutated with specific \KRAS{} alleles at an unexpectedly high right, suggesting they were alterations that cooperated with the \KRAS{} allele to promote positive selection in the tumor.
+On the other hand, some genes comutated with a \KRAS{} allele less frequently than expected by random chance, suggesting they are either functionally redundant or introduced an inhibitory effect on the tumor's progression.
+Finally, functional interactions were identified between specific \KRAS{} alleles and cellular processes and individual genes.
 Together, these findings provide further support to the mounting evidence that the various oncogenic \KRAS{} mutations are not biologically redundant, but instead have distinct properties relevant to the treatment of \KRAS{} mutant tumors.
 
 % Caveats of how we used the mutational signatures to predict KRAS frequency. 
 % It assumes the mutational signatures completely describe the active mutational signatures and are good estimates of their effects. This is supported by how they were extracted from SBS and KRAS is mutated via single base substitutions. 
 % However, there are known limitations such as artifacts introduced by the sample collection, storing, and sequencing process as well as artifacts from NMF.
-Pantsar \emph{et al.} \cite{Pantsar2018} used the transition:transversion mutation ratio to demonstrate that the distribution of codon 12 \KRAS{} mutations were not random.
+In 2018, Pantsar \emph{et al.} used the transition:transversion mutation ratio to demonstrate that the distribution of codon 12 \KRAS{} mutations were not random \cite{Pantsar2018}.
 Instead their results corroborated those of the present study: there are some trends between the observed and predicted allele frequencies, but there are many notable outliers.
 For example, they predicted an enrichment for G12R mutations in PAAD compared to the other cancers, though their predicted frequency was not very accurate (predicted frequency of 1.8 \% compared to the observed frequency of 14.4 \%).
-This study employed mutational signatures to estimate the frequency of \KRAS{} mutations under the null hypothesis that the \KRAS{} alleles were functionally equivalent, given that the tumor would aquire a mutation.
-
+The current study employed mutational signatures to estimate the frequency of \KRAS{} mutations under the null hypothesis that the \KRAS{} alleles were functionally equivalent and demonstrated that even this more nuanced model of random distribution of mutations was unable to explain the distribution of \KRAS{} alleles across the four cancers studied.
+While this use of mutational signatures is not without precedent \cite{Dietlein2020IdentificationContext., Bergstrom2020GeneratingSigProfilerSimulator}, it has limitations, primarily in the assumption that the mutational signatures can completely describe the mutagenic forces acting on the genome.
+This constraint was mitigated by the fact that the signatures were extracted from single base substitutions, just like the ones that caused the \KRAS{} allele.
+Still, there are known artifacts from the sample-processing procedure and NMF that prevent the mutational signatures from perfectly modeling the mutational processes in a tumor \cite{Alexandrov2015, Gawad2016, Alexandrov2020TheCancer.}.
 
 % Discuss limitations: 1) only used SBS and indels for comutation, but CNA and structural variants could provide additional information, 2) we did not distinguish between damaging and benign mutations because the predictive tools are not perfect, 3) only a few cell lines available for the dependency analysis
+The comutation analysis for this study was limited to relatively small somatic mutations while copy number alteration (CNA) and complex structural variants, such as those caused by chromothripsis, were not included.
+This was decided due to the fact that determining the copy number of genes and effects of catastrophic chromosomal events is still a current area of study and is primarily limited to WGS data.
+Thus, it is not clear that including these data would add clarification to this study or the additional complexity would make the results more difficult to resolve.
+For the same reason, the comutation analysis did not include the prediction of a mutation's impact on the encoded RNA or protein; while continually improving, the current tools are known to be imperfect with high levels of false positives and negatives, often contradicting each other \cite{Dong2015ComparisonStudies., Chun2009IdentificationGenomes., Schwarz2010MutationTasterAlterations., Thusberg2011PerformanceVariants., Wei2011IncorporatingStudy., Flanagan2010UsingMutations.}.
 
 
 % Follow-up for dependency analysis.
@@ -361,10 +367,10 @@ This study employed mutational signatures to estimate the frequency of \KRAS{} m
 
 \subsection*{Cancer sample data sources and acquisition}
 
-Whole genome sequencing (WGS), whole exome sequencing (WXS), and targeted gene panel sequencing data were collected of colorectal adenocarcinoma (COAD), lung adenocarcinoma (LUAD), multiple myeloma (MM), and pancreatic adenocarcinoma (PAAD).
-WXS and WGS data were downloaded from cBioportal \cite{Gao2013, Cerami2012}, which included relevant projects from The Cancer Genome Atlas (TCGA) \cite{CancerGenomeAtlasNetwork2012, CancerGenomeAtlasResearchNetwork2014, CancerGenomeAtlasResearchNetwork.Electronicaddress:andrew_aguirredfci.harvard.edu2017} and other smaller studies. 
+Whole genome sequencing (WGS), whole exome sequencing (WES), and targeted gene panel sequencing data were collected of colorectal adenocarcinoma (COAD), lung adenocarcinoma (LUAD), multiple myeloma (MM), and pancreatic adenocarcinoma (PAAD).
+WES and WGS data were downloaded from cBioportal \cite{Gao2013, Cerami2012}, which included relevant projects from The Cancer Genome Atlas (TCGA) \cite{CancerGenomeAtlasNetwork2012, CancerGenomeAtlasResearchNetwork2014, CancerGenomeAtlasResearchNetwork.Electronicaddress:andrew_aguirredfci.harvard.edu2017} and other smaller studies. 
 Additional data were acquired from the International Cancer Genome Consortium (ICGC) for pancreatic cancer \cite{Scarlett2011} and colorectal cancer. 
-MM WXS data were gathered from the Multiple Myeloma Research Foundation (MMRF)-CoMMpass online repository \cite{Walker2019AAnalysis.}.
+MM WES data were gathered from the Multiple Myeloma Research Foundation (MMRF)-CoMMpass online repository \cite{Walker2019AAnalysis.}.
 Panel data for multiple cancers were retrieved from AACR Project Genomics Evidence Neoplasia Information Exchange (GENIE) \cite{AACRProjectGENIEConsortium2017AACRConsortium.}.
 GENIE data are an aggregation of several different panels ranging from 30 to 600 genes.
 \KRAS{} was included in all of the libraries. 
@@ -374,8 +380,8 @@ A detailed list of all cancer studies can be found in Supplementary Data.
 \subsection*{Hypermutated sample cutoff}
 
 Some of the COAD samples had 5 to 10-times more mutations than average, often due to microsatellite instability (MSI). 
-A Gaussian mixed model was used to find the optimal cutoff based on available WGS and WXS data. 
-The top 17 \% and 21 \% of samples were considered hypermutants in WGS and WXS, respectively.
+A Gaussian mixed model was used to find the optimal cutoff based on available WGS and WES data. 
+The top 17 \% and 21 \% of samples were considered hypermutants in WGS and WES, respectively.
 The same 17 \% cutoff was applied to the gene panel data. 
 Hypermutants were not excluded from the identification of mutational signatures because signature 6 (marked as "MSI") is caused by MSI.
 
@@ -411,13 +417,13 @@ Mutational signatures were discovered separately for each tumor type and the opt
 
 The spectrum of the signatures discovered by NMF were matched to the COSMIC catalog \cite{Tate2019}.
 For the signatures for which none of the 30 signatures in COSMIC catalog was found to be compatible, we referred to more recent studies in literature and expanded upon the COSMIC catalog. 
-In particular, there were multiple subtypes of signature 7 (reported previously in \cite{Hayward2017Whole-genomeSubtypes., Alexandrov2018TheCancer}.
+In particular, there were multiple subtypes of signature 7 (reported previously in \cite{Hayward2017Whole-genomeSubtypes., Alexandrov2020TheCancer.}.
 Further, the analysis revealed a signature that was predominantly C>A but not a subtype of signature 7.
-This signature 38 was previously reported to be caused by indirect UV exposure \cite{Alexandrov2018TheCancer}. 
-Three versions of the signature associated to POLE mutations, signature 10, were discovered (previously reported in \cite{Alexandrov2018TheCancer}.
+This signature 38 was previously reported to be caused by indirect UV exposure \cite{Alexandrov2020TheCancer.}. 
+Three versions of the signature associated to POLE mutations, signature 10, were discovered (previously reported in \cite{Alexandrov2020TheCancer.}.
 These three POLE signatures differed in the C>A, C>T or C>G parts of the mutational spectrum. 
-In LUAD, a signature with mutations of type C[C>A]N and T[C>A]N attributable to 8-oxo-guanine \cite{Alexandrov2018TheCancer} was found. 
-One signature that we discovered COAD did not have a good match in any specific signature in literature, although it resembled a signature previously reported to be caused by SBSA \cite{Lee-Six2019} and signatures 34 and 41 in reference \cite{Alexandrov2018TheCancer}. 
+In LUAD, a signature with mutations of type C[C>A]N and T[C>A]N attributable to 8-oxo-guanine \cite{Alexandrov2020TheCancer.} was found. 
+One signature that we discovered COAD did not have a good match in any specific signature in literature, although it resembled a signature previously reported to be caused by SBSA \cite{Lee-Six2019} and signatures 34 and 41 in reference \cite{Alexandrov2020TheCancer.}. 
 This signature was not adjusted to resemble those previously reported because the results from different studies were not in strong agreement.
 This signature, referred to as "N," did not contribute to \KRAS{} mutations.
 Three of the signatures discovered via NMF were likely to be artifacts \cite{Costello2013DiscoveryPreparation.} and were removed from downstream analysis. 
@@ -457,7 +463,7 @@ A one-tailed Fisher’s exact test of independence was used to identify increase
 The Row-Column Test for Exclusivity (RC-test) was used to identify reduced frequency of comutation between \KRAS{} alleles and other mutated genes \cite{Leiserson2016}. 
 This is a permutation-based test that finds the probability of observing the actual number of mutually exclusive events given than the number of time the genes is mutated in all samples is fixed and the number of mutations in each sample is fixed.
 Thus, the test conditions on both the frequency of mutation of the gene and the mutational burden of the samples.
-For this reason, only WGS and WXS data could be used for this analysis.
+For this reason, only WGS and WES data could be used for this analysis.
 Only genes with a mutational frequency of at least 2 \% and 10 mutually exclusive events were considered.
 
 
