@@ -115,8 +115,8 @@ Integrating these two forms of genetic interactions highlighted the distinct eff
 \subsection*{\KRAS{} alleles are non-uniformly distributed across cancers.}
 
 This study utilized publicly available sequencing data of COAD, LUAD, MM, and PAAD tumors.
-There were whole exome or genome data available for 1,536 COAD, 891 LUAD, 1,201 MM, and 1,395 PAAD samples.
-In addition, there were targeted-sequencing data available for 3,329 COAD, 4,160 LUAD, 61 MM, and 919 PAAD sample.
+There were whole exome or genome data available for 1,536 COAD (1,280 after removing hypermutated samples), 891 LUAD, 1,201 MM, and 1,395 PAAD samples.
+In addition, there were targeted-sequencing data available for 3,329 COAD (2,865 after removing hypermutated samples), 4,160 LUAD, 61 MM, and 919 PAAD sample.
 More information on the sequencing data is available in the Methods and Supplemental Data.
 
 In the data collected for this study, \KRAS{} was most frequently mutated at four “hotspots.” 
@@ -296,22 +296,65 @@ For instance, the G12D allele was again associated with cell adhesion and motili
 This subnetwork succinctly demonstrated the overall pattern observed in the analysis of the \KRAS{} allele comutation and genetic dependency interactions: the strongest interactions were common within a cancer type, though each allele had distinguishing features pointing to distinct biological properties of the mutation.
 
 
+
 \section*{Discussion (in progress)}
 
-% Limitations of study:
-%   - data types: only used mutation data for comutation --> CNA, SV, non-coding mutations
-%   - final integration study limited by cell lines in DepMap
+% DISCUSSION OUTLINE
 
-The comutation and genetic dependency analyses each revealed different properties of the \KRAS{} alleles.
-The former identified co-alterations that possibly adjust the behavior of the tumor in coordination with the specific biology of the \KRAS{} allele, while the latter demonstrated the functional requirements that differed by each allele.
+% Intro: a brief statement about the main conclusions of the paper.
+This study was a genetic analysis of the common oncogenic \KRAS{} alleles in COAD, LUAD, MM, and PAAD.
+Measuring the levels of mutational signatures revealed that the cancer-specific distribution of \KRAS{} mutations was not determined by the active mutational processes in the tumor samples.
+This result suggested that the biological properties of the \KRAS{} alleles, within the context of the tissue of origin and tumor microenvironment, was an important factor in the positive selection of the \KRAS{} mutations during tumor evolution.
+Thus, to investigate these properties, we conducted tests to determine patterns of comutating genes and dependency for each \KRAS{} allele.
+The former identified genes that comutated with specific \KRAS{} alleles at an unexpectedly high right, suggesting they were co-alterations that cooperate with the \KRAS{} allele to promote positive selection in the tumor.
+On the other hand, some genes comutated with a \KRAS{} allele less frequently than expected by random chance, suggesting they are either functionally redundant or inhibitory.
+Finally, functional interactions, often distal to \kras{} in the cellular signaling network, were identified between specific \KRAS{} alleles and cellular processes and individual genes.
+Together, these findings provide further support to the mounting evidence that the various oncogenic \KRAS{} mutations are not biologically redundant, but instead have distinct properties relevant to the treatment of \KRAS{} mutant tumors.
 
-% see PMID: 26069186
-Previously, \KRAS{}-mutant LUAD were demonstrated to separate into 3 groups using RNA expression data.
-These groups were found to not associate with specific \KRAS{} alleles, but instead with mutations to \emph{STK11}, mutations to \emph{TP53}, or depletion of \emph{CDKN2A} and \emph{CDKN2B}.
-The results presented here, an increased comutation frequency between \KRAS{} G12C and \emph{STK11} and an increased dependency on \emph{STK11} in \KRAS{} G12C-mutant LUAD cell lines, suggest that the G12C allele does have an association with ...
+% Caveats of how we used the mutational signatures to predict KRAS frequency. 
+% It assumes the mutational signatures completely describe the active mutational signatures and are good estimates of their effects. This is supported by how they were extracted from SBS and KRAS is mutated via single base substitutions. 
+% However, there are known limitations such as artifacts introduced by the sample collection, storing, and sequencing process as well as artifacts from NMF.
+Pantsar \emph{et al.} \cite{Pantsar2018} used the transition:transversion mutation ratio to demonstrate that the distribution of codon 12 \KRAS{} mutations were not random.
+Instead their results corroborated those of the present study: there are some trends between the observed and predicted allele frequencies, but there are many notable outliers.
+For example, they predicted an enrichment for G12R mutations in PAAD compared to the other cancers, though their predicted frequency was not very accurate (predicted frequency of 1.8 \% compared to the observed frequency of 14.4 \%).
+This study employed mutational signatures to estimate the frequency of \KRAS{} mutations under the null hypothesis that the \KRAS{} alleles were functionally equivalent, given that the tumor would aquire a mutation.
 
 
-Presented here is a relatively minute analysis of the complex integration of comutation, genetic dependency, and signaling/functional data, and further analysis of these data is warranted to extract additional findings.
+% Discuss limitations: 1) only used SBS and indels for comutation, but CNA and structural variants could provide additional information, 2) we did not distinguish between damaging and benign mutations because the predictive tools are not perfect, 3) only a few cell lines available for the dependency analysis
+
+
+% Follow-up for dependency analysis.
+% Validate in vitro in the original and previously untested cell lines.
+% Hope it can help guide precision medicine to account for the specific KRAS mutation in a patient.
+
+% The analysis of the results from integrating the comutation and dependency data only scratched the surface.
+% "Presented here is a relatively minute analysis of the complex integration of comutation, genetic dependency, and signaling/functional data, and further analysis of these data is warranted to extract additional findings."
+
+% We specifically analyzed the results of increased comutation and genetic dependency between KRAS G12C and STK11.
+% Discuss this in light of the known interactions between KRAS and STK11 mutations.
+% Discuss this in light of the LUAD sub-groups found in PMID 26069186.
+% % PMID: 26069186
+% Previously, \KRAS{}-mutant LUAD were demonstrated to separate into 3 groups using RNA expression data.
+% These groups were found to not associate with specific \KRAS{} alleles, but instead with mutations to \emph{STK11}, mutations to \emph{TP53}, or depletion of \emph{CDKN2A} and \emph{CDKN2B}.
+% The results presented here, an increased comutation frequency between \KRAS{} G12C and \emph{STK11} and an increased dependency on \emph{STK11} in \KRAS{} G12C-mutant LUAD cell lines, suggest that the G12C allele does have an association with ...
+
+% Bridge: … though this is just one instance of a greater question, how do slight variations to mutant KRAS result in comutation and dependency interactions in distal parts of the cellular interactome.
+
+% KRAS alleles are known to have differential binding preferences, dimerization kinetics, and cell-membrane interactions.
+% These can alter the local signalling network and prime the local network for additional comutations (for the actual section, first discuss the comutation and then describe that a similar process would work for dependency).
+% These have additional effects that continue to permeate throughout the network, resulting in interactions found further away and in other cellular processes.
+% "comutation chain-reaction".
+
+% Example: KRAS G12C reduced response to cisplatin in LUAD.
+% % PMIDs: 26353932, 21169473 
+% From LUAD GSEA of genetic dependency: "However, the latter suggests they are more susceptible to inhibitors of postreplication DNA-damage repair mechanisms because the enrichment was driven by many components of the Fanconi anemia pathway responsible for resolving DNA interstrand crosslink \cite{Ceccaldi2016TheFunctions.}."
+% This supports the finding that G12C is less responsive to cisplatin chemo.
+% They did not find an association between Fanconi anemia pathway, but they didn't directly test effects of inhibiting it, just looking for RNA and protein level associations. % PMID: 26353932
+
+% Address alternative hypothesis: these additional comutation events could be the features determining the differential survival outcomes we currently ascribe to KRAS mutation.
+
+% Call to action.
+
 
 
 \section*{Methods}
@@ -536,7 +579,7 @@ A competing interests statement is required for all papers accepted by and publi
     \textbf{b, c, f, g.} Heatmaps ranking the cell lines by dependency score of the genes at the leading edge of enrichment for two gene sets in COAD (\textbf{b}, \textbf{c}) and two enriched gene sets in LUAD cell lines (\textbf{f}, \textbf{g}). Each row represents a gene and each cell represents a cell line colored by its \KRAS{} allele. The cell lines were arranged in ranking order by their dependency score for the gene. Thus, each column indicates a rank. The line plots above the heatmaps indicate the representation (density) of each \KRAS{} allele at each rank across the genes.
     \textbf{d, h.} Clustered heatmaps of the genes that demonstrated differential genetic dependency amongst cell lines of different \KRAS{} alleles in COAD (\textbf{d}) or LUAD (\textbf{h}) cell lines. Each column is a cell line labeled by its DepMap ID and each row is a gene. For \textbf{h}, only genes known to be involved in \KRAS{} signaling or previously implicated in driving cancer are labeled. Also, for visualization purposes, the scores of the WT cell lines were averaged into a single, representative group, labeled "WT (avg.)."
     \textbf{e.} Examples of genes that demonstrated differential genetic dependency amongst cell lines of different \KRAS{} alleles in COAD (*: p < 0.05, **: p < 0.01, ***: p < 0.001; p-values were adjusted using the Benjamini-Hochberg FDR correction method).
-    \textbf{i.} A PPI comprised of proteins whose genes were in cluster 1 of the deferentially dependent genes in LUAD cell lines (\textbf{h}).
+    \textbf{i.} A PPI comprised of proteins whose genes were in cluster 4 of the deferentially dependent genes in LUAD cell lines (\textbf{h}).
 }
 \label{fig:coadluad-dependency-main}
 \end{figure}
