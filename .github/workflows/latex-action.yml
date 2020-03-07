@@ -17,7 +17,7 @@ jobs:
       - run: mkdir output
       - uses: docker://pandoc/core:2.9
         with:
-          args: "--standalone comutation-manuscript.tex --output=output/comutation-manuscript.docx"
+          args: "--biblatex --standalone comutation-manuscript.tex --output=output/comutation-manuscript.docx"
       - uses: actions/upload-artifact@master
         with:
           name: manuscript
