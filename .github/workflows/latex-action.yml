@@ -10,3 +10,15 @@ jobs:
         uses: xu-cheng/latex-action@master
         with:
           root_file: comutation-manuscript.tex
+  convert_via_pandoc:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: mkdir output
+      - uses: docker://pandoc/core:2.9
+        with:
+          args: "--standalone comutation-manuscript.tex --output=output/comutation-manuscript.docx"
+      - uses: actions/upload-artifact@master
+        with:
+          name: output
+          path: output
