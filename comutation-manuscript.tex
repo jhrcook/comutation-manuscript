@@ -93,7 +93,7 @@ Additional biochemical, structural, and signaling distinctions have been identif
 
 Likely as a consequence of their distinct properties, associations have been uncovered between the specific \KRAS{} mutation status of a patient's tumor and the tumor's drug-response or clinical outcome \cite{Haigis2017, Li2018}.
 For instance, a retrospective study indicated that COAD tumors with a \KRAS{} G13D allele may be susceptible to anti-EGFR therapies, a treatment generally discouraged for \KRAS{}-mutant tumors \cite{DeRoock2010}. 
-It has recently been proposed, via computational and experimental means, that differential interaction kinetics between \kras{} G13D and the Ras GAP NF-1 explain this effect \cite{McFall2019, Rabara2019}.
+It has recently been proposed, via computational and experimental means, that differential interaction kinetics between \kras{} G13D and the Ras GAP NF-1 explain this effect \cite{McFall2019, Rabara2019, Zafra2019}.
 Another example is that the \KRAS{} G12D allele is associated with reduced overall survival in advanced PAAD when separately compared to patients with WT \KRAS{}, \KRAS{} G12R, or \KRAS{} G12V \cite{Bournet2016}.
 So far, the hypothesis has been that the different biological properties of the mutant \KRAS{} alleles is the cause of these clinical distinctions.
 However, it is also possible that the genetic interactions associated with the alleles is the true driver of the varying clinical outcomes.
@@ -251,7 +251,7 @@ Increased expression of \emph{WDR26} has previously been implicated in driving b
 The same analysis was conducted on the LUAD cell lines with WT \KRAS{} or \KRAS{} G12C or G12V mutations.
 The gene set enrichment analysis of the dependency scores highlighted a reduced dependency on the genes in the p53 hypoxia pathway (Fig. \ref{fig:coadluad-dependency-main}f) and an increased dependency for genes in the Bard1 pathway (Fig. \ref{fig:coadluad-dependency-main}g) for G12C cell lines.
 The former enrichment suggests that these cells would react less severely to inhibition HIF1-$\alpha$ and other components regulating the p53 response to hypoxic stress \cite{Goda2003Hypoxia-inducibleHypoxia., Sermeus2011ReciprocalPathways., Jing2019RoleMicroenvironment.}.
-However, the latter suggests they are more susceptible to inhibitors of postreplication DNA-damage repair mechanisms because the enrichment was driven by many components of the Fanconi anemia pathway responsible for resolving DNA interstrand crosslink \cite{Ceccaldi2016TheFunctions.}.
+However, the latter suggests they are more susceptible to inhibitors of postreplication DNA-damage repair mechanisms because the enrichment was driven by many components of the Fanconi anemia (FA) pathway responsible for resolving DNA interstrand crosslink \cite{Ceccaldi2016TheFunctions.}.
 A gene-by-gene analysis revealed allele-specific genetic dependencies in 583 genes which were further clustered into four groups (Fig. \ref{fig:coadluad-dependency-main}h).
 The second group was enriched in genes that encode for proteins in the integrin signaling pathway including \emph{RAP2C}, \emph{MAPK8} (JNK1), \emph{MAPK9} (JNK2), \emph{ITGB5} ($\beta_5$ integrin), \emph{ELMO2}, and \emph{PTK2} (FAK) (Supplemental Data).
 Further, cluster 4 contained a large component of the cellular protein-protein interaction network (PPIN) centered around components of the ubiquitination complex including \emph{UBC}, \emph{UBA3}, \emph{UBE2F}, \emph{RNF19B}, \emph{STAMBP}, \emph{USP14}, and \emph{FEM1A} (Fig. \ref{fig:coadluad-dependency-main}i).
@@ -289,10 +289,10 @@ For each allele in each cancer, the geodesic distance (the number of nodes on th
 This indicated that, instead of being randomly distributed throughout the PPIN, there were functional patterns in the identified genes.
 
 To inspect these cellular functions, subnetworks of the PPIN of the proteins with allele-specific interactions were extracted and compared.
-For COAD, the largest components of each allele's subnetwork were centered around \kras{} and the other oncogenes most frequently mutated in the cancer: p53, BRaf, PI3K-$\alpha$, Apc, and NRas (Fig. \ref{fig:results-integration-main}d highlighted in red).
+For COAD, the largest components of each allele's subnetwork were centered around \kras{} and the other oncogenes most frequently mutated in the cancer: p53, BRaf, PI3K$\alpha$, Apc, and NRas (Fig. \ref{fig:results-integration-main}d highlighted in red).
 Surrounding these nodes were others that had either comutation or dependency interactions with multiple \KRAS{} alleles (in brown).
 Finally, there were communities of nodes with associations to only a single \KRAS{} allele, some representing distinct biological functions.
-For instance, the G12D allele was again associated with cell adhesion and motility via the module consisting of Myosin-6 and 9 (MYH6/9) two components of lamanin (LAMA1/2), and neural cell adhesion molecule L1 (L1CAM) signaled to via $\alpha$6 integrin (ITGA6), PI3K-$\alpha$ (PIK3CA), and PIP5K1-$\alpha$ (PIP5KA).
+For instance, the G12D allele was again associated with cell adhesion and motility via the module consisting of Myosin-6 and 9 (MYH6/9) two components of lamanin (LAMA1/2), and neural cell adhesion molecule L1 (L1CAM) signaled to via $\alpha$6 integrin (ITGA6), PI3K$\alpha$ (PIK3CA), and PIP5K1-$\alpha$ (PIP5KA).
 This subnetwork succinctly demonstrated the overall pattern observed in the analysis of the \KRAS{} allele comutation and genetic dependency interactions: the strongest interactions were common within a cancer type, though each allele had distinguishing features pointing to distinct biological properties of the mutation.
 
 
@@ -357,30 +357,49 @@ Further, the targets can be validated in more biologically relevant systems such
 Presented here is a relatively brief analysis of the integrated results from the comutation and dependency analyses.
 Specifically, we focused on the interaction between \KRAS{} G12C and \emph{STK11} because of the previously documented importance of this tumor suppressor, but it is just one instance of the greater pattern of slight variations to the oncogenic properties of mutant \KRAS{} having far reaching effects.
 We hypothesize that the differing properties of the \kras{} mutants result in changes to the behaviour of the local signaling network that propagate out to more distal regions of the cellular PPIN.
-These network effects "prime" diverse cellular processes to be comutated or more important for the tumor.
+These network effects "prime" diverse cellular processes to become comutated or essential for the tumor.
 
-The different mutant forms of \kras{} demonstrate distinct kinetic properties regarding GTP hydrolysis and GDP exchange \cite{}, further complicated by the various preferences of the alleles to interact with GAPs and GEFs.
-For instance, the \kras{} G12C allele has a higher intrinsic rate of GTP hydrolysis than the other common G12 and G13 alleles, though in the presence of P120GAP, the alleles had more similar rates, with G12A, G12D, and G13D all showing higher rates than G12C.
-Further, our lab recently demonstrated the A146T mutant had a higher rate of exchange of GDP and acceptance of GTP than both WT \kras{} and the G12D mutant.
+The first claim is evidenced by the fact that the different mutant forms of \kras{} demonstrate distinct kinetic properties regarding GTP hydrolysis and GDP exchange, further complicated by the various preferences of the alleles to interact with GAPs and GEFs \cite{Smith2013, Hunter2015a}.
+For instance, \kras{} G12C exhibited a higher intrinsic rate of GTP hydrolysis than the other common G12 and G13 alleles, though in the presence of P120GAP, the alleles had more similar rates, with \kras{} G12A, G12D, and G13D all showing higher rates than G12C \cite{Hunter2015a}.
+Further, our lab recently demonstrated the A146T mutant had a higher rate of exchange of GDP for GTP than both WT \kras{} and the G12D mutant \cite{Poulin2019}.
 This mutant form also had a greater response to interactions with the GEF SOS1 compared to the two other proteins.
+Recent identification of maintained interactions between \kras{} G13D and the GAP NF-1 has been proposed as an explanation for continued sensitivity of \KRAS{} G13D-mutant tumors to anti-EGFR treatment \cite{McFall2019, Rabara2019, Zafra2019}.
+The effects of these differential kinetics likely result in differences in the immediate signaling behavior of the mutant \kras{} protein \cite{Haigis2017, Li2018}.
+For instance, Q61L/R mutations achieved greater activation of the MAPK pathway than G12D/V mutations in LUAD cell lines \cite{Pershing2015}.
+Further, expression of G12C mutant \kras{} results in greater phospho-ERK compared to G12D or G12V \cite{Li2018AssessingCancer.}.
+There are additional examples of the \kras{} mutant proteins having different binding preferences.
+While all of the G12 and Q61 mutants had greater affinity for the Ras Binding Domain (RBD) of Raf than WT \kras{}, the range extended from a 120 \% to a 734 \% increase over the WT affinity \cite{Hunter2015a}.
+Also, LUAD cell lines expressing \kras{} G12D demonstrated increased activation of Akt via phosphorylation at T308 and S473, while \kras{} G12C indicated greater levels of interaction with RalA and RalB.
+Other physical properties of \kras{}, such as dimerization, nanoclustering, and interactions with the cell membrane, have yet to be studied in an allele-specific way, though further distinctions may be found.
 
-Distinctions in the immediate signaling behavior of the common mutant alleles have been discovered.
-% "The Functional Proximal Proteome of Oncogenic Ras Includes mTORC2."
-% see PQE
+We also found evidence for the different local effects of the various \kras{} mutants represented by the clusters of \KRAS{} allele-specific interactions within the immediate neighborhood of \kras{} in the PPIN (Fig \ref{fig:results-integration-main}d).
+Thus, there is strong evidence that the different oncogenic \kras{} forms perturb the local signaling network in nuanced, yet distinct, ways.
 
-% We found evidence for the first part in the clustering of genes with \KRAS{} allele-specific interactions within the immediate neighborhood of \kras{} in the PPIN. 
-% …
+The long-range interactions between \KRAS{} alleles and other cellular functions are more difficult to assess given the complexity of the interactome.
+This study demonstrated that the elucidation of there interactions is possible by analyzing comutation with other genes and differential genetic dependency.
+Another possible investigatory mechanism has been to examine survival data.
+Comparing the progression free survival of patients with LUAD treated with platinum-based chemotherapy revealed a greater response by patients whose tumors harbored \KRAS{} G12V mutations \cite{Cserepes2014Subtype-specificChemotherapy., Marabese2015KRASChemotherapy.}.
+This agreed with earlier \emph{in vitro} experiments of the effects of cisplatin on cell lines with ectopic overexpression of \kras{} G12C, G12D, and G12V \cite{Garassino2011DifferentCancer.}.
+The reduced efficacy of these DNA crosslinking drugs was later linked to increased activity of base excision repair (BER) clearing the initial binding event before a second could form \cite{Caiola2015BaseCells.}.
+In our analysis, we uncovered an increased reliance of\KRAS{} G12C LUAD cell lines on the Bard1 pathway, primarily driven by genes from the FA pathway, whose primary function is to resolve DNA interstrand crosslinks \cite{Ceccaldi2016TheFunctions.}.
+While Caiola \emph{et al.} did not find a link between the activity of the FA pathway in G12C cell lines, our results, using a different experimental system, suggest that this DNA repair mechanism is also implicated in the reduced response of \KRAS{} G12C mutant tumors to cisplatin.
+Another example of using survival analysis to identify large-scale differences between \KRAS{} alleles was that patients with PAAD tumors carrying \KRAS{} G12D mutations had worse overall survival than those with \KRAS{} G12R, G12V, or WT \cite{Bournet2016}; this trend was also recapitulated using TCGA PAAD data (data not shown).
+This trend was maintained for those patients who did or did not receive chemotherapy, and the mechanistic cause has yet to be resolved.
 
+Another approach that has been used to identify large-scale distinctions between \KRAS{} alleles is to create the alleles in otherwise isogenic model systems and measuring the effects experimentally.
+Using this approach, Hobbs \emph{et al.} demonstrated that PAAD cell lines were all dependent upon macropinocytosis and that this process was dependent upon \KRAS{} expression, but only for only G12D and G12V mutant \KRAS{}, not G12R.
+They experimentally demonstrated that this was due to the unique conformation of Switch II of \kras G12R interfering with interactions with PI3K$\alpha$, but were unable to elucidate the mechanism behind how this occluded interaction resulted in the allele-specific dependency of macropinocytosis.
+Still, this an example of an experimentally verified interaction between a specific \KRAS{} allele and a seemingly separate cellular process due to a perturbation in the local \kras{} signaling network.
+Our lab recently studied the proteomic and phosphoproteomic effects of \kras{} G12D compared to \kras{} A146T in neoplastic and tumorigenic contexts in the colon and pancreas \cite{Poulin2019}.
+This analysis revealed differential activation of various signaling pathways including increased activation of p90RSK in \KRAS{} A146T colonic epithelium compared to \KRAS{} G12D.
+More nuanced differences were also uncovered including that though ERK2 was activated by both \kras{} G12D and \kras{} A146T, the specific targets were strikingly different.
+This lends further support for the hypothesis that different oncogenic \KRAS{} alleles can have substantial effects on signaling processes throughout the cell.
 
-% Example: KRAS G12C reduced response to cisplatin in LUAD.
-% % PMIDs: 26353932, 21169473 
-% From LUAD GSEA of genetic dependency: "However, the latter suggests they are more susceptible to inhibitors of postreplication DNA-damage repair mechanisms because the enrichment was driven by many components of the Fanconi anemia pathway responsible for resolving DNA interstrand crosslink \cite{Ceccaldi2016TheFunctions.}."
-% This supports the finding that G12C is less responsive to cisplatin chemo.
-% They did not find an association between Fanconi anemia pathway, but they didn't directly test effects of inhibiting it, just looking for RNA and protein level associations. % PMID: 26353932
-% Example: G12R and pinocytosis
-% Example: (Poulin et al.) isogenic background --> different signaling in G12D vs. A146T
 
 % Address alternative hypothesis: these additional comutation events could be the features determining the differential survival outcomes we currently ascribe to KRAS mutation.
+% PMID: 29945997 -- TP53 comutation made a big difference in drug response at the end of the paper.
+% \cite{Bournet2016} -- G12D tends to comutate with XX, this may be the determining factor.
+
 
 % Call to action.
 
