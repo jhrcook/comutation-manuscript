@@ -299,110 +299,80 @@ This subnetwork succinctly demonstrated the overall pattern observed in the anal
 
 \section*{Discussion (in progress)}
 
-% DISCUSSION OUTLINE
-
-% Intro: a brief statement about the main conclusions of the paper.
-This study was a genetic analysis of the common oncogenic \KRAS{} alleles in COAD, LUAD, MM, and PAAD.
+This study presented a genetic analysis of the common oncogenic \KRAS{} alleles in COAD, LUAD, MM, and PAAD.
 Measuring the levels of mutational signatures revealed that the cancer-specific distribution of \KRAS{} mutations was not determined by the active mutational processes in the tumor samples.
-This result suggested that the biological properties of the \KRAS{} alleles, within the context of the tissue of origin and tumor microenvironment, is an important factor in the positive selection of a \KRAS{} mutation during the evolution of a tumor.
+This result suggests that the biological properties of the \KRAS{} alleles, within the context of the tissue of origin and tumor microenvironment, is an important factor in the positive selection of a \KRAS{} mutation during the evolution of a tumor.
 To investigate these properties, we conducted tests to determine patterns of comutating genes and genetic dependency for each \KRAS{} allele.
 The former identified genes that comutated with specific \KRAS{} alleles at an unexpectedly high right, suggesting they were alterations that cooperated with the \KRAS{} allele to promote positive selection in the tumor.
-On the other hand, some genes comutated with a \KRAS{} allele less frequently than expected by random chance, suggesting they are either functionally redundant mutations or introduced an inhibitory effect on the tumor's progression.
+On the other hand, some genes comutated with a \KRAS{} allele less frequently than expected by random chance, suggesting they were either functionally redundant mutations or introduced an inhibitory effect on the tumor's progression.
 Finally, functional interactions were identified between \KRAS{} alleles and cellular processes and individual genes.
 Together, these findings provide further support to the mounting evidence that the various oncogenic \KRAS{} mutations are not biologically redundant, but instead have distinct properties relevant to the treatment of \KRAS{} mutant tumors.
 
-% Caveats of how we used the mutational signatures to predict KRAS frequency. 
-% It assumes the mutational signatures completely describe the active mutational signatures and are good estimates of their effects. This is supported by how they were extracted from SBS and KRAS is mutated via single base substitutions. 
-% However, there are known limitations such as artifacts introduced by the sample collection, storing, and sequencing process as well as artifacts from NMF.
 In 2018, Pantsar \emph{et al.} used the transition:transversion mutation ratio to demonstrate that the distribution of codon 12 \KRAS{} mutations were not random \cite{Pantsar2018}.
-Instead their results corroborated those of the present study: there are some trends between the observed and predicted allele frequencies, but there are many notable outliers.
-For example, they predicted an enrichment for G12R mutations in PAAD compared to the other cancers, though their predicted frequency was not very accurate (predicted frequency of 1.8 \% compared to the observed frequency of 14.4 \%).
-The current study employed mutational signatures to estimate the frequency of \KRAS{} mutations under the null hypothesis that the \KRAS{} alleles were functionally equivalent and demonstrated that even this more nuanced model of the random distribution of mutations was unable to explain the distribution of \KRAS{} alleles across the four cancers studied.
+Instead, their results corroborated those of the present study that random chance is not solely responsible for the \KRAS{} mutations observed in cancer.
+% For example, they predicted an enrichment for G12R mutations in PAAD compared to the other cancers, though their predicted frequency was not very accurate (predicted frequency of 1.8 \% compared to the observed frequency of 14.4 \%).
+The current study employed mutational signatures to estimate the frequency of \KRAS{} mutations under the null hypothesis that the alleles were functionally equivalent.
+Even this more nuanced model of the random distribution of mutations was unable to explain the frequency of \KRAS{} alleles across the four cancers studied.
 While this use of mutational signatures was not without precedent \cite{Dietlein2020IdentificationContext., Bergstrom2020GeneratingSigProfilerSimulator}, it had limitations, primarily the assumption that the mutational signatures completely described the mutagenic forces acting on the genome.
 This constraint was mitigated by the fact that the signatures were extracted from single base substitutions, the same type of mutations that cause the \KRAS{} alleles.
 Still, there are known artifacts from the sample-processing procedure and NMF that prevent the mutational signatures from perfectly modeling the mutational processes in a tumor \cite{Alexandrov2015, Gawad2016, Alexandrov2020TheCancer.}.
 
-% Discuss limitations: 1) only used SBS and indels for comutation, but CNA and structural variants could provide additional information, 2) we did not distinguish between damaging and benign mutations because the predictive tools are not perfect, 3) only a few cell lines available for the dependency analysis
 The comutation analysis for this study was limited to relatively small somatic mutations while copy number alteration (CNA) and complex structural variants, such as those caused by chromothripsis, were not included.
 This was decided due to the fact that determining the copy number of genes and effects of catastrophic chromosomal events is still a current area of study and is primarily limited to WGS data.
-Thus, it is not clear that including these data would add clarification to this study or rather the additional complexity would make the results more difficult to resolve.
-For the same reason, the comutation analysis did not include the prediction of a mutation's impact on the encoded RNA or protein; while continually improving, the current tools are known to be imperfect with high levels of false positives and negatives, often contradicting each other \cite{Dong2015ComparisonStudies., Chun2009IdentificationGenomes., Schwarz2010MutationTasterAlterations., Thusberg2011PerformanceVariants., Wei2011IncorporatingStudy., Flanagan2010UsingMutations.}.
+Thus, it is not clear that including these data would add clarification to this study or, rather, the additional complexity would make the results more difficult to resolve.
+For the same reason, the comutation analysis did not include the prediction of a mutation's impact on the encoded RNA or protein; while continually improving, the current tools are known to be imperfect with high rates of false positives and negatives, often contradicting each other \cite{Dong2015ComparisonStudies., Chun2009IdentificationGenomes., Schwarz2010MutationTasterAlterations., Thusberg2011PerformanceVariants., Wei2011IncorporatingStudy., Flanagan2010UsingMutations.}.
 
-% Follow-up for dependency analysis.
-% Validate in vitro in the original and previously untested cell lines.
-% Hope it can help guide precision medicine to account for the specific KRAS mutation in a patient.
-The analysis of a genome-wide, CRISPR-Cas9, loss-of-function screen of 89 human COAD, LUAD, and PAAD cell lines revealed cellular processes and individual genes with differential degrees of essentiality associated with the \KRAS{} allele of the cell line.
-The goal of this analysis was to identify potential allele-specific drug targets, progressing the concept of precision medicine to incorporate the \KRAS{} mutation of a patient's tumor.
-The next step will be to reproduce these findings \emph{in vitro} in the original and new cell lines.
-Further, the targets can be validated in more biologically relevant systems such as organoid or mouse models.
+The analysis of a genome-wide, CRISPR-Cas9, loss-of-function screen of 89 human COAD, LUAD, and PAAD cell lines revealed cellular processes and individual genes with differing degrees of essentiality associated with specific \KRAS{} alleles.
+The goal of this analysis was to identify potential allele-specific drug targets, progressing the concept of precision medicine to incorporate the \KRAS{} mutation of a patient's tumor, the relevance of which is discussed below.
+The next step is to reproduce these findings in the original and new cell lines.
+Further, the resulting targets can be validated in more biologically relevant systems such as organoid or mouse models.
 
-% The analysis of the results from integrating the comutation and dependency data only scratched the surface.
-% "Presented here is a relatively minute analysis of the complex integration of comutation, genetic dependency, and signaling/functional data, and further analysis of these data is warranted to extract additional findings."
-
-% We specifically analyzed the results of increased comutation and genetic dependency between KRAS G12C and STK11.
-% Discuss this in light of the known interactions between KRAS and STK11 mutations.
-% Discuss this in light of the LUAD sub-groups found in PMID 26069186.
-% % PMID: 26069186
-% Previously, \KRAS{}-mutant LUAD were demonstrated to separate into 3 groups using RNA expression data.
-% These groups were found to not associate with specific \KRAS{} alleles, but instead with mutations to \emph{STK11}, mutations to \emph{TP53}, or depletion of \emph{CDKN2A} and \emph{CDKN2B}.
-% The results presented here, an increased comutation frequency between \KRAS{} G12C and \emph{STK11} and an increased dependency on \emph{STK11} in \KRAS{} G12C-mutant LUAD cell lines, suggest that the G12C allele does have an association with ...
-
-% Bridge: … though this is just one instance of a greater question, how do slight variations to mutant KRAS result in comutation and dependency interactions in distal parts of the cellular interactome.
-
-% KRAS alleles are known to have differential binding preferences, dimerization kinetics, and cell-membrane interactions.
-% These can alter the local signalling network and prime the local network for additional comutations (for the actual section, first discuss the comutation and then describe that a similar process would work for dependency).
-% These have additional effects that continue to permeate throughout the network, resulting in interactions found further away and in other cellular processes.
-% "comutation chain-reaction".
-
-Presented here is a relatively brief analysis of the integrated results from the comutation and dependency analyses.
-Specifically, we focused on the interaction between \KRAS{} G12C and \emph{STK11} because of the previously documented importance of this tumor suppressor, but it is just one instance of the greater pattern of slight variations to the oncogenic properties of mutant \KRAS{} having far reaching effects.
+Here, we conducted a relatively brief analysis of the integrated results from the comutation and dependency analyses.
+Specifically, we focused on the interaction between \KRAS{} G12C and \emph{STK11} because of the previously documented importance of this tumor suppressor, but it is just one instance of the greater pattern where slight variations to the oncogenic properties of mutant \KRAS{} has far reaching effects.
 We hypothesize that the differing properties of the \kras{} mutants result in changes to the behaviour of the local signaling network that propagate out to more distal regions of the cellular PPIN.
 These network effects "prime" diverse cellular processes to become comutated or essential for the tumor.
 
 The first claim is evidenced by the fact that the different mutant forms of \kras{} demonstrate distinct kinetic properties regarding GTP hydrolysis and GDP exchange, further complicated by the various preferences of the alleles to interact with GAPs and GEFs \cite{Smith2013, Hunter2015a}.
-For instance, \kras{} G12C exhibited a higher intrinsic rate of GTP hydrolysis than the other common G12 and G13 alleles, though in the presence of P120GAP, the alleles had more similar rates, with \kras{} G12A, G12D, and G13D all showing higher rates than G12C \cite{Hunter2015a}.
-Further, our lab recently demonstrated the A146T mutant had a higher rate of exchange of GDP for GTP than both WT \kras{} and the G12D mutant \cite{Poulin2019}.
+For instance, \kras{} G12C exhibited a higher intrinsic rate of GTP hydrolysis than the other common G12 and G13 alleles, though in the presence of P120GAP, the alleles had more similar rates, with \kras{} G12A, G12D, and G13D all hydrolyzing GTP faster than G12C \cite{Hunter2015a}.
+Further, our lab and others have demonstrated the A146T mutant had a higher rate of exchange of GDP for GTP than both WT \kras{} and the G12D mutant \cite{Feig1988RelationshipProteins., Edkins2006, Janakiraman2010, Poulin2019}.
 This mutant form also had a greater response to interactions with the GEF SOS1 compared to the two other proteins.
-Recent identification of maintained interactions between \kras{} G13D and the GAP NF-1 has been proposed as an explanation for continued sensitivity of \KRAS{} G13D-mutant tumors to anti-EGFR treatment \cite{McFall2019, Rabara2019, Zafra2019}.
+Recently, the identification of maintained interaction between \kras{} G13D and the GAP NF-1 has been proposed as an explanation for continued sensitivity of \KRAS{} G13D-mutant tumors to anti-EGFR treatment \cite{McFall2019, Rabara2019, Zafra2019}.
+
 The effects of these differential kinetics likely result in differences in the immediate signaling behavior of the mutant \kras{} protein \cite{Haigis2017, Li2018}.
 For instance, Q61L/R mutations achieved greater activation of the MAPK pathway than G12D/V mutations in LUAD cell lines \cite{Pershing2015}.
-Further, expression of G12C mutant \kras{} results in greater phospho-ERK compared to G12D or G12V \cite{Li2018AssessingCancer.}.
-There are additional examples of the \kras{} mutant proteins having different binding preferences.
+Further, expression of G12C mutant \kras{} resulted in greater concentration of phospho-ERK compared to G12D or G12V \cite{Li2018AssessingCancer.}.
+There are also examples of the \kras{} mutant proteins having different binding preferences.
 While all of the G12 and Q61 mutants had greater affinity for the Ras Binding Domain (RBD) of Raf than WT \kras{}, the range extended from a 120 \% to a 734 \% increase over the WT affinity \cite{Hunter2015a}.
-Also, LUAD cell lines expressing \kras{} G12D demonstrated increased activation of Akt via phosphorylation at T308 and S473, while \kras{} G12C indicated greater levels of interaction with RalA and RalB.
-Other physical properties of \kras{}, such as dimerization, nanoclustering, and interactions with the cell membrane, have yet to be studied in an allele-specific way, though further distinctions may be found.
-
-We also found evidence for the different local effects of the various \kras{} mutants represented by the clusters of \KRAS{} allele-specific interactions within the immediate neighborhood of \kras{} in the PPIN (Fig \ref{fig:results-integration-main}d).
-Thus, there is strong evidence that the different oncogenic \kras{} forms perturb the local signaling network in nuanced, yet distinct, ways.
+Also, LUAD cell lines expressing \kras{} G12D demonstrated increased activation of Akt via phosphorylation at T308 and S473, while \kras{} G12C had increased interactions with RalA and RalB.
+Other physical properties of \kras{}, such as dimerization, nanoclustering, and interactions with the cell membrane, have yet to be studied in an allele-specific fashion, though additional distinctions may be found.
 
 The long-range interactions between \KRAS{} alleles and other cellular functions are more difficult to assess given the complexity of the interactome.
-This study demonstrated that the elucidation of there interactions is possible by analyzing comutation with other genes and differential genetic dependency.
-Another possible investigatory mechanism has been to examine survival data.
+One possible investigatory mechanism has been to examine survival data.
 Comparing the progression free survival of patients with LUAD treated with platinum-based chemotherapy revealed a greater response by patients whose tumors harbored \KRAS{} G12V mutations \cite{Cserepes2014Subtype-specificChemotherapy., Marabese2015KRASChemotherapy.}.
 This agreed with earlier \emph{in vitro} experiments of the effects of cisplatin on cell lines with ectopic overexpression of \kras{} G12C, G12D, and G12V \cite{Garassino2011DifferentCancer.}.
-The reduced efficacy of these DNA crosslinking drugs was later linked to increased activity of base excision repair (BER) clearing the initial binding event before a second could form \cite{Caiola2015BaseCells.}.
+The reduced efficacy of these DNA crosslinking drugs was later linked to increased activity of base excision repair clearing the intermediate cisplatin-nucleotide adduct beforethe final crosslinked product could form \cite{Caiola2015BaseCells.}.
 In our analysis, we uncovered an increased reliance of\KRAS{} G12C LUAD cell lines on the Bard1 pathway, primarily driven by genes from the FA pathway, whose primary function is to resolve DNA interstrand crosslinks \cite{Ceccaldi2016TheFunctions.}.
 While Caiola \emph{et al.} did not find a link between the activity of the FA pathway in G12C cell lines, our results, using a different experimental system, suggest that this DNA repair mechanism is also implicated in the reduced response of \KRAS{} G12C mutant tumors to cisplatin.
 Another example of using survival analysis to identify large-scale differences between \KRAS{} alleles was that patients with PAAD tumors carrying \KRAS{} G12D mutations had worse overall survival than those with \KRAS{} G12R, G12V, or WT \cite{Bournet2016}; this trend was also recapitulated using TCGA PAAD data (data not shown).
 This trend was maintained for those patients who did or did not receive chemotherapy, and the mechanistic cause has yet to be resolved.
 
-Another approach that has been used to identify large-scale distinctions between \KRAS{} alleles is to create the alleles in otherwise isogenic model systems and measuring the effects experimentally.
-Using this approach, Hobbs \emph{et al.} demonstrated that PAAD cell lines were all dependent upon macropinocytosis and that this process was dependent upon \KRAS{} expression, but only for only G12D and G12V mutant \KRAS{}, not G12R.
-They experimentally demonstrated that this was due to the unique conformation of Switch II of \kras G12R interfering with interactions with PI3K$\alpha$, but were unable to elucidate the mechanism behind how this occluded interaction resulted in the allele-specific dependency of macropinocytosis.
+Another approach that has been used to identify large-scale distinctions between \KRAS{} alleles is to create the alleles in otherwise isogenic model systems and measure the effects experimentally.
+Using this approach, Hobbs \emph{et al.} demonstrated that while all of their PAAD cell lines were dependent upon macropinocytosis, only those with \KRAS{} G12D or G12V, but not G12R, were dependent upon \KRAS{} expression for this cellular process \cite{Hobbs2019AtypicalCancer.}.
+They experimentally demonstrated that this was due to the unique conformation of Switch II of \kras{} G12R interfering with interactions with PI3K$\alpha$, but were unable to elucidate the mechanism behind how this occluded interaction resulted in the allele-specific dependency of macropinocytosis.
 Still, this an example of an experimentally verified interaction between a specific \KRAS{} allele and a seemingly separate cellular process due to a perturbation in the local \kras{} signaling network.
 Our lab recently studied the proteomic and phosphoproteomic effects of \kras{} G12D compared to \kras{} A146T in neoplastic and tumorigenic contexts in the colon and pancreas \cite{Poulin2019}.
 This analysis revealed differential activation of various signaling pathways including increased activation of p90RSK in \KRAS{} A146T colonic epithelium compared to \KRAS{} G12D.
-More nuanced differences were also uncovered including that though ERK2 was activated by both \kras{} G12D and \kras{} A146T, the specific targets were strikingly different.
-This lends further support for the hypothesis that different oncogenic \KRAS{} alleles can have substantial effects on signaling processes throughout the cell.
+More nuanced differences were also uncovered including changes in the targets of activated ERK2.
 
+Taken together, it is clear that the oncogenic \kras{} mutants have different effects on the local signaling network including differential GTPase and GDP-exchange kinetics, binding affinity, and signaling intensity.
+As such, we also found evidence for the different local effects of the various \kras{} mutants represented by the clusters of allele-specific interactions within the immediate neighborhood of \kras{} in the PPIN (Fig \ref{fig:results-integration-main}d).
+Further, there is substantial experimental evidence that these relatively minor changes have significant and diverse global impacts on the \KRAS{} mutant cell.
+This study highlighted many novel interactions beyond the \kras{} signaling pathways by identifying allele-specific patterns of comutation and genetic dependency.
+Thus, as supported by the analyses of patient outcomes, it has become apparent that not only are the \KRAS{} alleles biologically distinct, they impose specific impacts on the behavior of the tumor.
 
 % Address alternative hypothesis: these additional comutation events could be the features determining the differential survival outcomes we currently ascribe to KRAS mutation.
 % PMID: 29945997 -- TP53 comutation made a big difference in drug response at the end of the paper.
 % \cite{Bournet2016} -- G12D tends to comutate with XX, this may be the determining factor.
-
-
-% Call to action.
-
 
 
 
