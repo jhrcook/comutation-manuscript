@@ -47,6 +47,7 @@
 
 \begin{document}
 
+%%TC:ignore
 
 \maketitle
 
@@ -59,7 +60,9 @@
 5. Broad Institute, Cambridge, Massachusetts, USA.
 6. Harvard Digestive Disease Center, Harvard Medical School, Boston, Massachusetts.
 
-{*}corresponding author(s): Kevin M. Haigis (khaigis@bidmc.harvard.edu), Peter J. Park (peter\_park@hms.harvard.edu)
+{*}corresponding author(s):
+\newline{} \hspace*{1cm} Kevin M. Haigis (khaigis@bidmc.harvard.edu)
+\newline{} \hspace*{1cm} Peter J. Park (peter\_park@hms.harvard.edu)
 
 \begin{abstract}
 % Keep within 100-150 words.
@@ -73,7 +76,7 @@ Analyzing genetic dependencies highlighted cellular functions and individual gen
 Overall, this analysis demonstrates that the \KRAS{} alleles have distinct genetic interactions likely linked to their biological differences that can be further investigated as therapeutic targets.
 \end{abstract}
 
-
+%%TC:endignore
 
 \section*{}
 % Keep to ~500 words.
@@ -241,8 +244,9 @@ For example, many genes comprising Complex I of the electron transport chain had
 Alternatively, the \KRAS{} G13D cell lines were less affected when genes involved in the complement immune pathway were targeted (Fig. \ref{fig:coadluad-dependency-main}b).
 To discover individual genes as potential drug-screen targets, each gene was tested for differential genetic dependency with the cell lines grouped by \KRAS{} allele. 
 The resulting 77 genes were hierarchically clustered into six groups by their dependency scores (Figure \ref{fig:coadluad-dependency-main}c, d).
-Genes in cluster 1 tended to have a stronger dependency in \KRAS{} WT cell lines, especially compared to \KRAS{} G12D cell lines, and clusters 3, 4, and 5 had stronger dependency scores in \KRAS{} G12V, G12D, and G13D, respectively. 
-Cluster 2 was rather heterogeneous.
+Genes in clusters 1 and 3 tended to have reduced genetic dependency scores in cell lines with \KRAS{} G12D and G12V, respectively, compared to the other cell lines.
+Alternatively, clusters 4, 5, and 6 demonstrated increased dependency in \KRAS{} G13D, G12V, and G12D cell lines, respectively, compared to the other cell lines.
+Genes in cluster 2 tended to have a stronger dependency in \KRAS{} WT cell lines.
 One notable gene with allele-specific associations was the kinetochore-associated protein (\emph{KNTC1}), a regulator of the mitotic checkpoint \cite{Chan2000HumanKinetochores., Scaerou2001TheKinetochore., Kops2005ZW10Kinetochore.}, which demonstrated moderate to strong lethal effects when knocked out in almost every cell line except for those with a \KRAS{} G12V allele.
 Also, isocitrate dehydrogenase (\emph{IDH1}), a component of the citric acid cycle in cellular carbon metabolism \cite{Geisbrecht1999TheDehydrogenase.}, was found to have a negligible effect on growth reduction when knocked-out in \KRAS{} G12D cell lines, an intermediate effect in G12V cell lines, and the strongest effect in G13D and WT cell lines.
 Interestingly, a negative regulator of the MAPK pathway \cite{Goto2016WDR26Pathway.}, \emph{WDR26}, was found to be almost essential for the \KRAS{} G12D cell lines though resulted in more moderate growth reduction when knocked out in the other cell lines.
@@ -375,6 +379,7 @@ Thus, as supported by the analyses of patient outcomes, it has become apparent t
 % \cite{Bournet2016} -- G12D tends to comutate with XX, this may be the determining factor.
 
 
+%%TC:ignore
 
 \section*{Methods}
 
@@ -727,5 +732,6 @@ A competing interests statement is required for all papers accepted by and publi
 \label{sfig:paad-dependency-JUN}
 \end{figure}
 
+%%TC:endignore
 
 \end{document}
