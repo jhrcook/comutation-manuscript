@@ -119,7 +119,7 @@ Integrating these two forms of genetic interactions highlighted the distinct eff
 
 This study utilized publicly available sequencing data of COAD, LUAD, MM, and PAAD tumors.
 There were whole exome or genome data available for 1,536 COAD (1,280 after removing hypermutated samples), 891 LUAD, 1,201 MM, and 1,395 PAAD samples.
-In addition, there were targeted-sequencing data available for 3,329 COAD (2,865 after removing hypermutated samples), 4,160 LUAD, 61 MM, and 919 PAAD sample.
+In addition, there were targeted-sequencing data available for 3,329 COAD (2,865 after removing hypermutated samples), 4,160 LUAD, 61 MM, and 919 PAAD samples.
 More information on the sequencing data is available in the Methods and Supplemental Data.
 
 In the data collected for this study, \KRAS{} was most frequently mutated at four “hotspots.” 
@@ -158,7 +158,8 @@ In MM, signature 9, associated with mutations introduced by polymerase $\eta$ re
 \subsection*{The frequency of most \KRAS{} alleles cannot be attributed to the prevalence of detected mutagens.}
 
 The explanatory value of the mutational signatures was further analyzed by calculating the predicted frequency of each allele based on the frequency of mutations in the same trinucleotide context throughout the genome (Fig. \ref{fig:mutational-signatures-main}e, f).
-The first null hypothesis tested was that, assuming the cancer would acquire a \KRAS{} mutation, any of the common alleles were sufficient. Thus the frequency of the \KRAS{} alleles would be determined by the mutational processes, alone (Fig. \ref{fig:mutational-signatures-main}e).
+The first null hypothesis tested was that, assuming the cancer would acquire a \KRAS{} mutation, any of the common alleles were sufficient.
+Thus, the frequency of the \KRAS{} alleles would be determined by the mutational processes, alone (Fig. \ref{fig:mutational-signatures-main}e).
 The second null hypothesis was similar, but restricted to just codon 12 mutations (Fig. \ref{fig:mutational-signatures-main}f).
 The predicted frequencies were compared against the observed allele frequencies.
 The alleles above the diagonal line were predicted to be more frequent than observed, while those below the line were more frequently observed than predicted by the mutational signatures.
@@ -307,7 +308,7 @@ This study presented a genetic analysis of the common oncogenic \KRAS{} alleles 
 Measuring the levels of mutational signatures revealed that the cancer-specific distribution of \KRAS{} mutations was not determined by the active mutational processes in the tumor samples.
 This result suggests that the biological properties of the \KRAS{} alleles, within the context of the tissue of origin and tumor microenvironment, is an important factor in the positive selection of a \KRAS{} mutation during the evolution of a tumor.
 To investigate these properties, we conducted tests to determine patterns of comutating genes and genetic dependency for each \KRAS{} allele.
-The former identified genes that comutated with specific \KRAS{} alleles at an unexpectedly high right, suggesting they were alterations that cooperated with the \KRAS{} allele to promote positive selection in the tumor.
+The former identified genes that comutated with specific \KRAS{} alleles at an unexpectedly high rate, suggesting they were alterations that cooperated with the \KRAS{} allele to promote positive selection in the tumor.
 On the other hand, some genes comutated with a \KRAS{} allele less frequently than expected by random chance, suggesting they were either functionally redundant mutations or introduced an inhibitory effect on the tumor's progression.
 Finally, functional interactions were identified between \KRAS{} alleles and cellular processes and individual genes.
 Together, these findings provide further support to the mounting evidence that the various oncogenic \KRAS{} mutations are not biologically redundant, but instead have distinct properties relevant to the treatment of \KRAS{} mutant tumors.
@@ -319,7 +320,7 @@ The current study employed mutational signatures to estimate the frequency of \K
 Even this more nuanced model of the random distribution of mutations was unable to explain the frequency of \KRAS{} alleles across the four cancers studied.
 While this use of mutational signatures was not without precedent \cite{Dietlein2020IdentificationContext., Bergstrom2020GeneratingSigProfilerSimulator}, it had limitations, primarily the assumption that the mutational signatures completely described the mutagenic forces acting on the genome.
 This constraint was mitigated by the fact that the signatures were extracted from single base substitutions, the same type of mutations that cause the \KRAS{} alleles.
-Still, there are known artifacts from the sample-processing procedure and NMF that prevent the mutational signatures from perfectly modeling the mutational processes in a tumor \cite{Alexandrov2015, Gawad2016, Alexandrov2020TheCancer.}.
+Still, there are known artifacts from the sample-processing procedure and non-negative matrix factorization (NMF) that prevent the mutational signatures from perfectly modeling the mutational processes in a tumor \cite{Alexandrov2015, Gawad2016, Alexandrov2020TheCancer.}.
 
 The comutation analysis for this study was limited to relatively small somatic mutations while copy number alteration (CNA) and complex structural variants, such as those caused by chromothripsis, were not included.
 This was decided due to the fact that determining the copy number of genes and effects of catastrophic chromosomal events is still a current area of study and is primarily limited to WGS data.
@@ -354,7 +355,7 @@ The long-range interactions between \KRAS{} alleles and other cellular functions
 One possible investigatory mechanism has been to examine survival data.
 Comparing the progression free survival of patients with LUAD treated with platinum-based chemotherapy revealed a greater response by patients whose tumors harbored \KRAS{} G12V mutations \cite{Cserepes2014Subtype-specificChemotherapy., Marabese2015KRASChemotherapy.}.
 This agreed with earlier \emph{in vitro} experiments of the effects of cisplatin on cell lines with ectopic overexpression of \kras{} G12C, G12D, and G12V \cite{Garassino2011DifferentCancer.}.
-The reduced efficacy of these DNA crosslinking drugs was later linked to increased activity of base excision repair clearing the intermediate cisplatin-nucleotide adduct beforethe final crosslinked product could form \cite{Caiola2015BaseCells.}.
+The reduced efficacy of these DNA crosslinking drugs was later linked to increased activity of base excision repair clearing the intermediate cisplatin-nucleotide adduct before the final crosslinked product could form \cite{Caiola2015BaseCells.}.
 In our analysis, we uncovered an increased reliance of\KRAS{} G12C LUAD cell lines on the Bard1 pathway, primarily driven by genes from the FA pathway, whose primary function is to resolve DNA interstrand crosslinks \cite{Ceccaldi2016TheFunctions.}.
 While Caiola \emph{et al.} did not find a link between the activity of the FA pathway in G12C cell lines, our results, using a different experimental system, suggest that this DNA repair mechanism is also implicated in the reduced response of \KRAS{} G12C mutant tumors to cisplatin.
 Another example of using survival analysis to identify large-scale differences between \KRAS{} alleles was that patients with PAAD tumors carrying \KRAS{} G12D mutations had worse overall survival than those with \KRAS{} G12R, G12V, or WT \cite{Bournet2016}; this trend was also recapitulated using TCGA PAAD data (data not shown).
@@ -363,7 +364,7 @@ This trend was maintained for those patients who did or did not receive chemothe
 Another approach that has been used to identify large-scale distinctions between \KRAS{} alleles is to create the alleles in otherwise isogenic model systems and measure the effects experimentally.
 Using this approach, Hobbs \emph{et al.} demonstrated that while all of their PAAD cell lines were dependent upon macropinocytosis, only those with \KRAS{} G12D or G12V, but not G12R, were dependent upon \KRAS{} expression for this cellular process \cite{Hobbs2019AtypicalCancer.}.
 They experimentally demonstrated that this was due to the unique conformation of Switch II of \kras{} G12R interfering with interactions with PI3K$\alpha$, but were unable to elucidate the mechanism behind how this occluded interaction resulted in the allele-specific dependency of macropinocytosis.
-Still, this an example of an experimentally verified interaction between a specific \KRAS{} allele and a seemingly separate cellular process due to a perturbation in the local \kras{} signaling network.
+Still, this is an example of an experimentally verified interaction between a specific \KRAS{} allele and a seemingly separate cellular process due to a perturbation in the local \kras{} signaling network.
 Our lab recently studied the proteomic and phosphoproteomic effects of \kras{} G12D compared to \kras{} A146T in neoplastic and tumorigenic contexts in the colon and pancreas \cite{Poulin2019}.
 This analysis revealed differential activation of various signaling pathways including increased activation of p90RSK in \KRAS{} A146T colonic epithelium compared to \KRAS{} G12D.
 More nuanced differences were also uncovered including changes in the targets of activated ERK2.
@@ -430,15 +431,15 @@ The full edge list is available in the Supplementary Data.
 
 The genome-wide mutations of a sample can be deconvolved into mutational signatures that represent endogenous or exogenous mutagenic processes \cite{Alexandrov2013}. 
 Single nucleotide variants (SNVs) from exomes or genomes were divided into 96 types, according to the 6 mutations of a pyrimidine (C>A, C>G, C>T and T>A, T>C, T>G) and the 16 possible combinations of 3’ and 5’ adjacent bases.
-The MATLAB \cite{MATLAB:2010} implementation of Non-Negative Matrix Factorization (NMF) algorithm, SigProfiler \cite{Alexandrov2013}, was used to discover the underlying mutational patterns that are common across tumors. 
+The MATLAB \cite{MATLAB:2010} implementation of NMF algorithm, SigProfiler \cite{Alexandrov2013}, was used to discover the underlying mutational patterns that are common across tumors. 
 Mutational signatures were discovered separately for each tumor type and the optimal number of signatures was determined based on silhouette width and Frobenius error. 
 
 The spectrum of the signatures discovered by NMF were matched to the COSMIC catalog \cite{Tate2019}.
 For the signatures for which none of the 30 signatures in COSMIC catalog was found to be compatible, we referred to more recent studies in literature and expanded upon the COSMIC catalog. 
-In particular, there were multiple subtypes of signature 7 (reported previously in \cite{Hayward2017Whole-genomeSubtypes., Alexandrov2020TheCancer.}.
+In particular, there were multiple subtypes of signature 7 reported previously in \cite{Hayward2017Whole-genomeSubtypes., Alexandrov2020TheCancer.}.
 Further, the analysis revealed a signature that was predominantly C>A but not a subtype of signature 7.
 This signature 38 was previously reported to be caused by indirect UV exposure \cite{Alexandrov2020TheCancer.}. 
-Three versions of the signature associated to POLE mutations, signature 10, were discovered (previously reported in \cite{Alexandrov2020TheCancer.}.
+Three versions of the signature associated to POLE mutations, signature 10, were discovered (previously reported in \cite{Alexandrov2020TheCancer.}).
 These three POLE signatures differed in the C>A, C>T or C>G parts of the mutational spectrum. 
 In LUAD, a signature with mutations of type C[C>A]N and T[C>A]N attributable to 8-oxo-guanine \cite{Alexandrov2020TheCancer.} was found. 
 One signature that we discovered COAD did not have a good match in any specific signature in literature, although it resembled a signature previously reported to be caused by SBSA \cite{Lee-Six2019} and signatures 34 and 41 in reference \cite{Alexandrov2020TheCancer.}. 
