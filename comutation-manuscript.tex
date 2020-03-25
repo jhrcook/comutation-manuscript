@@ -2,7 +2,7 @@
 \usepackage[letterpaper, margin=1in]{geometry}
 \usepackage[utf8]{inputenc}
 
-\title{The genetic interaction network of mutationally activated \KRAS{}}
+\title{The genetic interaction network of mutationally activated \emph{KRAS}}
 \author{
     Joshua Cook\textsuperscript{1,2},
     Giorgio Melloni\textsuperscript{3}, 
@@ -27,7 +27,7 @@
         \renewcommand{\thetable}{\arabic{table}}%
         \setcounter{figure}{0}
         \renewcommand{\thefigure}{\arabic{figure}}%
-     }
+    }
 
 % Single spaces after periods.
 \frenchspacing
@@ -551,7 +551,7 @@ A competing interests statement is required for all papers accepted by and publi
 
 \begin{figure}[p]
 \centering
-\includegraphics[height=160mm]{figures/Figure_01.jpeg}
+\includegraphics[height=160mm]{figures/Fig_1.jpeg}
 \caption{
     \textbf{The contribution of mutational processes to \KRAS{} mutagenesis.}
     \textbf{a.} The number of samples with mutations along the \KRAS{} protein sequence. The most frequently mutated locations are labeled. The color of the bar indicates the abundance per cancer. 
@@ -566,7 +566,7 @@ A competing interests statement is required for all papers accepted by and publi
 
 \begin{figure}[p]
 \centering
-\includegraphics[height=135mm]{figures/Figure_02.jpeg}
+\includegraphics[height=135mm]{figures/Fig_2.jpeg}
 \caption{
     \textbf{The comutation networks of common \KRAS{} alleles in COAD.}
     \textbf{a.} The comutation network of the \KRAS{} alleles in COAD with each edge representing a comutation interaction between an allele and another gene. The color of the edge indicates whether the interaction was an increase (blue) or decrease (green) in the frequency of comutation.
@@ -580,7 +580,7 @@ A competing interests statement is required for all papers accepted by and publi
 
 \begin{figure}[p]
 \centering
-\includegraphics[height=130mm]{figures/Figure_03.jpeg}
+\includegraphics[height=130mm]{figures/Fig_3.jpeg}
 \caption{
     \textbf{The comutation networks of \KRAS{} alleles in LUAD and MM.}
     \textbf{a.} The comutation network of the \KRAS{} alleles in LUAD where each edge represents a comutation interaction between an allele and another gene. The color of the edge indicates whether the interaction was an increase (blue) or decrease (green) in the frequency of comutation.
@@ -596,7 +596,7 @@ A competing interests statement is required for all papers accepted by and publi
 
 \begin{figure}[p]
 \centering
-\includegraphics[height=150mm]{figures/Figure_04.jpeg}
+\includegraphics[height=150mm]{figures/Fig_4.jpeg}
 \caption{
     \textbf{Allele-specific genetic dependencies in COAD and LUAD cell lines.}
     \textbf{a.} Gene sets with significant enrichment for increased (lower dependency score; purple) or reduced (higher dependency score; orange) genetic dependency in COAD cell lines. The size of the dot relates the p-value of the association and the color indicated the strength of the enrichment ("normalized enrichment score").
@@ -611,7 +611,7 @@ A competing interests statement is required for all papers accepted by and publi
 
 \begin{figure}[p]
 \centering
-\includegraphics[height=145mm]{figures/SuppFigure_13.jpeg}
+\includegraphics[height=145mm]{figures/Fig_5.jpeg}
 \caption{
     \textbf{Allele-specific genetic dependencies in PAAD cell lines.}
     \textbf{a.} Gene sets with significant enrichment for increased (lower dependency score; purple) or reduced (higher dependency score; orange) genetic dependency in PAAD cell lines. The size of the dot relates the p-value of the association and the color indicated the strength of the enrichment.
@@ -625,7 +625,7 @@ A competing interests statement is required for all papers accepted by and publi
 
 \begin{figure}[p]
 \centering
-\includegraphics[height=100mm]{figures/Figure_05.jpeg}
+\includegraphics[height=100mm]{figures/Fig_6.jpeg}
 \caption{
     \textbf{Integration of comutation and genetic dependency results.}
     \textbf{a.} A table of the genes found to comutate and demonstrate differential dependency with the same \KRAS{} allele. The "Dependency comparison" indicates the comparison of dependency scores found to be statistically significant; the "Adj. p-value" is the Benjamini-Hochberg-adjusted p-value for the comparison. The "Comutation interaction" indicates if the comutation interaction was a reduced or increased rate of comutation; the "P-value" is the p-value for this interaction.
@@ -640,11 +640,15 @@ A competing interests statement is required for all papers accepted by and publi
 
 \beginsupplement
 
+\makeatletter
+\renewcommand{\fnum@figure}{Supplemental \figurename~\thefigure}
+\makeatother
+
 
 
 \begin{figure}[p]
 \centering
-\includegraphics[width=\textwidth]{figures/SuppFigure_01.jpeg}
+\includegraphics[width=\textwidth]{figures/Supp_Fig_1.jpeg}
 \caption{
     \textbf{The complete distribution of \KRAS{} alleles in each cancer.} The adjacent bar indicates the fraction of samples with each \KRAS{} allele over all samples, including those with WT \KRAS{}.
 }
@@ -654,7 +658,7 @@ A competing interests statement is required for all papers accepted by and publi
 
 \begin{figure}[p]
 \centering
-\includegraphics[height=160mm]{figures/SuppFigure_02.jpeg}
+\includegraphics[height=160mm]{figures/Supp_Fig_2.jpeg}
 \caption{
     \textbf{Mutational signatures in tumor samples.}
     \textbf{a, b.} The detected level of the mutational signatures in each tumor sample. In \textbf{a}, each tumor sample is a column.
@@ -667,7 +671,7 @@ A competing interests statement is required for all papers accepted by and publi
 
 \begin{figure}[p]
 \centering
-\includegraphics[height=150mm]{figures/SuppFigure_04.jpeg}
+\includegraphics[height=150mm]{figures/Supp_Fig_3.jpeg}
 \caption{
     \textbf{The mutation burden and types of mutations of coding regions in human cancer samples.}
     \textbf{a-d.} The number of coding mutations per sample are shown as scatter plots with the samples arranged in order of increasing mutational burden (top) followed by the distribution of the types of mutations (bottom). The samples were separated by type of cancer and by source of the sequencing data.
@@ -679,7 +683,7 @@ A competing interests statement is required for all papers accepted by and publi
 
 \begin{figure}[p]
 \centering
-\includegraphics[height=170mm]{figures/SuppFigure_11.jpeg}
+\includegraphics[height=170mm]{figures/Supp_Fig_4.jpeg}
 \caption{
     \textbf{The survival curves of patients with LUAD stratified by \KRAS{} mutation and protein-protein interactions (PPI) of enriched functions in the \KRAS{} allele comutation networks in LUAD.}
     \textbf{a-c.} Survival curves of LUAD patients stratified by (\textbf{a}) \KRAS{} WT or mutant, (\textbf{b}) \KRAS{} allele, and (\textbf{c}) only \KRAS{} WT and \KRAS{} G12C. Each survival curve is labeled with the p-value from either the (\textbf{a, c}) log-rank test or (\textbf{b}) likelihood ratio test.
@@ -695,7 +699,7 @@ A competing interests statement is required for all papers accepted by and publi
 
 \begin{figure}[p]
 \centering
-\includegraphics[height=110mm]{figures/SuppFigure_12.jpeg}
+\includegraphics[height=110mm]{figures/Supp_Fig_5.jpeg}
 \caption{
     \textbf{The comutation networks of common \KRAS{} alleles in PAAD.}
     \textbf{a.} The comutation network of the \KRAS{} alleles in PAAD where each edge represents a comutation interaction between an allele and another gene. The color of the edge indicates whether the interaction was an increase (blue) or decrease (green) in the frequency of comutation.
@@ -711,7 +715,7 @@ A competing interests statement is required for all papers accepted by and publi
 
 \begin{figure}[p]
 \centering
-\includegraphics[height=100mm]{figures/SuppFigure_15.jpeg}
+\includegraphics[height=100mm]{figures/Supp_Fig_6.jpeg}
 \caption{
     \textbf{Association between \emph{WDR26} RNA expression and dependency score in COAD cell lines.}
     \textbf{a.} The dependency score of knocking out \emph{WDR26} against the gene's RNA expression (log-transformed TPM with a pseudocount of 1). Each point represents a COAD cell line, colored by the \KRAS{} allele. The size of the point represents the copy number of \emph{WDR26} where "norm" is 2 copies and "amp" is amplified. The dashed line represents the line-of-best fit. The equation, p-value, and $R^2$ for the line are shown in the top-right.
@@ -722,7 +726,7 @@ A competing interests statement is required for all papers accepted by and publi
 
 \begin{figure}[p]
 \centering
-\includegraphics[width=\textwidth]{figures/SuppFigure_14.jpeg}
+\includegraphics[width=\textwidth]{figures/Supp_Fig_7.jpeg}
 \caption{
     \textbf{Reduced dependency on JNK signaling in PAAD cell lines with \KRAS{} G12V mutations.}
     \textbf{a.} The "JNK phosphorylation and activation by activated TAK1" gene set was significantly enriched for reduced genetic dependency in PAAD cell lines with \KRAS{} G12V. Each row represents a gene and each cell represents a cell line colored by its \KRAS{} allele. The cell lines were arranged in ranking order by their dependency score for each gene. Thus, each column indicates a rank. The line plots above the heatmap indicate the representation (density) of each \KRAS{} allele at each rank across the genes.
