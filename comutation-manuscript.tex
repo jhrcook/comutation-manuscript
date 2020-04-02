@@ -197,6 +197,7 @@ Thus, this comutation interaction provides further evidence for the link between
 
 The \KRAS{} allele-specific comutation network uncovered in LUAD was far larger than that of COAD (Fig. \ref{fig:luadmm-comutation-main}a).
 This was likely caused by the higher mutation rate in this cancer (Supplemental Fig. \ref{sfig:mutation-burden-of-cancer-samples}), increasing the power to detect both increased and reduced comutation interactions.
+Many of these genes were involved in integral \kras{} signaling pathways including an increased comutation interaction between \KRAS{} G12A and \emph{MAP2K3}, a reduced comutation interaction between \KRAS{} G12D and \emph{ERBB4}, a pro-growth receptor tyrosine kinase, and a very strong increased rate of comutation between \KRAS{} G12C and \emph{STK11} (Fig. \ref{fig:luadmm-comutation-main}b).
 There were several intriguing cellular processes enriched in the LUAD networks or each allele (Fig. \ref{fig:luadmm-comutation-main}c, d).
 Interestingly, some of the enrichments were driven by \emph{both} increased and reduced comutation interactions, while others were driven by increased \emph{or} reduced comutation interactions (Fig. \ref{fig:luadmm-comutation-main}d).
 For example, \KRAS{} G12C had increased and reduced comutation interactions with many genes encoding proteins that interact with Myc ("PPI of MYC (TF)"), compared to how reduced comutation interactions drove the enrichment of focal adhesion genes with \KRAS{} G12D (Fig. \ref{fig:luadmm-comutation-main}d, Supplemental Fig. \ref{sfig:luad-comutation-supplementary}).
@@ -205,7 +206,7 @@ A primary piece of evidence that \KRAS{} alleles are distinct in LUAD came from 
 Thus, clinical data from TCGA \cite{CancerGenomeAtlasResearchNetwork2014} were collected to assess the relation of the comutation events identified above on the overall survival (OS) of patients with LUAD.
 There was no detectable difference in survival between patients with \KRAS{} mutant and WT tumors (log-rank test, p-value: 0.290), though, when stratified by \KRAS{} allele, the strongest contrast was between G12C and WT tumors (log-rank test, p-value: 0.052) (Supplementary Fig. \ref{sfig:luad-comutation-supplementary}).
 Thus, for each gene found to comutate with G12C, the patients were divided into four groups: those with WT \KRAS{} and interacting gene (grey), \KRAS{} G12C and WT interacting gene (black), \KRAS{} WT and mutated interacting gene (pink), or \KRAS{} G12C and mutant interacting gene.
-Several were found to have statistically significant differences between these groups (Cox proportional hazards, p-value < 0.05), four of which are shown in Fig. \ref{fig:luadmm-comutation-main}b.
+Several were found to have statistically significant differences between these groups (Cox proportional hazards, p-value < 0.05), four of which are shown in Supplementary Fig. \ref{sfig:luad-comutation-supplementary}.
 \emph{CHRNB4}, \emph{VN1R2}, and \emph{ZNF445} were found to have increased rates of comutation with G12C, and patients with these comutations tended to have worse overall survival than the other groups.
 Alternatively, \emph{ZNF804A} had reduced comutation with the G12C allele, and the patients with both \KRAS{} G12C and mutated \emph{ZNF804A} tended to have better overall survival than the other groups.
 While these are relatively rare events and consequently the survival data is sparse, these trends lend support to the cooperative or inhibitory effect of these \KRAS{} allele-specific comutation interactions.
@@ -414,7 +415,7 @@ A gene was considered “expressed” in a tissue if it met at least one of the 
 
 \subsection*{Calculating overall distribution of hotspot mutations}
 The distribution across COAD, LUAD, MM, and PAAD of mutations over the four hotspots on \KRAS{} was calculated by accounting for the yearly incidence of each cancer type.
-The incidence of cancers of the "colorectum," "lung and bronchus," "myeloma," and "pancreas" were obtained from the American Cancer Society \cite{Siegel2020Cancer2020.}.
+The incidence of cancers of the "colorectum," "lung and bronchus," "myeloma," and "pancreas" were obtained from the American Cancer Society \cite{Siegel2020Cancer2020.}: 3,870,000 colorectum, 5,930,000 lung and bronchus, 680,000 myeloma, 1,280,000 pancreas.
 The incidence of COAD, LUAD, and PAAD was estimated by multiplying the number of cases of their respective tissue by the proportion they constitute: 95\%, 50\%, and 95\%, respectively \cite{Siegel2020Cancer2020., Meza2015Lung1973-2010.}.
 The distribution of mutations to the hotspots across all cancers was calculated by finding the frequency within each cancer type, then combining those figures, weighting by their yearly incidence.
 
@@ -587,11 +588,11 @@ A competing interests statement is required for all papers accepted by and publi
 
 \begin{figure}[p]
 \centering
-\includegraphics[height=130mm]{figures/Fig_3.jpeg}
+\includegraphics[height=145mm]{figures/Fig_3.jpeg}
 \caption{
     \textbf{The comutation networks of \KRAS{} alleles in LUAD and MM.}
     \textbf{a.} The comutation network of the \KRAS{} alleles in LUAD where each edge represents a comutation interaction between an allele and another gene. The color of the edge indicates whether the interaction was an increase (blue) or decrease (green) in the frequency of comutation.
-    \textbf{b.} Survival curves of patients with or without comutation of \KRAS{} G12C and a gene found to comutate with the allele (labeled above each plot). The color of the curve indicates the mutations of the tumor (grey: \KRAS{} and the other gene are WT; black: \KRAS{} G12C; pink: the other gene is mutated; purple: both \KRAS{} G12C and the other gene is mutated). The p-values for the likelihood ratio test and the regression covariates for the \KRAS{} G12C allele and the other gene are indicated on the plot.
+    \textbf{b.} A subset of the network shown in \textbf{a} of genes in one of its canonical up- or downstream signaling pathways. The width of the edge indicates the strength of the association.
     \textbf{c.} Cellular functions enriched in the comutation networks of the \KRAS{} alleles. The size of the dot indicates the p-value of the enrichment and the transparency indicates the number of genes in both the function and the comutation network.
     \textbf{d.} The combined rate of comutation of the genes underlying the enriched functions shown in \textbf{b}. The x-axis indicates the fraction of samples with at least one of the interacting genes mutated in the samples with the indicated \KRAS{} allele (dark) or the other samples (light). The genes were separated into those with an increase (blue, going right) or a reduced (green, going left) rate of comutation with the \KRAS{} allele.
     \textbf{e.} Each edge represents a comutation interaction between an allele and the indicated gene. The color of the edge indicates whether the interaction was an increase (blue) or decrease (green) in the frequency of comutation.
@@ -690,23 +691,25 @@ A competing interests statement is required for all papers accepted by and publi
 
 \begin{figure}[p]
 \centering
-\includegraphics[height=170mm]{figures/Supp_Fig_4.jpeg}
+\includegraphics[height=160mm]{figures/Supp_Fig_4.jpeg}
 \caption{
-    \textbf{The survival curves of patients with LUAD stratified by \KRAS{} mutation and protein-protein interactions (PPI) of enriched functions in the \KRAS{} allele comutation networks in LUAD.}
-    \textbf{a-c.} Survival curves of LUAD patients stratified by (\textbf{a}) \KRAS{} WT or mutant, (\textbf{b}) \KRAS{} allele, and (\textbf{c}) only \KRAS{} WT and \KRAS{} G12C. Each survival curve is labeled with the p-value from either the (\textbf{a, c}) log-rank test or (\textbf{b}) likelihood ratio test.
-    \textbf{d.} The PPI of the transcription factor Myc that was detected to comutate with \KRAS{} G12C in LUAD.
-    \textbf{e.} The subnetwork of the focal adhesion PPI that was detected to comutate with \KRAS{} G12D in LUAD.
+    \textbf{The protein-protein interactions (PPI) of enriched functions in the \KRAS{} allele comutation networks in LUAD and survival curves of patients with LUAD stratified by \KRAS{} mutation.}
+    \textbf{a.} The PPI of the transcription factor Myc that was detected to comutate with \KRAS{} G12C in LUAD.
+    \textbf{b.} The subnetwork of the focal adhesion PPI that was detected to comutate with \KRAS{} G12D in LUAD.
     For both subnetworks, the nodes represent proteins and edges represent physical PPI. Colored nodes had a comutation interaction with the respective \KRAS{} allele, the color indicating whether it was a reduced (green) or increased (blue) rate of comutation.
     The bold protein names indicate that the gene was included in the enriched gene set.
     Edge thickness is related to the centrality of the interaction to the presented subnetwork.
+    \textbf{c-e.} Survival curves of LUAD patients stratified by (\textbf{a}) \KRAS{} WT or mutant, (\textbf{b}) \KRAS{} allele, and (\textbf{c}) only \KRAS{} WT and \KRAS{} G12C. Each survival curve is labeled with the p-value from either the (\textbf{a, c}) log-rank test or (\textbf{b}) likelihood ratio test.
+    \textbf{f-i.} Survival curves of patients with or without comutation of \KRAS{} G12C and a gene found to comutate with the allele (labeled above each plot). The color of the curve indicates the mutations of the tumor (grey: \KRAS{} and the other gene are WT; black: \KRAS{} G12C; pink: the other gene is mutated; purple: both \KRAS{} G12C and the other gene is mutated). The p-values for the likelihood ratio test and the regression covariates for the \KRAS{} G12C allele and the other gene are indicated on the plot.
 }
 \label{sfig:luad-comutation-supplementary}
 \end{figure}
 
 
+
 \begin{figure}[p]
 \centering
-\includegraphics[height=110mm]{figures/Supp_Fig_5.jpeg}
+\includegraphics[height=150mm]{figures/Supp_Fig_5.jpeg}
 \caption{
     \textbf{The comutation networks of common \KRAS{} alleles in PAAD.}
     \textbf{a.} The comutation network of the \KRAS{} alleles in PAAD where each edge represents a comutation interaction between an allele and another gene. The color of the edge indicates whether the interaction was an increase (blue) or decrease (green) in the frequency of comutation.
@@ -746,7 +749,7 @@ A competing interests statement is required for all papers accepted by and publi
 
 \begin{figure}[p]
 \centering
-\includegraphics[height=100mm]{figures/Supp_Fig_8.jpeg}
+\includegraphics[height=180mm]{figures/Supp_Fig_8.jpeg}
 \caption{
     \textbf{PPIN subnetworks from the integration of comutation and genetic dependency results for LUAD and PAAD.}
     \textbf{a, b.} The largest connected subnetworks of the PPIN of genes found to comutate or demonstrate differential dependence with only \KRAS{} G12C (\textbf{a}) or only G12V (\textbf{b}) in LUAD were extracted. Due to the order of the subnetwork, only a selection of the nodes are labeled.
