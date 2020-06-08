@@ -270,28 +270,23 @@ Overall, the \KRAS{} alleles were associated with substantially different geneti
 
 \subsection*{An integrated analysis of allele-specific comutation and genetic dependencies.}
 
-The allele-specific comutation networks and the differential genetic dependency interactions were integrated to provide further insight into the distinctions between the \KRAS{} alleles.
-Surprisingly, there was no overlap between the genes found to comutate with an allele and those with differential dependency.
-This was likely due to the different biological pressures of the tumor microenvironment compared to the tissue culture used for the genetic dependency screens.
-In addition, this suggests that the mutations obtained by genes with comutation interactions are not sufficiently modelled by a CRISPR-Cas9 knock-out, but are instead more complex alterations to the gene and encoded protein's behaviour.
-
-One explanation for the allele-specific genetic dependency interactions discovered above is that the unique signaling properties of the \KRAS{} variant impose or remove the requirement for the function of the other gene.
-However, as emphasized by the weakly connected comutation networks, the \KRAS{} alleles are not acting in the same genetic environments.
-Therefore, an alternative explanation is that the genetic dependencies of a \KRAS{} allele are instead attributable to the recurrent mutation of a comutation partner.
-To address this hypothesis, linear models were constructed for the dependency score of each gene with allele-specific dependency that include a coefficient for the \KRAS{} allele and a coefficient for the mutation of each gene in its comutation network.
+One explanation for the allele-specific genetic dependency interactions discovered above is that the unique signaling properties of the \KRAS{} variant impose or remove the requirement for the function of the other gene. 
+Nevertheless, as emphasized by the weakly connected comutation networks, the \KRAS{} alleles are not acting in the same genetic environments.
+Given that each \KRAS{} allele is associated with a distinct comutation network, we posited that some of the genetic dependencies associated with specific \KRAS{} alleles were actually linked to commutated genes.
+To address this hypothesis, we constructed linear models for the dependency score of each gene with allele-specific dependency that included a coefficient for the \KRAS{} allele and a coefficient for the mutation of each gene in its comutation network.
 These models were then fit with elastic net regression to isolate the most informative predictors \cite{Zou2005RegularizationNet}.
 
 The fit models that had non-zero coefficients for the effects of the comutation variables tended to separate into two groups.
 In the first, the mutation of a comutation partner could explain the allele-specific dependency interaction.
 An example of this was how the dependency of COAD cell lines on \emph{STARD9} was greater in \emph{TP53}-mutant lines than in \KRAS{} G12D lines (Fig. \ref{fig:dep-map-comut-masking}a).
 If \emph{TP53} mutations induce a stronger dependency on \emph{STARD9}, the reduced frequency of comutation between \emph{TP53} and \KRAS{} G12D would cause the opposite effect to be ascribed to the G12D allele.
-A similar effect was found between \KRAS{} G12D and \emph{SMAD4} in PAAD cell lines for the dependency on \emph{EEF1E1} (Fig. \ref{fig:dep-map-comut-masking}b), \emph{ABI1}, and \emph{MYBL2} (Supplementary Fig. \ref{sfig:dep-map-comut-masking}).
+A similar effect was found between \KRAS{} G12D and \emph{SMAD4} in PAAD cell lines for the dependency on \emph{EEF1E1}, \emph{ABI1}, and \emph{MYBL2} (Fig. \ref{fig:dep-map-comut-masking}b, Supplementary Fig. \ref{sfig:dep-map-comut-masking}).
 Because of the reduced comutation interaction between \KRAS{} G12D and \emph{SMAD4} in PAAD, the effects of knocking out these genes can be ascribed to an allele-specific effect or to the \emph{SMAD4} mutation.
 
-The other group of models estimated varying effects for the comutation events that altered the interpretation of the dependency interaction between the \KRAS{} allele and knocked-out gene.
-For instance, knocking-out \emph{SRSF5}, a splice factor that promotes splicing of the  PKC $\beta$II isoform to promote oncogenesis \cite{Gokmen-Polar2001ElevatedCarcinogenesis., Patel2005MolecularSRp40., Jiang2009Akt2Acid.}, in COAD cell lines with \KRAS{} G12D mutations caused an increase in the growth rate. 
+The other group of models estimated effects of the comutation events that altered the interpretation of the dependency interaction between the \KRAS{} allele and knocked-out gene.
+For instance, targeting \emph{SRSF5}, a splice factor that promotes splicing of the  PKC $\beta$II isoform to promote oncogenesis \cite{Gokmen-Polar2001ElevatedCarcinogenesis., Patel2005MolecularSRp40., Jiang2009Akt2Acid.}, in COAD cell lines with \KRAS{} G12D mutations caused an increase in the growth rate. 
 The new model with variables for comutation events indicated that increased Wnt signaling was important for this effect (Fig. \ref{fig:dep-map-comut-adding}a) because mutations of \emph{APC} and \emph{HECW1}, negative regulators of Wnt signaling \cite{Zhan2017, Tauriello2010TheRegulation.}, were estimated to have positive effects on the dependency score.
-\emph{APC} has increased comutation with \KRAS{} G12D while \emph{HECW1} has a reduced comutation interaction, though this is likely due to the redundancy of loss of both and the preference for the loss of \emph{APC} is influenced by other factors.
+\emph{APC} has increased comutation with \KRAS{} G12D while \emph{HECW1} has a reduced comutation interaction, though this is likely due to the redundancy of loss of both and a preference for the loss of \emph{APC}.
 Importantly, while cell lines with mutations to these negative Wnt regulators had reduced dependency on \emph{SRSF5}, the cell lines with concomitant \KRAS{} G12D mutations tended to have an increase in growth rate when \emph{SRSF5} was knocked-out (a positive dependency score), suggesting that these co-occurring mutations cooperate in this genetic interaction.
 
 As another example, the loss of \emph{KIAA1257} in PAAD cell lines with a \KRAS{} G12R and/or \emph{DNAH5} mutation had a greater reduction on growth than without a mutation in either gene (Fig. \ref{fig:dep-map-comut-adding}b).
@@ -304,26 +299,29 @@ Together, these results create a network of comutation, dependency, and protein-
 
 \section*{Discussion}
 
-This study addresses the genetic complexity of cancer through a genetic interaction analysis of oncogenic \KRAS{} alleles in COAD, LUAD, MM, and PAAD. 
-Measuring the levels of mutational signatures revealed that the cancer-specific distributions of \KRAS{} mutations were influenced, but not determined by, the active mutational processes in the tumor samples.
+This study addresses the genetic complexity of cancer through a comprehensive genetic interaction analysis of oncogenic \KRAS{} alleles in COAD, LUAD, MM, and PAAD. 
+Measuring the levels of mutational signatures revealed that the cancer-specific distributions of \KRAS{} mutations were influenced, but not determined, by the active mutational processes in the tumor samples.
 This result suggests that the biological properties of the \KRAS{} alleles, within the context of the tissue of origin, is an important factor in the positive selection of a \KRAS{} mutation during the evolution of a tumor.
-To investigate these properties, we conducted statistical tests to determine patterns of comutating genes and genetic dependencies for each \KRAS{} allele in each cancer.
+Indeed, our lab has previously demonstrated that mutant forms of \kras{} produce distinct molecular and cellular phenotypes that are largely dependent upon tissue context \cite{Poulin2019, Brubaker2019, Johnson2019}. 
+To investigate allele-specific genetic properties, we conducted statistical tests to identify patterns of comutating genes and genetic dependencies for each \KRAS{} allele in each cancer.
 The former identified genes that comutated with specific \KRAS{} alleles at an unexpectedly high frequency, suggesting they were alterations that cooperated with the \KRAS{} allele to promote positive selection in the tumor.
 Alternatively, some genes comutated with a \KRAS{} allele less frequently than expected by chance, suggesting they were functionally redundant mutations or introduced an inhibitory effect on the tumor's progression.
 Finally, functional interactions were identified between \KRAS{} alleles and cellular processes and individual genes.
-Together, these findings support a model in which the various oncogenic \KRAS{} mutations are not biologically redundant, but instead have distinct properties relevant to the treatment of \KRAS{} mutant tumors.
+Together, these findings support a model in which the various oncogenic \KRAS{} mutations are not biologically redundant, but instead have distinct properties that are reflected in their genetic interactions.
 
 This analysis of \KRAS{} genetic networks in four different tumor types highlights the tissue-specific nature of genetic interactions. 
-In places, we focused on the results from the analysis of COAD as it demonstrated a high variability in the types of \KRAS{} alleles, had limited exogenous mutational pressure (in contrast to the effects of smoking-induced mutations in LUAD), and we had a large number of WGS and WES data.
+In places, we focused on the results from the analysis of COAD, as it demonstrated a high variability in the types of \KRAS{} alleles, had limited exogenous mutational pressure (in contrast to the effects of smoking-induced mutations in LUAD), and we had a large number of WGS and WES data.
 However, allele-specific genetic interactions were not consistent between tissues, demonstrating the complex relationship between the tissue-of-origin, \kras{} function, and cooperating genetic events.
-While the intrinsic biochemical biochemical properties of a \kras{} mutant are maintained in each cancer, their downstream signaling properties, and ultimately their effects on tumorigenesis, are determined by basal configuration of the tissue-specific signaling network.
+While the intrinsic biochemical properties of a \kras{} mutant are likely maintained in each cancer, their downstream signaling properties, and ultimately their effects on tumorigenesis, are determined by the basal configuration of the tissue-specific signaling network \cite{Brubaker2019}.
+Thus, the configuration of the tissue signaling network influences the genetic interactions that arise during cancer progression.
 
-In addition to the importance of tissue-specificity, this study provides additional evidence that the study of oncogenes must be allele-specific.
-We and others have repeatedly demonstrated the distinct effects of the \KRAS{} alleles, both computationally and experimentally, revealing many instances of substantial variation between different mutations of the same gene.
+% Probably need a paragraph about the interpretation of SL screening in light of our last analysis.
+
+In addition to the importance of tissue-specificity, this study provides compelling evidence that the somatic missense mutations that activate oncogenes are not always equivalent.
+We and others have demonstrated the distinct effects of the \KRAS{} alleles, both computationally and experimentally, revealing many instances of substantial variation between different mutations of the same gene.
 This is likely a more general principle applicable to many oncogenes, especially those with multiple mutational hotspots.
 
-
-More broadly, this study has broad implications for the understanding of oncogene biology and for cancer therapy.
+Finally, this study has broad implications for the understanding of oncogene biology and for cancer therapy.
 Whether a targeted therapy directly inhibits the activated oncoprotein or not, it is important to understand how allele-specific signaling properties and genetic interactions influence therapeutic response.
 For instance, \emph{BRAF} activating mutations have been classified into three groups defined by their functional effects on the protein product \cite{Yao2015BRAFInhibition., Yao2017TumoursRAS.}, which consequently determines their response to different inhibitors \cite{Dagogo-Jack2019, Bracht2019BRAFRationale.}.
 Moreover, the response of HER2 mutant cancers to HER2 inhibition varies depending on the tissue-of-origin of the cancer \cite{Hyman2018HERCancers}, which could be due to intrinsic signaling differences between the tissues-of-origin or to cooperating mutations unique to a specific cancer type. 
@@ -368,14 +366,6 @@ The frequency of mutations at the four hotspots of \KRAS{} across COAD, LUAD, MM
 The incidence of cancers of the "colorectum," "lung and bronchus," "myeloma," and "pancreas" were obtained from the American Cancer Society \cite{Siegel2020Cancer2020.}: 3,870,000 colorectum, 5,930,000 lung and bronchus, 680,000 myeloma, 1,280,000 pancreas.
 The incidences of COAD, LUAD, and PAAD were estimated by multiplying the number of cases of their respective tissue by the proportion they constitute: 95\%, 50\%, and 95\%, respectively \cite{Siegel2020Cancer2020., Meza2015Lung1973-2010.}.
 The distribution of mutations to the hotspots across all cancers was calculated by finding the frequency within each cancer type, then combining those figures, weighting by their yearly incidence.
-
-
-% \subsection*{Predicting effect of mutations on gene or protein function}
-
-% The effect of a mutation on the function of a gene or encoded protein was predicted using SIFT \cite{Kumar2009, Vaser2016}, PolyPhen2 \cite{Adzhubei2010}, LRT \cite{Chun2009IdentificationGenomes.}, MutationTaster \cite{Schwarz2014MutationTaster2:Age.}, MutationAssessor \cite{Reva2007DeterminantsOptimization., Reva2011}, FATHMM \cite{Shihab2013}, MetaSVM \cite{Dong2015ComparisonStudies.}, and MetaLR \cite{Dong2015ComparisonStudies.}.
-% Known clinically significant mutations were acquired from ClinVar \cite{Landrum2018ClinVar:Evidence.}.
-% Annotations were applied using ANNOVAR \cite{Wang2010ANNOVAR:Data.}.
-% A mutation was marked as deleterious if it was predicted as such by at least one of the prediction methods or declared as such by ClinVar.
 
 
 \subsection*{Protein-Protein Interaction Network (PPIN)}
@@ -463,15 +453,13 @@ Gene sets from the following sources provided by Enrichr were used: BioCarta (20
 Genetic dependency data was downloaded from the online DepMap portal (https://depmap.org/portal/download/) (2019Q3) and the CERES scores were used for all analyses.
 Cell lines with multiple activating \KRAS{} mutations or an activating mutation in \emph{BRAF}, \emph{EGFR}, or \emph{NRAS} were removed from the data set.
 For each cancer, only cell lines with a \KRAS{} allele found in at least 3 cell lines were included in the study.
-The only exception to this was the removal of the LUAD cell lines with \KRAS{} G13D mutations because this allele is exceedingly rare in LUAD.
-This is supported by the fact that knocking out \KRAS{} in these cell lines had an equivalent effect than when the gene was knocked out in \KRAS{} WT cell lines: the average ($\pm$ std. dev.) dependency score for G13D LUAD cell lines was -0.55 $\pm$ 0.26, compared to that of \KRAS{} WT cell lines: -0.55 $\pm$ 0.28. The rest of the \KRAS{} mutant samples demonstrated a far greater dependency on \KRAS{}: -1.26 $\pm$ 0.33.
 
 The genetic dependency score is often linked to the expression of the gene.
 Thus, if the RNA expression of the gene could explain the dependency score (linear model, p-value < 0.05 and $R^2$ $\ge$ 0.4), the gene was not tested for \KRAS{} allele-specific genetic dependency.
 Further, genes that tended to show differential dependence on the basis of their mutation status (Wilcoxon rank sum test, p < 0.05) were not included in downstream analysis.
 Of the remaining genes, an ANOVA was used to measure if the mean dependency scores for the cell lines grouped by \KRAS{} allele were different (p-value < 0.01).
 For these genes, one-versus-all Student's \emph{t}-tests were used to compare the dependency scores of each group of cell lines against the others (Benjamini-Hochberg FDR adjusted p-value < 0.05).
-These genes were declared as deferentially dependent by \KRAS{} allele.
+These genes were declared as differentially dependent by \KRAS{} allele.
 The box-plots in Fig. \ref{fig:coad-dependency-main} and Supplementary Fig. \ref{sfig:paad-dependency-heatmap} show pairwise \emph{t}-tests with Benjamini-Hochberg FDR adjusted p-value.
 
 
@@ -616,7 +604,7 @@ The authors declare that they have no competing interests.
 \end{figure}
 \newpage
 \noindent Figure 6. \textbf{Integration of comutation and genetic dependency interactions.}
-\textbf{a.} The coefficients of \KRAS{} G12D, \emph{SORL1}, \emph{APC}, or \emph{HECW1} from the model of \emph{SRSF5} dependency scores in COAD cell lines regressed on \KRAS{} G12D and its comutation interactors are shown on the top. The middle dot-plot presents the dependency scores of \emph{SRSF5} for COAD cell lines with \emph{SORL1}, \emph{APC}, or \emph{HECW1} mutants highlighted in each column. The comutation interactions of each gene with \KRAS{} G12D are shown along the bottom.
+\textbf{a.} The coefficients of \KRAS{} G12D, \emph{APC}, or \emph{HECW1} from the model of \emph{SRSF5} dependency scores in COAD cell lines regressed on \KRAS{} G12D and its comutation interactors are shown on the top. The middle dot-plot presents the dependency scores of \emph{SRSF5} for COAD cell lines with \emph{APC} or \emph{HECW1} mutants highlighted in each column. The comutation interactions of each gene with \KRAS{} G12D are shown along the bottom.
 \textbf{b.} The coefficients of \KRAS{} G12R and \emph{DNAH5} from the model of \emph{KIAA1257} dependency scores in PAAD cell lines regressed on \KRAS{} G12R and its comutation interactors are shown on the top. The dependency score from knocking-out \emph{KIAA1257} for each cell line separated by if it has a mutation in neither \emph{DNAH5} nor \emph{G12R}, in one of the genes, or in both. The line and square points indicate the mean value between each group. The inset genetic interaction diagram indicates that \KRAS{} G12R and \emph{DNAH5} have a reduced comutation interaction.
 \textbf{c.} The coefficients of \KRAS{} G12D, the \KRAS{} G12D and \emph{GPR98} comutation interaction term, and \emph{RNF43} from the model of \emph{FKBP1A} dependency scores in PAAD cell lines regressed on \KRAS{} G12D and its comutation interactors are shown on the top. The bottom dot-plot shows the dependency scores from knocking-out \emph{FKBP1A} in cells with and without a  \KRAS{} G12D mutation or mutation in \emph{GPR98} or \emph{RNF43}. The color of the point indicates which mutations the represented cell line has and \KRAS{} G12D cell lines are also triangles.
 \textbf{d.} A diagram describing the complex interaction network from \textbf{c} involving dependency (purple), comutation (blue and green), and protein-protein interactions (grey).
